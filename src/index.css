@@ -1,0 +1,186 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #A87056;
+  --bg-dark: #151515;
+  --bg-gray: #1F1F1F;
+  --bg-card: rgba(32, 32, 32, 0.7);
+  --white: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
+  /* Margens horizontais consistentes (mobile respeita safe-area) */
+  --page-gutter: 20px;
+}
+
+@font-face {
+  font-family: 'Athelas';
+  src: url('./assets/fonts/Athelas.ttc') format('truetype-collection');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Effra';
+  src: url('./assets/fonts/Effra_Trial_Rg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--white);
+  font-family: 'Effra', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root,
+.monteo-app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Luxury Grain Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Deep Mesh Gradient Backgrounds */
+.mesh-bg {
+  position: relative;
+  overflow: hidden;
+}
+.mesh-bg::after {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 70% 30%, rgba(168, 112, 86, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(32, 32, 32, 1) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1, h2, h3, .athelas {
+  font-family: 'Athelas', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.effra { font-family: 'Effra', sans-serif; }
+
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+section {
+  padding: 120px var(--page-gutter);
+  position: relative;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 10px 20px rgba(168, 112, 86, 0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(168, 112, 86, 0.4);
+  background: #c28266;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--white);
+}
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-gutter: max(20px, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  }
+
+  section {
+    padding-top: 88px;
+    padding-bottom: 96px;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+  }
+
+  /* Tipografia mobile: títulos secundários e corpo */
+  h2 {
+    font-size: clamp(1.75rem, 6.5vw, 2.125rem);
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: clamp(1.125rem, 4vw, 1.375rem);
+    line-height: 1.25;
+  }
+
+  .btn {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    padding: 14px 22px;
+  }
+}

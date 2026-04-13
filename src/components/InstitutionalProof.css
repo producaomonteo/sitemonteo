@@ -1,0 +1,148 @@
+.institutional-proof {
+  background: var(--bg-dark);
+  padding: 56px var(--page-gutter, 20px) 48px;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.proof-main {
+  text-align: left;
+}
+
+.proof-main .label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.proof-main-stats-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px 72px;
+}
+
+.proof-main-stat {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.proof-main-stat .main-number {
+  margin-bottom: 16px;
+}
+
+.main-number {
+  font-size: clamp(72px, 11vw, 200px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.proof-main-stats-row .main-number {
+  font-size: clamp(64px, 9.5vw, 170px);
+}
+
+.main-desc {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+  color: var(--text-muted);
+  opacity: 0.92;
+  max-width: 360px;
+}
+
+.main-desc--emph {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+.proof-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-item {
+  padding: 40px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .institutional-proof {
+    padding: 40px var(--page-gutter, 20px) 32px;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .main-number {
+    font-size: 120px;
+  }
+
+  .proof-main-stats-row .main-number {
+    font-size: clamp(56px, 18vw, 120px);
+  }
+}
+
+@media (max-width: 768px) {
+  .institutional-proof {
+    padding: 32px var(--page-gutter, 20px) 28px;
+  }
+
+  .main-desc {
+    font-size: 15px;
+  }
+
+  .main-desc--emph {
+    font-size: 13px;
+  }
+
+  .stat-number {
+    font-size: 34px;
+  }
+
+  .proof-grid {
+    gap: 28px;
+  }
+
+  .main-number {
+    font-size: 80px;
+  }
+
+  .proof-main-stats-row {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .proof-main-stats-row .main-number {
+    font-size: clamp(52px, 22vw, 96px);
+  }
+
+  .proof-secondary {
+    grid-template-columns: 1fr;
+  }
+}

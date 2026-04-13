@@ -1,0 +1,157 @@
+.hero {
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+.hero-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, var(--bg-dark) 0%, rgba(21, 21, 21, 0.4) 50%, rgba(21, 21, 21, 0.8) 100%);
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-title {
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Wordmark “preto” em SVG → branco no hero (mesma leitura do texto MONTEO anterior) */
+.hero-title-logo {
+  display: block;
+  width: auto;
+  height: clamp(56px, 11vw, 132px);
+  max-width: min(92vw, 640px);
+  margin: 0 auto;
+  filter: brightness(0) invert(1);
+}
+
+.light-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(168, 112, 86, 0.3), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  color: var(--text-muted);
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Mesmo breakpoint do header compacto: conteúdo não pode ficar centrado por baixo do header fixo */
+@media (max-width: 1180px) {
+  .hero {
+    align-items: flex-start;
+    justify-content: center;
+    /* safe-area + top do header (20px) + altura (80px) + respiro sob o header */
+    padding-top: calc(env(safe-area-inset-top, 0px) + 20px + 80px + 32px);
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: min(100vh, 720px);
+  }
+
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .hero-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    padding: 0 4px;
+  }
+
+  .hero-title-logo {
+    max-width: 100%;
+    height: clamp(44px, 12vw, 72px);
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 36px;
+    padding: 0 2px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+
+  /* Sombras deslocadas para baixo — contraste sobre o fundo fotográfico */
+  .hero-label {
+    text-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.55),
+      0 3px 6px rgba(0, 0, 0, 0.65),
+      0 8px 18px rgba(0, 0, 0, 0.45);
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.5),
+      0 3px 8px rgba(0, 0, 0, 0.62),
+      0 6px 20px rgba(0, 0, 0, 0.5);
+  }
+}

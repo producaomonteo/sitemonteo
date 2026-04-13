@@ -1,0 +1,10 @@
+# Variáveis locais (nunca commitar chaves)
+.env
+.env.local
+.env.*.local
+
+# Build e dependências
+node_modules
+dist
+
+.DS_Store

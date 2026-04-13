@@ -1,0 +1,21 @@
+{
+  "name": "site-monteo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --port 8585",
+    "build": "vite build",
+    "preview": "vite preview --port 8585"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "animejs": "^4.3.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "vite": "^8.0.5"
+  }
+}
