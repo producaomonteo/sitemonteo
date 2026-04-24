@@ -4,6 +4,8 @@ import logoValor from '@Imagens/Logo-Valor-Economico.svg';
 import logoInfomoney from '@Imagens/Logo-Info-Money.svg';
 import logoTerra from '@Imagens/Logo Terra (1).svg';
 import logoEstadao from '@Imagens/Logo-Estadao.svg';
+import logoIstoe from '@Imagens/Logo-Istoe.svg';
+import logoUol from '@Imagens/Logo-UOL.svg';
 import './MediaSection.css';
 
 const mediaLogos = [
@@ -11,7 +13,9 @@ const mediaLogos = [
   { alt: 'Valor Econômico', src: logoValor },
   { alt: 'InfoMoney', src: logoInfomoney },
   { alt: 'Terra', src: logoTerra },
-  { alt: 'Estadão', src: logoEstadao }
+  { alt: 'Estadão', src: logoEstadao },
+  { alt: 'IstoÉ', src: logoIstoe },
+  { alt: 'UOL', src: logoUol }
 ];
 
 const MediaSection = () => {
