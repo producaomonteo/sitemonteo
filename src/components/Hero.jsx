@@ -54,7 +54,7 @@ const Hero = () => {
 
       <div className="container hero-content" ref={contentRef}>
         <div className="hero-text-wrapper">
-          <span className="hero-label stagger-text">VENHA SER</span>
+
           <h1 className="hero-title stagger-text" ref={titleRef}>
             <img
               src={heroWordmark}
@@ -65,12 +65,11 @@ const Hero = () => {
             <div className="light-beam"></div>
           </h1>
           <p className="hero-subtitle stagger-text">
-            O Ecossistema que está transformando o mercado patrimonial no Brasil. 
-            Conectamos estratégia, método e autoridade para o seu crescimento.
+            Estrutura, método e estratégia para crescimento patrimonial.
           </p>
           <div className="hero-btns">
-            <button className="btn btn-primary">SEJA UM INVESTIDOR</button>
-            <button className="btn btn-outline">TRABALHAR COM A MONTEO</button>
+            <button className="btn btn-primary">FALAR COM ESPECIALISTA</button>
+<button className="btn btn-outline">QUERO CRESCER COM A MONTEO</button>
           </div>
         </div>
       </div>
