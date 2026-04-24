@@ -107,10 +107,10 @@ const PodcastSection = () => {
         <header className="podcast-intro">
           <span className="podcast-kicker">Monteo Cast</span>
           <h2 id="podcast-heading" className="podcast-title">
-            O Podcast Estratégico do Mercado de Consórcios.
+            Conteúdo técnico sobre consórcios.
           </h2>
           <p className="podcast-lead">
-            Nossa missão também é levar e expandir o conhecimento
+            Conteúdo estratégico para quem quer entender e dominar o mercado de consórcios.
           </p>
         </header>
 
