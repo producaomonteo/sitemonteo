@@ -94,11 +94,11 @@ const Header = () => {
   }, [menuOpen]);
 
   const navLinks = [
-    { name: 'Alavancagem', href: '#' },
-    { name: 'Mex Club', href: '#' },
-    { name: 'Conteúdos', href: '#' },
-    { name: 'Resultados', href: '#' },
-    { name: 'Sobre nós', href: '#' }
+    { name: 'Cliente', href: '#' },
+    { name: 'Seja Franqueado', href: '#' },
+    { name: 'Seja Parceiro', href: '#' },
+    { name: 'Profissionais de Consórcio', href: '#' },
+    { name: 'Sobre a Monteo', href: '#' }
   ];
 
   const closeMenu = () => setMenuOpen(false);
@@ -121,7 +121,7 @@ const Header = () => {
             <ul className="nav-list">
               {navLinks.map((link, i) => (
                 <li key={link.name}>
-                  <a
+                  
                     href={link.href}
                     ref={(el) => {
                       linksRef.current[i] = el;
@@ -137,13 +137,13 @@ const Header = () => {
 
           <div className="header-ctas header-ctas-desktop">
             <button type="button" className="btn btn-outline btn-sm header-cta-btn">
-              Acesse
+              Falar com especialista
             </button>
             <button
               type="button"
               className="btn btn-primary btn-sm header-cta-btn header-cta-btn--primary"
             >
-              Invista com a Monteo
+              Quero crescer com a Monteo
             </button>
           </div>
 
@@ -179,13 +179,13 @@ const Header = () => {
               </nav>
               <div className="mobile-menu-ctas">
                 <button type="button" className="btn btn-outline btn-sm btn-block">
-                  Acesse
+                  Falar com especialista
                 </button>
                 <button
                   type="button"
                   className="btn btn-primary btn-sm btn-block header-cta-btn header-cta-btn--primary"
                 >
-                  Invista com a Monteo
+                  Quero crescer com a Monteo
                 </button>
               </div>
             </div>
