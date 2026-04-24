@@ -307,8 +307,10 @@ const GoogleReviews = () => {
             {(status === 'error' || status === 'fallback') && reviews.length === 0 && (
               <p className="google-reviews-carousel-status">
                 {status === 'error'
-                  ? 'Não foi possível carregar as avaliações (chave, APIs ativas ou cota). Confira o Google Cloud ou abra o perfil pelo logo ao lado.'
-                  : 'Crie um arquivo .env na raiz com VITE_GOOGLE_MAPS_API_KEY=sua_chave e reinicie o servidor. O Place ID é opcional: usamos o perfil da Monteo no Maps (Londrina) automaticamente.'}
+                  ? 'Não foi possível carregar as avaliações agora. Pode abrir o perfil da Monteo no Google pelo logo ao lado para ver todas as avaliações.'
+                  : import.meta.env.DEV
+                    ? 'Defina VITE_GOOGLE_MAPS_API_KEY no ficheiro .env na raiz e reinicie o servidor. O Place ID (VITE_GOOGLE_PLACE_ID) é opcional — usamos o perfil Monteo em Londrina automaticamente.'
+                    : 'As avaliações do Google não estão disponíveis nesta página neste momento. Use o logo do Google ao lado para abrir o perfil da Monteo em Londrina e ver as avaliações.'}
               </p>
             )}
 
