@@ -3,7 +3,6 @@ import './ReceitaPodcastSection.css';
 
 const SHOW_URL = 'https://open.spotify.com/show/0sdIxUVCJCCDJhhupdRFW6?si=a8f59b43cdea47dd';
 
-/** Episódios públicos do show (IDs extraídos do perfil Spotify). */
 const RECEITA_EPISODE_IDS = [
   '5UX8WsHUusNB1bJdkcbhZ1',
   '6bpXWwtHTmS8QNbMXjG9S6',
@@ -67,10 +66,10 @@ const ReceitaPodcastSection = () => {
         <header className="receita-intro section-header">
           <span className="label">Receita de Sucesso Podcast</span>
           <h2 id="receita-podcast-heading" className="title">
-            Grandes nomes do empreendedorismo.
+            Nossos fundadores entrevistam alguns dos maiores nomes do empreendedorismo e desenvolvimento pessoal do Brasil.
           </h2>
           <p className="subtitle">
-            Histórias de liderança e inovação que inspiram o ecossistema.
+            Histórias de liderança e inovação que inspiram o ecossistema Monteo.
           </p>
         </header>
 
