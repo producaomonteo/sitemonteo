@@ -3,8 +3,8 @@ import './EcosystemDoors.css';
 
 const ecosystemDoors = [
   {
-    title: 'INVESTIDOR',
-    description: 'Transforme seus planos em patrimônio com estratégia personalizada.',
+    title: 'CLIENTE',
+    description: 'Estruture seu patrimônio com estratégia.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -13,8 +13,8 @@ const ecosystemDoors = [
     color: '#A87056'
   },
   {
-    title: 'FRANQUEADO',
-    description: 'Construa uma carreira sólida utilizando o método Monteo.',
+    title: 'SEJA FRANQUEADO',
+    description: 'Construa uma operação sólida com método e suporte.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -25,8 +25,8 @@ const ecosystemDoors = [
     color: '#A87056'
   },
   {
-    title: 'PARCEIRO',
-    description: 'Converta sua rede de contatos em receita sem precisar vender nada.',
+    title: 'SEJA PARCEIRO',
+    description: 'Transforme sua carteira em receita recorrente.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -38,8 +38,8 @@ const ecosystemDoors = [
     color: '#A87056'
   },
   {
-    title: 'MEX CLUB',
-    description: 'Eleve sua operação de consórcio ao mais alto patamar do mercado.',
+    title: 'PROFISSIONAIS DO CONSÓRCIO',
+    description: 'Eleve sua operação ao próximo nível.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
