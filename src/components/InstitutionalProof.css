@@ -1,12 +1,12 @@
 .institutional-proof {
   background: var(--bg-dark);
-  padding: 56px var(--page-gutter, 20px) 48px;
+  padding: 88px var(--page-gutter, 20px) 96px;
 }
 
 .proof-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 120px;
   align-items: center;
 }
 
@@ -18,8 +18,10 @@
   font-size: 10px;
   letter-spacing: 4px;
   color: var(--primary);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: block;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .proof-main-stats-row {
@@ -27,7 +29,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 40px 72px;
+  gap: 48px 80px;
 }
 
 .proof-main-stat {
@@ -36,113 +38,132 @@
 }
 
 .proof-main-stat .main-number {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .main-number {
-  font-size: clamp(72px, 11vw, 200px);
-  line-height: 0.85;
+  font-size: clamp(80px, 12vw, 210px);
+  line-height: 0.82;
   letter-spacing: -0.06em;
   margin-bottom: 20px;
   color: var(--white);
+  font-family: 'Athelas', serif;
 }
 
 .proof-main-stats-row .main-number {
-  font-size: clamp(64px, 9.5vw, 170px);
+  font-size: clamp(72px, 10vw, 180px);
 }
 
 .main-desc {
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.06em;
-  line-height: 1.45;
-  color: var(--text-muted);
-  opacity: 0.92;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.5);
   max-width: 360px;
 }
 
 .main-desc--emph {
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .proof-secondary {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 24px;
 }
 
 .stat-item {
-  padding: 40px;
+  padding: 44px 36px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.stat-item:hover {
+  border-color: rgba(168, 112, 86, 0.2);
+  background: rgba(168, 112, 86, 0.03);
 }
 
 .stat-number {
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 46px;
+  margin-bottom: 14px;
   color: var(--primary);
+  font-family: 'Athelas', serif;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
 }
 
 .stat-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--text-muted);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
   .institutional-proof {
-    padding: 40px var(--page-gutter, 20px) 32px;
+    padding: 64px var(--page-gutter, 20px) 56px;
   }
 
   .proof-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 56px;
   }
 
   .main-number {
-    font-size: 120px;
+    font-size: 128px;
   }
 
   .proof-main-stats-row .main-number {
-    font-size: clamp(56px, 18vw, 120px);
+    font-size: clamp(56px, 18vw, 128px);
   }
 }
 
 @media (max-width: 768px) {
   .institutional-proof {
-    padding: 32px var(--page-gutter, 20px) 28px;
+    padding: 48px var(--page-gutter, 20px) 40px;
   }
 
   .main-desc {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .main-desc--emph {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .stat-number {
-    font-size: 34px;
+    font-size: 36px;
   }
 
   .proof-grid {
-    gap: 28px;
+    gap: 36px;
   }
 
   .main-number {
-    font-size: 80px;
+    font-size: 88px;
   }
 
   .proof-main-stats-row {
     flex-direction: column;
-    gap: 28px;
+    gap: 32px;
   }
 
   .proof-main-stats-row .main-number {
-    font-size: clamp(52px, 22vw, 96px);
+    font-size: clamp(56px, 22vw, 96px);
   }
 
   .proof-secondary {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-item {
+    padding: 32px 24px;
   }
 }

@@ -9,6 +9,7 @@ const Header = () => {
   const headerRef = useRef(null);
   const linksRef = useRef([]);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [isDesktopNav, setIsDesktopNav] = useState(
     () => typeof window !== 'undefined' && window.matchMedia('(min-width: 1181px)').matches
   );
@@ -23,6 +24,12 @@ const Header = () => {
         delay: 200
       });
     }
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
@@ -104,7 +111,7 @@ const Header = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="header glass-card">
+    <header className={`header glass-card${scrolled ? ' is-scrolled' : ''}`}>
       <div className="header-motion" ref={headerRef}>
         <div className="header-container">
           <div className="logo-section">
@@ -121,7 +128,7 @@ const Header = () => {
             <ul className="nav-list">
               {navLinks.map((link, i) => (
                 <li key={link.name}>
-                  
+                  <a
                     href={link.href}
                     ref={(el) => {
                       linksRef.current[i] = el;

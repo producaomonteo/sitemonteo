@@ -5,7 +5,7 @@
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 28px;
 }
 
 .video-card-trigger {
@@ -28,17 +28,43 @@
 .video-thumb-wrapper {
   position: relative;
   aspect-ratio: 16/9;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 25px;
-  border: 1px solid var(--glass-border);
+  margin-bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  transition: box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.video-card-trigger:hover .video-thumb-wrapper {
+  border-color: rgba(168, 112, 86, 0.25);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(168, 112, 86, 0.12);
 }
 
 .video-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  filter: brightness(0.88);
+}
+
+.video-card-trigger:hover .video-thumb {
+  transform: scale(1.04);
+  filter: brightness(0.95);
+}
+
+/* Gradient overlay on thumb for streaming feel */
+.video-thumb-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  pointer-events: none;
 }
 
 .play-btn {
@@ -46,25 +72,28 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: var(--primary);
+  width: 56px;
+  height: 56px;
+  background: rgba(168, 112, 86, 0.9);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
-  box-shadow: 0 10px 30px rgba(168, 112, 86, 0.4);
-  transition: all 0.4s ease;
-}
-
-.video-card-trigger:hover .video-thumb {
-  transform: scale(1.05);
+  box-shadow:
+    0 0 0 8px rgba(168, 112, 86, 0.15),
+    0 8px 28px rgba(168, 112, 86, 0.45);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+  backdrop-filter: blur(4px);
 }
 
 .video-card-trigger:hover .play-btn {
-  transform: translate(-50%, -50%) scale(1.1);
-  box-shadow: 0 15px 40px rgba(168, 112, 86, 0.6);
+  transform: translate(-50%, -50%) scale(1.12);
+  background: var(--primary);
+  box-shadow:
+    0 0 0 12px rgba(168, 112, 86, 0.12),
+    0 12px 36px rgba(168, 112, 86, 0.6);
 }
 
 .info-role {
@@ -73,14 +102,20 @@
   color: var(--primary);
   display: block;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .info-name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.9);
   font-family: 'Athelas', serif;
+  transition: color 0.3s ease;
+}
+
+.video-card-trigger:hover .info-name {
+  color: var(--white);
 }
 
 @media (max-width: 1024px) {
@@ -111,10 +146,11 @@
   }
 
   .info-name {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
+/* Video modal */
 .video-modal {
   position: fixed;
   inset: 0;
@@ -131,7 +167,7 @@
   border: none;
   margin: 0;
   padding: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   cursor: pointer;
 }
 

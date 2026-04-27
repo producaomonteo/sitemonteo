@@ -4,13 +4,13 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 88px;
 }
 .section-header .label {
   font-size: 10px;
   letter-spacing: 4px;
   color: var(--primary);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   display: block;
   font-weight: 700;
 }
@@ -23,21 +23,41 @@
   font-size: 18px;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.7;
 }
 
 .doors-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 .door-card {
-  padding: 40px;
+  padding: 48px 40px 40px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: rgba(26, 26, 26, 0.6);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.5s ease,
+              box-shadow 0.5s ease,
+              background 0.5s ease;
+}
+
+.door-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168, 112, 86, 0.28);
+  background: rgba(30, 28, 26, 0.75);
+  box-shadow:
+    0 0 0 1px rgba(168, 112, 86, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.45),
+    0 0 80px rgba(168, 112, 86, 0.06) inset;
 }
 
 .card-border-beam {
@@ -45,7 +65,7 @@
   top: 0; left: 0;
   width: 100%; height: 100%;
   border: 1px solid var(--glass-border);
-  border-radius: 12px;
+  border-radius: 14px;
   pointer-events: none;
 }
 
@@ -53,16 +73,16 @@
   content: "";
   position: absolute;
   top: -2px; left: -2px; right: -2px; bottom: -2px;
-  background: linear-gradient(135deg, transparent, var(--primary), transparent);
+  background: linear-gradient(135deg, transparent, rgba(168, 112, 86, 0.18), transparent);
   background-size: 200% 200%;
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: -1;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 .door-card:hover::before {
-  opacity: 0.1;
+  opacity: 1;
   animation: beam 3s infinite linear;
 }
 
@@ -71,16 +91,35 @@
   100% { background-position: 200% 200%; }
 }
 
+/* Subtle top highlight line on hover */
+.door-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 112, 86, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.door-card:hover::after {
+  opacity: 1;
+}
+
 .card-icon {
-  margin-bottom: 30px;
+  margin-bottom: 36px;
   color: var(--primary);
-  opacity: 0.8;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.door-card:hover .card-icon {
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 .card-title {
   font-size: 18px;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-weight: 700;
 }
 
@@ -88,16 +127,19 @@
   font-size: 14px;
   color: var(--text-muted);
   flex-grow: 1;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
+  line-height: 1.7;
 }
 
 .card-footer {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   font-size: 11px;
   font-weight: 700;
   color: var(--primary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   opacity: 0;
   transform: translateX(-10px);
   transition: var(--transition);
@@ -117,7 +159,7 @@
   }
 
   .section-header {
-    margin-bottom: 48px;
+    margin-bottom: 52px;
   }
 
   .section-header .label {
@@ -132,8 +174,12 @@
 
   .section-header .subtitle {
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 1.6;
     padding: 0 4px;
+  }
+
+  .door-card {
+    padding: 36px 28px 32px;
   }
 
   .card-title {

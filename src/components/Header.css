@@ -7,12 +7,26 @@
   max-width: min(1400px, calc(100% - 2 * var(--page-gutter, 20px)));
   box-sizing: border-box;
   z-index: 1000;
-  padding: 10px 30px;
+  padding: 10px 36px;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  transition: var(--transition), background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+  /* Transparent at top */
+  background: rgba(21, 21, 21, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Solid when scrolled */
+.header.is-scrolled {
+  background: rgba(21, 21, 21, 0.88);
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 .header-motion {
@@ -61,18 +75,17 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: clamp(18px, 2.2vw, 32px);
+  gap: clamp(22px, 2.6vw, 40px);
 }
 
 @media (max-width: 1180px) {
-  /* Largura explícita dentro da viewport — evita overflow horizontal */
   .header {
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - (2 * var(--page-gutter, 20px)));
     max-width: calc(100% - (2 * var(--page-gutter, 20px)));
     right: auto;
-    padding: 10px 10px;
+    padding: 10px 14px;
     overflow-x: hidden;
     box-sizing: border-box;
   }
@@ -95,7 +108,6 @@
     max-width: 100%;
   }
 
-  /* Flex em vez de display:contents na grelha — evita ícone do menu sumir em alguns browsers */
   .logo-section {
     flex: 1 1 auto;
     display: grid;
@@ -147,7 +159,8 @@
   color: var(--text-muted);
   position: relative;
   display: inline-block;
-  padding: 10px;
+  padding: 10px 4px;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
@@ -162,7 +175,7 @@
   width: 0;
   height: 1px;
   background: var(--primary);
-  transition: var(--transition);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   transform: translateX(-50%);
 }
 .nav-link:hover::after {
@@ -172,14 +185,13 @@
 .header-ctas {
   justify-self: end;
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
 .btn-sm {
   padding: 10px 20px;
 }
 
-/* Mesmo corpo tipográfico dos links (.nav-link: 11px / 2px) — sobrescreve .btn global (14px) */
 .header-ctas .btn,
 .mobile-menu-ctas .btn {
   font-size: 11px;
@@ -191,8 +203,27 @@
   white-space: nowrap;
 }
 
+/* Outline CTA: refined complement */
+.header-ctas .btn-outline {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.8);
+}
+.header-ctas .btn-outline:hover {
+  border-color: rgba(168, 112, 86, 0.4);
+  color: var(--white);
+  background: rgba(168, 112, 86, 0.06);
+}
+
+/* Primary CTA: clearly dominant */
 .header-cta-btn--primary {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 8px 24px rgba(168, 112, 86, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(168, 112, 86, 0.35),
+    0 6px 20px rgba(168, 112, 86, 0.3);
+}
+.header-cta-btn--primary:hover {
+  box-shadow:
+    0 0 0 1px rgba(168, 112, 86, 0.55),
+    0 8px 28px rgba(168, 112, 86, 0.45);
 }
 
 @media (max-width: 1180px) {
@@ -217,8 +248,6 @@
   justify-self: end;
   color: var(--white);
 }
-
-/* Menu sanduíche (≤1180px): grelha e visibilidade em @media acima */
 
 .header-menu-bar {
   display: block;
@@ -303,6 +332,7 @@
   text-transform: uppercase;
   color: var(--text-muted);
   border-bottom: 1px solid var(--glass-border);
+  transition: color 0.3s ease;
 }
 
 .mobile-menu-link:hover {
@@ -320,4 +350,3 @@
   width: 100%;
   justify-content: center;
 }
-

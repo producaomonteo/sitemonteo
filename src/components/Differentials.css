@@ -3,30 +3,55 @@
 }
 
 .diff-list {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .diff-item {
   display: flex;
   align-items: flex-start;
-  padding: 60px 0;
-  border-bottom: 1px solid var(--glass-border);
-  transition: var(--transition);
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: padding-left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Left indicator glow on hover */
+.diff-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .diff-item:hover {
-  background: rgba(168, 112, 86, 0.05); /* Sutil ocre */
+  padding-left: 12px;
+}
+
+.diff-item:hover::before {
+  opacity: 0.6;
 }
 
 .diff-id {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--primary);
-  margin-right: 80px;
-  opacity: 0.5;
+  margin-right: 88px;
+  opacity: 0.4;
   font-family: 'Athelas', serif;
+  flex-shrink: 0;
+  padding-top: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.diff-item:hover .diff-id {
+  opacity: 0.65;
 }
 
 .diff-content {
@@ -35,14 +60,26 @@
 
 .diff-title {
   font-size: 32px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   color: var(--white);
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.diff-item:hover .diff-title {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .diff-desc {
-  font-size: 16px;
-  color: var(--text-muted);
-  max-width: 500px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 520px;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.diff-item:hover .diff-desc {
+  color: rgba(255, 255, 255, 0.58);
 }
 
 @media (max-width: 768px) {
@@ -53,21 +90,26 @@
 
   .diff-item {
     flex-direction: column;
-    padding: 36px 0;
+    padding: 40px 0;
+  }
+
+  .diff-item:hover {
+    padding-left: 0;
   }
 
   .diff-id {
     margin-right: 0;
-    margin-bottom: 16px;
-    font-size: 13px;
+    margin-bottom: 14px;
+    font-size: 12px;
   }
 
   .diff-title {
     font-size: clamp(1.25rem, 5vw, 1.5rem);
+    margin-bottom: 12px;
   }
 
   .diff-desc {
     font-size: 15px;
-    line-height: 1.55;
+    line-height: 1.6;
   }
 }

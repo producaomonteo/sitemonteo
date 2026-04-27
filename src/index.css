@@ -7,15 +7,17 @@
 
 :root {
   --primary: #A87056;
+  --primary-muted: rgba(168, 112, 86, 0.45);
   --bg-dark: #151515;
   --bg-gray: #1F1F1F;
-  --bg-card: rgba(32, 32, 32, 0.7);
+  --bg-card: rgba(28, 28, 28, 0.75);
   --white: #FFFFFF;
-  --text-muted: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
-  /* Margens horizontais consistentes (mobile respeita safe-area) */
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-premium: 0 24px 48px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 8px 32px rgba(168, 112, 86, 0.3);
+  /* Margens horizontais consistentes */
   --page-gutter: 20px;
 }
 
@@ -40,6 +42,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root,
@@ -56,7 +59,7 @@ body::before {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.03;
+  opacity: 0.025;
   pointer-events: none;
   z-index: 9999;
 }
@@ -71,7 +74,7 @@ body::before {
   position: absolute;
   top: -50%; left: -50%;
   width: 200%; height: 200%;
-  background: radial-gradient(circle at 70% 30%, rgba(168, 112, 86, 0.05) 0%, transparent 40%),
+  background: radial-gradient(circle at 70% 30%, rgba(168, 112, 86, 0.04) 0%, transparent 40%),
               radial-gradient(circle at 20% 80%, rgba(32, 32, 32, 1) 0%, transparent 50%);
   z-index: -1;
   pointer-events: none;
@@ -98,7 +101,7 @@ section {
   margin: 0 auto;
 }
 
-/* Buttons */
+/* ─── Buttons ──────────────────────────────────────────────── */
 .btn {
   padding: 16px 32px;
   border-radius: 4px;
@@ -111,31 +114,49 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle inner highlight for premium feel */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  pointer-events: none;
 }
 
 .btn-primary {
   background: var(--primary);
   color: var(--white);
   border: none;
-  box-shadow: 0 10px 20px rgba(168, 112, 86, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(168, 112, 86, 0.3),
+    0 10px 24px rgba(168, 112, 86, 0.25);
 }
 .btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(168, 112, 86, 0.4);
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(168, 112, 86, 0.5),
+    0 14px 36px rgba(168, 112, 86, 0.42);
   background: #c28266;
 }
 
 .btn-outline {
   background: transparent;
   border: 1px solid var(--glass-border);
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.85);
 }
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(168, 112, 86, 0.38);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
-/* Glassmorphism Classes */
+/* ─── Glassmorphism ─────────────────────────────────────────── */
 .glass-card {
   background: var(--bg-card);
   backdrop-filter: blur(20px);
@@ -144,15 +165,24 @@ section {
   border-radius: 12px;
 }
 
-/* Scroll Animations */
+/* ─── Scroll Animations ─────────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ─── Section header label consistency ──────────────────────── */
+.label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -167,7 +197,6 @@ section {
     padding-right: var(--page-gutter);
   }
 
-  /* Tipografia mobile: títulos secundários e corpo */
   h2 {
     font-size: clamp(1.75rem, 6.5vw, 2.125rem);
     line-height: 1.15;
