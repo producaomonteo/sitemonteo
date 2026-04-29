@@ -27,7 +27,7 @@ const MediaSection = () => {
           {mediaLogos.map((logo) => (
             <div key={logo.alt} className="media-logo-item">
               <img
-                className="media-logo-img"
+                className={`media-logo-img${logo.alt === 'IstoÉ' ? ' media-logo-img--istoe' : ''}`}
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"

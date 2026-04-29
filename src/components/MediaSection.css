@@ -46,6 +46,10 @@
   opacity: 0.85;
 }
 
+.media-logo-img--istoe {
+  height: clamp(52px, 7vw, 80px);
+}
+
 .info-label {
   display: block;
   text-align: center;

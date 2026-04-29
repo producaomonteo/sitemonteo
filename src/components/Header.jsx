@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { Link } from 'react-router-dom';
 import { animate as anime } from 'animejs';
 import logoMonteo from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
 import './Header.css';
@@ -100,11 +101,11 @@ const Header = () => {
   }, [menuOpen]);
 
   const navLinks = [
-    { name: 'Cliente', href: '#' },
-    { name: 'Seja Franqueado', href: '#' },
-    { name: 'Seja Parceiro', href: '#' },
-    { name: 'Profissionais de Consórcio', href: '#' },
-    { name: 'Sobre a Monteo', href: '#' }
+    { name: 'Cliente', href: '/cliente' },
+    { name: 'Seja Franqueado', href: '/seja-franqueado' },
+    { name: 'Seja Parceiro', href: '/seja-parceiro' },
+    { name: 'Profissionais de Consórcio', href: '/profissionais-de-consorcio' },
+    { name: 'Sobre a Monteo', href: '/sobre-a-monteo' }
   ];
 
   const closeMenu = () => setMenuOpen(false);
@@ -114,22 +115,24 @@ const Header = () => {
       <div className="header-motion" ref={headerRef}>
         <div className="header-container">
           <div className="logo-section">
-            <img src={logoMonteo} alt="Monteo Investimentos" className="logo" />
+            <Link to="/">
+              <img src={logoMonteo} alt="Monteo Investimentos" className="logo" />
+            </Link>
           </div>
 
           <nav className="nav nav-desktop" aria-label="Principal">
             <ul className="nav-list">
               {navLinks.map((link, i) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     ref={(el) => {
                       linksRef.current[i] = el;
                     }}
                     className="nav-link"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -170,9 +173,9 @@ const Header = () => {
                 <ul className="mobile-menu-list">
                   {navLinks.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="mobile-menu-link" onClick={closeMenu}>
+                      <Link to={link.href} className="mobile-menu-link" onClick={closeMenu}>
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
