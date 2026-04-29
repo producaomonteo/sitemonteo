@@ -67,42 +67,33 @@ const StatCounter = ({
 const InstitutionalProof = () => {
   return (
     <section className="institutional-proof">
-      <div className="container proof-grid">
-        <div className="proof-main">
-          <span className="label">AUTORIDADE CONQUISTADA</span>
-          <div className="proof-main-stats-row">
-            <div className="proof-main-stat">
-              <h2 className="main-number">
-                <StatCounter value="1.5" suffix=" Bi" scaleBillions />
-              </h2>
-              <p className="main-desc main-desc--emph">EM CARTAS DE CRÉDITO SOB ASSESSORIA.</p>
-            </div>
-            <div className="proof-main-stat">
-              <h2 className="main-number">
-                <StatCounter value="3500" suffix="" integerPtBR />
-              </h2>
-              <p className="main-desc main-desc--emph">CLIENTES ATENDIDOS.</p>
-            </div>
+      <div className="container">
+        <span className="label proof-label">AUTORIDADE CONQUISTADA</span>
+        <div className="proof-stats-grid">
+          <div className="proof-stat-item">
+            <h2 className="proof-stat-number">
+              R$&nbsp;<StatCounter value="1.5" suffix=" Bi" scaleBillions />
+            </h2>
+            <p className="proof-stat-desc">em cartas de crédito sob assessoria</p>
           </div>
-        </div>
-        <div className="proof-secondary">
-          <div className="stat-item glass-card reveal-up">
-            <h3 className="stat-number">
-              <StatCounter value="25" suffix="k+" />
-            </h3>
-            <p className="stat-label">CLIENTES ATIVOS</p>
+          <div className="proof-stat-divider" aria-hidden />
+          <div className="proof-stat-item">
+            <h2 className="proof-stat-number">
+              <StatCounter value="3500" suffix="" integerPtBR />
+            </h2>
+            <p className="proof-stat-desc">clientes atendidos</p>
           </div>
-          <div className="stat-item glass-card reveal-up">
-            <h3 className="stat-number">98%</h3>
-            <p className="stat-label">ÍNDICE DE NPS</p>
+          <div className="proof-stat-divider" aria-hidden />
+          <div className="proof-stat-item">
+            <h2 className="proof-stat-number">
+              <StatCounter value="15" suffix="" />
+            </h2>
+            <p className="proof-stat-desc">anos de atuação</p>
           </div>
-          <div className="stat-item glass-card reveal-up">
-            <h3 className="stat-number">GPTW</h3>
-            <p className="stat-label">EXCELÊNCIA EM CULTURA</p>
-          </div>
-          <div className="stat-item glass-card reveal-up">
-            <h3 className="stat-number">15</h3>
-            <p className="stat-label">ANOS DE ATUAÇÃO</p>
+          <div className="proof-stat-divider" aria-hidden />
+          <div className="proof-stat-item">
+            <h2 className="proof-stat-number proof-stat-number--text">GPTW</h2>
+            <p className="proof-stat-desc">Selo Great Place to Work</p>
           </div>
         </div>
       </div>

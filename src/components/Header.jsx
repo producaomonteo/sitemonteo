@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { animate as anime } from 'animejs';
-import logoGptw from '@Imagens/GPTW Quadrado.png';
 import logoMonteo from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
 import './Header.css';
 
@@ -115,12 +114,6 @@ const Header = () => {
       <div className="header-motion" ref={headerRef}>
         <div className="header-container">
           <div className="logo-section">
-            <img
-              src={logoGptw}
-              alt="Great Place to Work"
-              className="logo-gptw"
-              decoding="async"
-            />
             <img src={logoMonteo} alt="Monteo Investimentos" className="logo" />
           </div>
 

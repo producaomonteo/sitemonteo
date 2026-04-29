@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import './Differentials.css';
 const differentials = [
   { 
@@ -45,3 +45,16 @@ const Differentials = () => {
             <div key={item.id} className="diff-item reveal-up active">
               <span className="diff-id">{item.id}</span>
               <div className="diff-content">
+
+                <h3 className="diff-title">{item.title}</h3>
+                <p className="diff-desc">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Differentials;

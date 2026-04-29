@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { animate, createTimeline, stagger } from 'animejs';
-import heroRecepcao from '@Imagens/Recepção Monteo.webp';
+import heroRecepcao from '@Imagens/recepcao-monteo-4.png';
 import heroWordmark from '@Imagens/LOGO-2025-HORIZONTAL-PRETO-8-Editado.svg';
 import './Hero.css';
 
@@ -64,6 +64,9 @@ const Hero = () => {
             />
             <div className="light-beam"></div>
           </h1>
+          <p className="hero-headline stagger-text">
+            O Ecossistema que está transformando o mercado de consórcios no Brasil.
+          </p>
           <p className="hero-subtitle stagger-text">
             Estrutura, método e estratégia para crescimento patrimonial.
           </p>
