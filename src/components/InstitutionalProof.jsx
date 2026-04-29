@@ -79,7 +79,7 @@ const InstitutionalProof = () => {
             </div>
             <div className="proof-main-stat">
               <h2 className="main-number">
-                <StatCounter value="1500" suffix="" integerPtBR />
+                <StatCounter value="3500" suffix="" integerPtBR />
               </h2>
               <p className="main-desc main-desc--emph">CLIENTES ATENDIDOS.</p>
             </div>
