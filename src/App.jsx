@@ -18,6 +18,7 @@ import SejaFranqueado from './pages/SejaFranqueado';
 import SejaParceiro from './pages/SejaParceiro';
 import MexClub from './pages/MexClub';
 import SobreMonteo from './pages/SobreMonteo';
+import Blog from './pages/Blog';
 
 const Home = () => (
   <div className="monteo-app">
@@ -49,6 +50,7 @@ function App() {
         <Route path="/seja-parceiro" element={<SejaParceiro />} />
         <Route path="/profissionais-de-consorcio" element={<MexClub />} />
         <Route path="/sobre-a-monteo" element={<SobreMonteo />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );

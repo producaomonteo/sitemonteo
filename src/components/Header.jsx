@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { animate as anime } from 'animejs';
 import logoMonteo from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
 import './Header.css';
@@ -10,6 +10,7 @@ const Header = () => {
   const linksRef = useRef([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
   const [isDesktopNav, setIsDesktopNav] = useState(
     () => typeof window !== 'undefined' && window.matchMedia('(min-width: 1181px)').matches
   );
@@ -129,7 +130,7 @@ const Header = () => {
                     ref={(el) => {
                       linksRef.current[i] = el;
                     }}
-                    className="nav-link"
+                    className={`nav-link${location.pathname === link.href ? ' nav-link--active' : ''}`}
                   >
                     {link.name}
                   </Link>
