@@ -43,10 +43,6 @@
   color: var(--white);
   margin-bottom: 16px;
   white-space: nowrap;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .proof-stat-number--text {
@@ -100,7 +96,7 @@
 }
 
 .proof-gptw-logo {
-  height: 52px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
