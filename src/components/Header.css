@@ -36,9 +36,9 @@
 .header-container {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  column-gap: 8px;
+  column-gap: 24px;
 }
 
 
@@ -51,7 +51,7 @@
 }
 
 .nav {
-  justify-self: center;
+  justify-self: start;
   min-width: 0;
   max-width: 100%;
 }
@@ -156,9 +156,9 @@
 }
 
 .nav-link {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   color: var(--text-muted);
   position: relative;
