@@ -305,13 +305,19 @@ const GoogleReviews = () => {
             )}
 
             {(status === 'error' || status === 'fallback') && reviews.length === 0 && (
-              <p className="google-reviews-carousel-status">
-                {status === 'error'
-                  ? 'Não foi possível carregar as avaliações agora. Pode abrir o perfil da Monteo no Google pelo logo ao lado para ver todas as avaliações.'
-                  : import.meta.env.DEV
-                    ? 'Defina VITE_GOOGLE_MAPS_API_KEY no ficheiro .env na raiz e reinicie o servidor. O Place ID (VITE_GOOGLE_PLACE_ID) é opcional — usamos o perfil Monteo em Londrina automaticamente.'
-                    : 'As avaliações do Google não estão disponíveis nesta página neste momento. Use o logo do Google ao lado para abrir o perfil da Monteo em Londrina e ver as avaliações.'}
-              </p>
+              <div className="google-reviews-fallback-cta">
+                <p className="google-reviews-carousel-status">
+                  Veja as avaliações reais dos nossos clientes diretamente no Google. Clique no logo ao lado para acessar o perfil completo da Monteo.
+                </p>
+                <a
+                  className="google-reviews-fallback-btn"
+                  href={MONTEO_GOOGLE_MAPS_PROFILE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver avaliações no Google →
+                </a>
+              </div>
             )}
 
             {slides.length > 0 && (

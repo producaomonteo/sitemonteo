@@ -1,21 +1,14 @@
 import React from 'react';
-import logoExame from '@Imagens/Logo-Exame.svg';
-import logoValor from '@Imagens/Logo-Valor-Economico.svg';
-import logoInfomoney from '@Imagens/Logo-Info-Money.svg';
 import logoTerra from '@Imagens/Logo Terra (1).svg';
-import logoEstadao from '@Imagens/Logo-Estadao.svg';
-import logoIstoe from '@Imagens/Logo-Istoe.svg';
-import logoUol from '@Imagens/Logo-UOL.svg';
 import './MediaSection.css';
 
+// Adicione aqui outros veículos conforme Fernando confirmar, com a URL da matéria
 const mediaLogos = [
-  { alt: 'Exame', src: logoExame },
-  { alt: 'Valor Econômico', src: logoValor },
-  { alt: 'InfoMoney', src: logoInfomoney },
-  { alt: 'Terra', src: logoTerra },
-  { alt: 'Estadão', src: logoEstadao },
-  { alt: 'IstoÉ', src: logoIstoe },
-  { alt: 'UOL', src: logoUol }
+  {
+    alt: 'Terra',
+    src: logoTerra,
+    href: 'https://www.terra.com.br'  // Substituir pela URL real da matéria
+  }
 ];
 
 const MediaSection = () => {
@@ -26,13 +19,31 @@ const MediaSection = () => {
         <div className="logos-wrapper">
           {mediaLogos.map((logo) => (
             <div key={logo.alt} className="media-logo-item">
-              <img
-                className={`media-logo-img${logo.alt === 'IstoÉ' ? ' media-logo-img--istoe' : ''}`}
-                src={logo.src}
-                alt={logo.alt}
-                loading="lazy"
-                decoding="async"
-              />
+              {logo.href ? (
+                <a
+                  href={logo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="media-logo-link"
+                  aria-label={`Ver matéria no ${logo.alt}`}
+                >
+                  <img
+                    className="media-logo-img"
+                    src={logo.src}
+                    alt={logo.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+              ) : (
+                <img
+                  className="media-logo-img"
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
             </div>
           ))}
         </div>

@@ -1,15 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import img1 from '../assets/images/recepcao-monteo-1.webp';
+import img2 from '../assets/images/recepcao-monteo-2.webp';
+import img3 from '../assets/images/recepcao-monteo-3.webp';
+import img4 from '../assets/images/recepcao-monteo-4.webp';
 import './TeamSection.css';
 
+const images = [
+  { src: img1, alt: 'Escritório Monteo - Recepção' },
+  { src: img2, alt: 'Escritório Monteo - Ambiente' },
+  { src: img3, alt: 'Escritório Monteo - Equipe' },
+  { src: img4, alt: 'Escritório Monteo - Estrutura' }
+];
+
+const AUTOPLAY_INTERVAL = 4000;
+
 const TeamSection = () => {
-  const images = [
-    '/src/assets/images/Eduardo e Evelyn.JPG',
-    '/src/assets/images/Eduardo Sentado.JPG',
-    '/src/assets/images/Eduardo em pé.JPG',
-    '/src/assets/images/Eduardo Sério frente.JPG',
-    '/src/assets/images/Eduardo Sério editado inteiro.JPG',
-    '/src/assets/images/Eduardo Sério Editado.JPG'
-  ];
+  const [current, setCurrent] = useState(0);
+  const timerRef = useRef(null);
+
+  const goTo = (idx) => {
+    setCurrent((idx + images.length) % images.length);
+  };
+
+  const next = () => goTo(current + 1);
+  const prev = () => goTo(current - 1);
+
+  // Autoplay
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      setCurrent((c) => (c + 1) % images.length);
+    }, AUTOPLAY_INTERVAL);
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  // Reset timer on manual nav
+  const manualNav = (idx) => {
+    clearInterval(timerRef.current);
+    goTo(idx);
+    timerRef.current = setInterval(() => {
+      setCurrent((c) => (c + 1) % images.length);
+    }, AUTOPLAY_INTERVAL);
+  };
 
   return (
     <section className="team-section">
@@ -19,12 +50,54 @@ const TeamSection = () => {
           <h2 className="title">Pessoas que constroem a Monteo.</h2>
           <p className="subtitle">Fotos reais do nosso escritório, equipe e eventos.</p>
         </div>
-        <div className="team-gallery">
-          {images.map((img, i) => (
-            <div key={i} className="team-img-card reveal-up active" style={{ transitionDelay: `${i * 100}ms` }}>
-              <img src={img} alt={`Time Monteo ${i}`} className="team-img" />
-            </div>
-          ))}
+
+        <div className="team-carousel" aria-label="Fotos do escritório Monteo">
+          <div className="team-carousel-viewport">
+            {images.map((img, i) => (
+              <div
+                key={i}
+                className={`team-carousel-slide${i === current ? ' is-active' : ''}`}
+                aria-hidden={i !== current}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="team-carousel-img"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              </div>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="team-carousel-btn team-carousel-btn--prev"
+            onClick={() => manualNav(current - 1)}
+            aria-label="Foto anterior"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            className="team-carousel-btn team-carousel-btn--next"
+            onClick={() => manualNav(current + 1)}
+            aria-label="Próxima foto"
+          >
+            ›
+          </button>
+
+          <div className="team-carousel-dots">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={`team-carousel-dot${i === current ? ' is-active' : ''}`}
+                onClick={() => manualNav(i)}
+                aria-label={`Ir para foto ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

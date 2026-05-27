@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { animate as anime } from 'animejs';
+import gptwLogo from '../assets/images/gptw-oficial.png';
 import './InstitutionalProof.css';
 const StatCounter = ({
   value,
@@ -92,7 +93,7 @@ const InstitutionalProof = () => {
           </div>
           <div className="proof-stat-divider" aria-hidden />
           <div className="proof-stat-item">
-            <h2 className="proof-stat-number proof-stat-number--text">GPTW</h2>
+            <img src={gptwLogo} alt="Great Place to Work" className="proof-gptw-logo" />
             <p className="proof-stat-desc">Selo Great Place to Work</p>
           </div>
         </div>

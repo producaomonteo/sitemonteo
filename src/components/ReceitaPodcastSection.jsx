@@ -1,65 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ReceitaPodcastSection.css';
 
 const SHOW_URL = 'https://open.spotify.com/show/0sdIxUVCJCCDJhhupdRFW6?si=a8f59b43cdea47dd';
 
-const RECEITA_EPISODE_IDS = [
-  '5UX8WsHUusNB1bJdkcbhZ1',
-  '6bpXWwtHTmS8QNbMXjG9S6',
-  '6mY3LEnhuLiqNWW7TMHn49',
-  '3NWve9nsjcNp3SEK665JQf',
-  '1t2p9CTNqrwf40ZqZKCdsf',
-  '5NziGQn8aX4rnb2qWDBVVN',
-  '1d2FWR8iePmdCR3Eedbhak',
-  '3fofP9jVMnRpKOAAGHAYET',
-  '6MUwQSfoPk6zpTdP8HrdD9',
-  '5Pe3jz8lPuw1lxi5yUCkvf',
-  '5hA5BCHMJKMEN4cOvoTxGx',
-  '5RYSDQ7V3GcRQuTsDEE7XZ'
-];
-
-async function fetchEpisodeOembed(episodeId) {
-  const pageUrl = `https://open.spotify.com/episode/${episodeId}`;
-  const oembed = `https://open.spotify.com/oembed?url=${encodeURIComponent(pageUrl)}`;
-  const res = await fetch(oembed);
-  if (!res.ok) return null;
-  const data = await res.json();
-  return {
-    id: episodeId,
-    title: data.title || 'Episódio',
-    thumbnailUrl: data.thumbnail_url || '',
-    iframeUrl: data.iframe_url || `https://open.spotify.com/embed/episode/${episodeId}`
-  };
-}
+// Imagem de capa do podcast — substitua por lâmina da nova apresentação quando disponível
+// Por ora usa a thumbnail de um dos episódios para gerar autoridade
+const COVER_EPISODE_ID = '5UX8WsHUusNB1bJdkcbhZ1';
 
 const ReceitaPodcastSection = () => {
-  const [episodes, setEpisodes] = useState([]);
-  const [loadStatus, setLoadStatus] = useState('idle');
-  const [activeId, setActiveId] = useState(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      setLoadStatus('loading');
-      try {
-        const settled = await Promise.all(RECEITA_EPISODE_IDS.map((id) => fetchEpisodeOembed(id)));
-        const ok = settled.filter(Boolean);
-        if (cancelled) return;
-        setEpisodes(ok);
-        setActiveId(ok[0]?.id ?? null);
-        setLoadStatus(ok.length ? 'ready' : 'empty');
-      } catch {
-        if (!cancelled) setLoadStatus('error');
-      }
-    };
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const active = episodes.find((e) => e.id === activeId) ?? episodes[0];
-
   return (
     <section className="receita-podcast-section mesh-bg" aria-labelledby="receita-podcast-heading">
       <div className="container">
@@ -73,77 +21,42 @@ const ReceitaPodcastSection = () => {
           </p>
         </header>
 
-        {loadStatus === 'loading' && (
-          <p className="receita-status" role="status">
-            A carregar episódios do Spotify…
-          </p>
-        )}
-
-        {(loadStatus === 'error' || loadStatus === 'empty') && (
-          <p className="receita-status">
-            Não foi possível carregar os episódios aqui.{' '}
-            <a href={SHOW_URL} target="_blank" rel="noopener noreferrer">
-              Abrir no Spotify
-            </a>
-          </p>
-        )}
-
-        {loadStatus === 'ready' && active && (
-          <div className="receita-shell">
-            <div className="receita-list-outer receita-list-outer--selector">
-              <ul className="receita-list" role="list">
-                {episodes.map((ep) => {
-                  const isActive = ep.id === active.id;
-                  return (
-                    <li key={ep.id}>
-                      <button
-                        type="button"
-                        className={`receita-episode${isActive ? ' is-active' : ''}`}
-                        onClick={() => setActiveId(ep.id)}
-                        aria-current={isActive ? 'true' : undefined}
-                        aria-label={`Reproduzir ${ep.title}`}
-                      >
-                        <span className="receita-episode-thumb-wrap">
-                          {ep.thumbnailUrl ? (
-                            <img
-                              src={ep.thumbnailUrl}
-                              alt=""
-                              className="receita-episode-thumb"
-                              loading="lazy"
-                            />
-                          ) : (
-                            <span className="receita-episode-thumb-fallback" aria-hidden>
-                              ▶
-                            </span>
-                          )}
-                        </span>
-                        <span className="receita-episode-body">
-                          <span className="receita-episode-title">{ep.title}</span>
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            <div className="receita-player-wrap glass-card">
-              <div className="receita-player-chrome">
-                <span className="receita-player-badge">Receita de Sucesso</span>
-                <span className="receita-player-ep-title">{active.title}</span>
-              </div>
-              <div className="receita-player-frame">
-                <iframe
-                  key={active.id}
-                  title={active.title}
-                  src={active.iframeUrl}
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
+        <div className="receita-cover-wrap">
+          <a
+            href={SHOW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="receita-cover-link"
+            aria-label="Ouvir Receita de Sucesso no Spotify"
+          >
+            <div className="receita-cover-thumb-wrap">
+              {/* Troque o src abaixo pela lâmina da nova apresentação */}
+              <img
+                src={`https://i.scdn.co/image/ab6765630000ba8a${COVER_EPISODE_ID}`}
+                alt="Receita de Sucesso Podcast"
+                className="receita-cover-thumb"
+                onError={(e) => {
+                  // fallback: imagem genérica do Spotify
+                  e.currentTarget.src = 'https://open.spotify.com/favicon.ico';
+                  e.currentTarget.style.objectFit = 'contain';
+                  e.currentTarget.style.background = '#1DB954';
+                  e.currentTarget.style.padding = '40px';
+                }}
+              />
+              <div className="receita-cover-overlay">
+                <div className="receita-cover-play">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+                <div className="receita-cover-cta">
+                  <span className="receita-cover-badge">Receita de Sucesso Podcast</span>
+                  <span className="receita-cover-action">Ouvir no Spotify →</span>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          </a>
+        </div>
       </div>
     </section>
   );

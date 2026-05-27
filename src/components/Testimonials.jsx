@@ -7,19 +7,19 @@ const categories = [
     label: 'Clientes',
     testimonials: [
       {
-        name: 'Dr. Carlos Manfrim',
-        role: 'CIRURGIÃO PLÁSTICO',
-        youtubeId: 'GNMk80NnMfw'
-      },
-      {
-        name: 'Julian Tonioli',
-        role: 'MENTOR DE EMPRESÁRIOS',
-        youtubeId: 'xB6GNyK3-JA'
-      },
-      {
         name: 'Thiago Reis',
         role: 'MENTOR DE VENDAS',
         youtubeId: '58oqsfJGQbQ'
+      },
+      {
+        name: 'Max',
+        role: 'CLIENTE MONTEO',
+        youtubeId: 'xB6GNyK3-JA'
+      },
+      {
+        name: 'Dr. Carlos Manfrim',
+        role: 'CIRURGIÃO PLÁSTICO',
+        youtubeId: 'GNMk80NnMfw'
       }
     ]
   },
@@ -28,7 +28,7 @@ const categories = [
     testimonials: []
   },
   {
-    label: 'Parceiros',
+    label: 'Profissionais de Consórcio',
     testimonials: []
   }
 ];

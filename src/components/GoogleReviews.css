@@ -521,3 +521,33 @@ a.google-review-name:hover {
   color: var(--white) !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
 }
+
+.google-reviews-fallback-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 32px;
+  text-align: center;
+}
+
+.google-reviews-fallback-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  border-radius: 40px;
+  border: 1px solid rgba(168, 112, 86, 0.4);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  background: rgba(168, 112, 86, 0.08);
+}
+
+.google-reviews-fallback-btn:hover {
+  background: rgba(168, 112, 86, 0.18);
+  border-color: rgba(168, 112, 86, 0.6);
+  transform: translateY(-2px);
+}

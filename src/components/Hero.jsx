@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { animate, createTimeline, stagger } from 'animejs';
-import heroRecepcao from '@Imagens/recepcao-monteo-4.png';
+import heroRecepcao from '../assets/images/recepcao-monteo-4.webp';
 import heroWordmark from '@Imagens/LOGO-2025-HORIZONTAL-PRETO-8-Editado.svg';
 import './Hero.css';
 
