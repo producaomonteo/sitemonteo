@@ -29,7 +29,7 @@
 
 .proof-stat-divider {
   width: 1px;
-  height: 80px;
+  height: 60px;
   background: rgba(255, 255, 255, 0.08);
   flex-shrink: 0;
   margin-top: 0;
@@ -96,7 +96,7 @@
 }
 
 .proof-gptw-logo {
-  height: 80px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   display: block;
