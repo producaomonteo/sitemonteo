@@ -35,10 +35,25 @@
 
 .header-container {
   width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  column-gap: 24px;
+  gap: 0;
+}
+
+.logo-section {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.nav {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -51,9 +66,10 @@
 }
 
 .nav {
-  justify-self: start;
+  flex: 1;
   min-width: 0;
-  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .logo-gptw {
@@ -197,7 +213,7 @@
 }
 
 .header-ctas {
-  justify-self: end;
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
