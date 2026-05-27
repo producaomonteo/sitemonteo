@@ -156,9 +156,9 @@
 }
 
 .nav-link {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   color: var(--text-muted);
   position: relative;
