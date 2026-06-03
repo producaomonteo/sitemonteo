@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import EcosystemDoors from './components/EcosystemDoors';
 import InstitutionalProof from './components/InstitutionalProof';
-import GoogleReviews from './components/GoogleReviews';
 import Testimonials from './components/Testimonials';
 import MediaSection from './components/MediaSection';
 import Differentials from './components/Differentials';
@@ -27,7 +26,6 @@ const Home = () => (
       <Hero />
       <EcosystemDoors />
       <InstitutionalProof />
-      <GoogleReviews />
       <Testimonials />
       <MediaSection />
       <Differentials />
