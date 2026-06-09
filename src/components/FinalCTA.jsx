@@ -40,7 +40,7 @@ const FinalCTA = () => {
     e.preventDefault();
     if (!form.name || !form.phone) return;
 
-    // Envia para Formspree (e-mail + planilha)
+    // Envia para Formspree (e-mail)
     try {
       await fetch('https://formspree.io/f/xrevkwne', {
         method: 'POST',
@@ -55,6 +55,24 @@ const FinalCTA = () => {
       });
     } catch (e) {
       console.error('Formspree error:', e);
+    }
+
+    // Envia para Google Sheets
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbwraNwIN-sqEaTGZva6e-a2YHEI0AJIFK1_9nDAVCNyvlKEQTaWVA0YuLKXCdj7Zzdo/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome: form.name,
+          whatsapp: form.phone,
+          email: form.email || 'não informado',
+          interesse: activeCat?.label,
+          data_hora: new Date().toLocaleString('pt-BR')
+        })
+      });
+    } catch (e) {
+      console.error('Sheets error:', e);
     }
 
     // Abre WhatsApp da Tamires
