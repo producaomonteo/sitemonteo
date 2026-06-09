@@ -37,41 +37,40 @@
   color: var(--white);
 }
 
-/* Cards grid */
+/* Lista */
 .diff-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-  overflow: hidden;
-  max-width: 1100px;
+  max-width: 860px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-/* Card */
+/* Item da lista */
 .diff-card {
-  background: var(--bg-dark, #0d0d0d);
-  transition: background 0.2s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
-.diff-card:hover,
-.diff-card.is-open {
-  background: rgba(168,112,86,0.05);
+.diff-card:first-child {
+  border-top: 1px solid rgba(255,255,255,0.07);
 }
 
 .diff-card-trigger {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 22px 28px;
+  gap: 20px;
+  padding: 20px 8px;
   background: none;
   border: none;
   color: var(--white);
   cursor: pointer;
   text-align: left;
+  transition: background 0.2s ease;
+}
+
+.diff-card-trigger:hover {
+  background: rgba(168,112,86,0.03);
 }
 
 .diff-card-index {
@@ -80,14 +79,13 @@
   color: var(--primary);
   letter-spacing: 1px;
   flex-shrink: 0;
-  opacity: 0.7;
-  min-width: 24px;
+  opacity: 0.6;
+  min-width: 28px;
 }
 
 .diff-card-title {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  font-size: 15px;
+  font-weight: 600;
   flex: 1;
   line-height: 1.4;
   color: rgba(255,255,255,0.85);
@@ -100,12 +98,12 @@
 }
 
 .diff-card-chevron {
-  font-size: 18px;
-  color: rgba(255,255,255,0.3);
+  font-size: 22px;
+  color: rgba(255,255,255,0.25);
   transition: transform 0.3s ease, color 0.3s ease;
   flex-shrink: 0;
-  line-height: 1;
   font-weight: 300;
+  line-height: 1;
 }
 
 .diff-card.is-open .diff-card-chevron {
@@ -114,14 +112,15 @@
 }
 
 .diff-card-body {
-  padding: 0 28px 22px 68px;
+  padding: 0 8px 20px 48px;
   animation: fadeSlide 0.25s ease;
 }
 
 .diff-card-body p {
-  color: rgba(255,255,255,0.5);
-  font-size: 13px;
-  line-height: 1.7;
+  color: rgba(255,255,255,0.45);
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 680px;
 }
 
 @keyframes fadeSlide {
@@ -146,13 +145,13 @@
     padding: 88px var(--page-gutter, 20px) 96px;
   }
 
-  .diff-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
   .diff-tab {
     font-size: 10px;
     padding: 9px 18px;
     letter-spacing: 1.5px;
+  }
+
+  .diff-card-title {
+    font-size: 14px;
   }
 }
