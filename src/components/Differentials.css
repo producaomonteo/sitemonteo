@@ -84,7 +84,7 @@
 }
 
 .diff-card-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   flex: 1;
   line-height: 1.4;
@@ -118,7 +118,7 @@
 
 .diff-card-body p {
   color: rgba(255,255,255,0.45);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.75;
   max-width: 680px;
 }
