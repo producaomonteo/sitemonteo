@@ -6,7 +6,7 @@ const mediaLogos = [
   {
     alt: 'Terra',
     src: logoTerra,
-    href: 'https://www.google.com/search?q=monteo+recebe+selo+gptw+terra'
+    href: 'https://www.terra.com.br/economia/monteo-recebe-selo-gptw-e-aposta-em-cultura-participativa,abd56ed14164fca8f638488ae8dd81d9xpv34kad.html'
   }
 ];
 
