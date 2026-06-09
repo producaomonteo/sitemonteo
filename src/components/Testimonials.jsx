@@ -6,30 +6,22 @@ const categories = [
   {
     label: 'Clientes',
     testimonials: [
-      {
-        name: 'Thiago Reis',
-        role: 'MENTOR DE VENDAS',
-        youtubeId: '58oqsfJGQbQ'
-      },
-      {
-        name: 'Max',
-        role: 'CLIENTE MONTEO',
-        youtubeId: 'xB6GNyK3-JA'
-      },
-      {
-        name: 'Dr. Carlos Manfrim',
-        role: 'CIRURGIÃO PLÁSTICO',
-        youtubeId: 'GNMk80NnMfw'
-      }
+      { name: 'Thiago Reis', role: 'MENTOR DE VENDAS', youtubeId: '5pEkPw2L2DQ' },
+      { name: 'Max Jefferson', role: 'CLIENTE MONTEO', youtubeId: 'omfdgae1BQE' },
+      { name: 'Dr. Carlos Manfrim', role: 'CIRURGIÃO PLÁSTICO', youtubeId: 'GNMk80NnMfw' }
     ]
   },
   {
     label: 'Franqueados',
-    testimonials: []
+    testimonials: [
+      { name: 'Depoimento Franqueado', role: 'FRANQUEADO MONTEO', youtubeId: 'rYQedQ5BJ3I' }
+    ]
   },
   {
     label: 'Profissionais de Consórcio',
-    testimonials: []
+    testimonials: [
+      { name: 'Profissional de Consórcio', role: 'MEX CLUB', youtubeId: 'w8SNOj5k5vA' }
+    ]
   }
 ];
 
@@ -43,9 +35,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (!activeYoutubeId) return undefined;
-    const onKey = (e) => {
-      if (e.key === 'Escape') setActiveYoutubeId(null);
-    };
+    const onKey = (e) => { if (e.key === 'Escape') setActiveYoutubeId(null); };
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', onKey);
@@ -79,11 +69,7 @@ const Testimonials = () => {
         {current?.testimonials.length > 0 ? (
           <div className="video-grid">
             {current.testimonials.map((testi, i) => (
-              <div
-                key={testi.youtubeId}
-                className="video-card reveal-up active"
-                style={{ transitionDelay: `${i * 150}ms` }}
-              >
+              <div key={testi.youtubeId} className="video-card reveal-up active" style={{ transitionDelay: `${i * 150}ms` }}>
                 <button
                   type="button"
                   className="video-card-trigger"
@@ -95,9 +81,7 @@ const Testimonials = () => {
                       src={thumbUrl(testi.youtubeId)}
                       alt=""
                       className="video-thumb"
-                      onError={(e) => {
-                        e.currentTarget.src = `https://img.youtube.com/vi/${testi.youtubeId}/hqdefault.jpg`;
-                      }}
+                      onError={(e) => { e.currentTarget.src = `https://img.youtube.com/vi/${testi.youtubeId}/hqdefault.jpg`; }}
                     />
                     <div className="play-btn">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -118,41 +102,23 @@ const Testimonials = () => {
         )}
       </div>
 
-      {activeYoutubeId &&
-        createPortal(
-          <div
-            className="video-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Vídeo do depoimento"
-          >
-            <button
-              type="button"
-              className="video-modal-backdrop"
-              aria-label="Fechar vídeo"
-              onClick={() => setActiveYoutubeId(null)}
-            />
-            <div className="video-modal-content">
-              <button
-                type="button"
-                className="video-modal-close"
-                aria-label="Fechar"
-                onClick={() => setActiveYoutubeId(null)}
-              >
-                ×
-              </button>
-              <div className="video-modal-iframe-wrap">
-                <iframe
-                  title="Depoimento em vídeo"
-                  src={`https://www.youtube.com/embed/${activeYoutubeId}?autoplay=1&rel=0`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
+      {activeYoutubeId && createPortal(
+        <div className="video-modal" role="dialog" aria-modal="true">
+          <button type="button" className="video-modal-backdrop" onClick={() => setActiveYoutubeId(null)} />
+          <div className="video-modal-content">
+            <button type="button" className="video-modal-close" onClick={() => setActiveYoutubeId(null)}>×</button>
+            <div className="video-modal-iframe-wrap">
+              <iframe
+                title="Depoimento em vídeo"
+                src={`https://www.youtube.com/embed/${activeYoutubeId}?autoplay=1&rel=0`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
-          </div>,
-          document.body
-        )}
+          </div>
+        </div>,
+        document.body
+      )}
     </section>
   );
 };
