@@ -72,33 +72,34 @@
 }
 
 .cta-btn {
-  min-width: 220px;
+  padding: 16px 0;
+  width: 210px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: transparent;
+  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Effra', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Primary CTA: decisive, unmistakable */
-.cta-grid .btn-primary {
-  box-shadow:
-    0 0 0 1px rgba(168, 112, 86, 0.45),
-    0 10px 32px rgba(168, 112, 86, 0.4),
-    0 24px 64px rgba(168, 112, 86, 0.2);
-  font-size: 13px;
-}
-.cta-grid .btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 0 0 1px rgba(168, 112, 86, 0.6),
-    0 14px 40px rgba(168, 112, 86, 0.55),
-    0 32px 80px rgba(168, 112, 86, 0.28);
+.cta-btn:hover {
+  border-color: var(--primary);
+  color: var(--white);
+  background: rgba(168,112,86,0.85);
 }
 
-/* Outline CTA: premium complement */
-.cta-grid .btn-outline {
-  border-color: rgba(255, 255, 255, 0.14);
-}
-.cta-grid .btn-outline:hover {
-  border-color: rgba(168, 112, 86, 0.4);
-  background: rgba(168, 112, 86, 0.06);
-  transform: translateY(-2px);
+.cta-btn.is-active {
+  border-color: var(--primary);
+  background: rgba(168,112,86,0.85);
+  color: var(--white);
 }
 
 @media (max-width: 768px) {
