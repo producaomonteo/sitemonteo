@@ -169,8 +169,11 @@
   max-width: 480px;
   padding: 48px 40px;
   border-radius: 16px;
-  border: 1px solid var(--glass-border);
-  background: #1a1612;
+  border: 1px solid rgba(168,112,86,0.25);
+  background: #18140f !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
   animation: modal-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
