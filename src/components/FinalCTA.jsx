@@ -36,15 +36,32 @@ const FinalCTA = () => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.phone) return;
 
+    // Envia para Formspree (e-mail + planilha)
+    try {
+      await fetch('https://formspree.io/f/xrevkwne', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome: form.name,
+          whatsapp: form.phone,
+          email: form.email || 'não informado',
+          interesse: activeCat?.label,
+          data_hora: new Date().toLocaleString('pt-BR')
+        })
+      });
+    } catch (e) {
+      console.error('Formspree error:', e);
+    }
+
+    // Abre WhatsApp da Tamires
     const msg = encodeURIComponent(
       `Olá! Me chamo *${form.name}* e tenho interesse como *${activeCat?.label}* na Monteo.\n` +
       `📱 Telefone: ${form.phone}\n` +
-      `📧 E-mail: ${form.email || 'não informado'}\n` +
-      `Origem: ${activeCat?.label}`
+      `📧 E-mail: ${form.email || 'não informado'}`
     );
 
     window.open(`https://wa.me/${TAMIRES_WHATSAPP}?text=${msg}`, '_blank', 'noopener');
