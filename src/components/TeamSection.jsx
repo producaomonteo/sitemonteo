@@ -3,13 +3,19 @@ import img1 from '../assets/images/recepcao-monteo-1.webp';
 import img2 from '../assets/images/recepcao-monteo-2.webp';
 import img3 from '../assets/images/recepcao-monteo-3.webp';
 import img4 from '../assets/images/recepcao-monteo-4.webp';
+import img5 from '../assets/images/foto-premiacao.png';
+import img6 from '../assets/images/foto-treinamento.png';
+import img7 from '../assets/images/foto-convencao.png';
 import './TeamSection.css';
 
 const images = [
   { src: img1, alt: 'Escritório Monteo - Recepção' },
   { src: img2, alt: 'Escritório Monteo - Ambiente' },
   { src: img3, alt: 'Escritório Monteo - Equipe' },
-  { src: img4, alt: 'Escritório Monteo - Estrutura' }
+  { src: img4, alt: 'Escritório Monteo - Estrutura' },
+  { src: img5, alt: 'Monteo - Premiação' },
+  { src: img6, alt: 'Monteo - Treinamento' },
+  { src: img7, alt: 'Monteo - Convenção' }
 ];
 
 const AUTOPLAY_INTERVAL = 4000;
