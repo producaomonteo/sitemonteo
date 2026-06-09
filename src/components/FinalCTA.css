@@ -170,7 +170,7 @@
   padding: 48px 40px;
   border-radius: 16px;
   border: 1px solid var(--glass-border);
-  background: var(--bg-gray);
+  background: #1a1612;
   animation: modal-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
