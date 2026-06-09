@@ -5,7 +5,7 @@ import img3 from '../assets/images/recepcao-monteo-3.webp';
 import img4 from '../assets/images/recepcao-monteo-4.webp';
 import img5 from '../assets/images/foto-premiacao.png';
 import img6 from '../assets/images/foto-treinamento.png';
-import img7 from '../assets/images/foto-convencao.png';
+import img7 from '../assets/images/foto-convencao2.png';
 import './TeamSection.css';
 
 const images = [
