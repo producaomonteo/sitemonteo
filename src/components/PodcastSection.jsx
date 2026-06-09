@@ -9,6 +9,10 @@ const PodcastSection = () => {
   return (
     <section className="podcast-section mesh-bg">
       <div className="container">
+        <div className="section-header reveal-up active" style={{marginBottom: '64px'}}>
+          <span className="label">CONTEÚDO</span>
+          <h2 className="title">Podcast</h2>
+        </div>
         <div className="podcast-layout">
 
           {/* Esquerda — Logo */}
