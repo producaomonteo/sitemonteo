@@ -3,13 +3,13 @@ import { createPortal } from 'react-dom';
 import './FinalCTA.css';
 
 // WhatsApp da Tamires — substituir pelo número real
-const TAMIRES_WHATSAPP = '5543999999999'; // Formato: 55 + DDD + número
+const TAMIRES_WHATSAPP = '5544991158523'; // Formato: 55 + DDD + número
 
 const categories = [
-  { label: 'Cliente', origin: 'cliente', icon: '👤' },
-  { label: 'Franqueado', origin: 'franqueado', icon: '🏢' },
-  { label: 'Parceiro', origin: 'parceiro', icon: '🤝' },
-  { label: 'Profissional de Consórcio', origin: 'profissional-de-consorcio', icon: '📈' }
+  { label: 'Cliente', origin: 'cliente' },
+  { label: 'Franqueado', origin: 'franqueado' },
+  { label: 'Parceiro', origin: 'parceiro' },
+  { label: 'Profissional de Consórcio', origin: 'profissional-de-consorcio' }
 ];
 
 const INITIAL_FORM = { name: '', phone: '', email: '' };
