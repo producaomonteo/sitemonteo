@@ -140,12 +140,14 @@ const Header = () => {
           </nav>
 
           <div className="header-ctas header-ctas-desktop">
-            <button type="button" className="btn btn-outline btn-sm header-cta-btn">
+            <button type="button" className="btn btn-outline btn-sm header-cta-btn"
+              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>
               Falar com especialista
             </button>
             <button
               type="button"
               className="btn btn-primary btn-sm header-cta-btn header-cta-btn--primary"
+              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } }))}
             >
               Quero crescer com a Monteo
             </button>
@@ -182,12 +184,14 @@ const Header = () => {
                 </ul>
               </nav>
               <div className="mobile-menu-ctas">
-                <button type="button" className="btn btn-outline btn-sm btn-block">
+                <button type="button" className="btn btn-outline btn-sm btn-block"
+                  onClick={() => { closeMenu(); window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } })); }}>
                   Falar com especialista
                 </button>
                 <button
                   type="button"
                   className="btn btn-primary btn-sm btn-block header-cta-btn header-cta-btn--primary"
+                  onClick={() => { closeMenu(); window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } })); }}
                 >
                   Quero crescer com a Monteo
                 </button>
