@@ -634,3 +634,11 @@
     align-items: stretch;
   }
 }
+
+/* ── Left align section headers on inner pages ── */
+.page-section .section-header,
+.page-section .section-title,
+.page-section .section-label,
+.page-section .section-label + h2 {
+  text-align: left;
+}
