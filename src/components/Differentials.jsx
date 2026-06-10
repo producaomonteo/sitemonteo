@@ -3,7 +3,7 @@ import './Differentials.css';
 
 const AUDIENCES = [
   {
-    id: 'clientes',
+    id: 'cliente',
     label: 'Clientes',
     items: [
       { title: 'Grupos Exclusivos de Investidores', desc: 'Grupos de investidores que compartilham o mesmo objetivo de crescimento patrimonial.' },
@@ -15,7 +15,7 @@ const AUDIENCES = [
     ]
   },
   {
-    id: 'franqueados',
+    id: 'franqueado',
     label: 'Franqueados',
     items: [
       { title: 'Método Comercial Validado', desc: 'Método comercial de alta performance testado e validado com centenas de unidades.' },
@@ -32,7 +32,7 @@ const AUDIENCES = [
     ]
   },
   {
-    id: 'profissionais',
+    id: 'profissional-de-consorcio',
     label: 'Profissionais de Consórcio',
     items: [
       { title: 'Comunidade Exclusiva de Alta Performance', desc: 'Conecte-se aos profissionais que mais crescem no mercado de consórcios — o MEX Club.' },
@@ -46,7 +46,7 @@ const AUDIENCES = [
     ]
   },
   {
-    id: 'parceiros',
+    id: 'parceiro',
     label: 'Parceiros',
     items: [
       { title: 'Nova Fonte de Receita Recorrente', desc: 'Transforme sua carteira existente em uma nova fonte de receita sem criar uma nova operação.' },
