@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './EcosystemDoors.css';
 
 const ecosystemDoors = [
   {
     title: 'CLIENTE',
+    href: '/cliente',
     description: 'Estruture seu patrimônio com estratégia.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -14,6 +16,7 @@ const ecosystemDoors = [
   },
   {
     title: 'SEJA FRANQUEADO',
+    href: '/seja-franqueado',
     description: 'Construa uma operação sólida com método e suporte.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -26,6 +29,7 @@ const ecosystemDoors = [
   },
   {
     title: 'SEJA PARCEIRO',
+    href: '/seja-parceiro',
     description: 'Transforme sua carteira em receita recorrente.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -39,6 +43,7 @@ const ecosystemDoors = [
   },
   {
     title: 'PROFISSIONAIS DO CONSÓRCIO',
+    href: '/profissionais-de-consorcio',
     description: 'Eleve sua operação ao próximo nível.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -80,8 +85,9 @@ const EcosystemDoors = () => {
 
         <div className="doors-grid">
           {ecosystemDoors.map((door, i) => (
-            <div 
+            <Link 
               key={door.title} 
+              to={door.href}
               className="door-card glass-card reveal-up"
               ref={el => scrollRef.current[i + 1] = el}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -97,7 +103,7 @@ const EcosystemDoors = () => {
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
