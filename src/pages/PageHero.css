@@ -695,3 +695,30 @@
 .diff-pill {
   font-size: 15px !important;
 }
+
+
+/* ── Center page hero content ── */
+.page-hero-content {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.page-hero-content .label {
+  text-align: center;
+}
+
+.page-hero-title {
+  text-align: center;
+}
+
+.page-hero-subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-hero-btn {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
