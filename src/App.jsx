@@ -50,6 +50,7 @@ function App() {
         <Route path="/profissionais-de-consorcio" element={<MexClub />} />
         <Route path="/sobre-a-monteo" element={<SobreMonteo />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/contato" element={<><Header /><Contato /><Footer /></>} />
       </Routes>
     </BrowserRouter>
   );
