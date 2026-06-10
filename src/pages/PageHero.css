@@ -642,3 +642,8 @@
 .page-section .section-label + h2 {
   text-align: left;
 }
+
+.page-section .section-label,
+.page-section .section-title {
+  text-align: left !important;
+}
