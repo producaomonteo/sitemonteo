@@ -18,6 +18,7 @@ import SejaParceiro from './pages/SejaParceiro';
 import MexClub from './pages/MexClub';
 import SobreMonteo from './pages/SobreMonteo';
 import Blog from './pages/Blog';
+import Contato from './pages/Contato';
 
 const Home = () => (
   <div className="monteo-app">
