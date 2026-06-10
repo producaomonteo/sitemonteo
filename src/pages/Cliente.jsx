@@ -125,35 +125,14 @@ const Cliente = () => {
           <div className="container form-container">
             <span className="label section-label" style={{display:"block",textAlign:"left"}}>Dê o primeiro passo</span>
             <h2 className="section-title">Fale com um especialista</h2>
-            <form className="page-form glass-card" onSubmit={e => e.preventDefault()}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Nome</label>
-                  <input type="text" className="form-input" placeholder="Seu nome completo" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">WhatsApp</label>
-                  <input type="tel" className="form-input" placeholder="(00) 00000-0000" />
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Cidade</label>
-                  <input type="text" className="form-input" placeholder="Sua cidade" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Objetivo</label>
-                  <select className="form-input form-select">
-                    <option value="">Selecione seu objetivo</option>
-                    <option>Comprar imóvel</option>
-                    <option>Comprar veículo</option>
-                    <option>Investir / acumular patrimônio</option>
-                    <option>Outro</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="btn btn-primary form-btn">Quero falar com especialista</button>
-            </form>
+            <p className="page-hero-subtitle" style={{marginBottom: '32px'}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}
+            >
+              QUERO FALAR COM ESPECIALISTA
+            </button>
           </div>
         </section>
 
