@@ -84,7 +84,7 @@ const DiffCard = ({ item, index }) => {
 };
 
 const Differentials = () => {
-  const [activeAudience, setActiveAudience] = useState('clientes');
+  const [activeAudience, setActiveAudience] = useState('cliente');
   const current = AUDIENCES.find((a) => a.id === activeAudience);
 
   return (
