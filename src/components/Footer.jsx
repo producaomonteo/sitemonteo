@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import logoMonteo from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
 import './Footer.css';
 
+const TAMIRES_WHATSAPP = '5544991158523';
+
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src={logoMonteo} alt="Monteo Investimentos" className="footer-logo" />
+          <img src={logoMonteo} alt="Monteo" className="footer-logo" />
           <p className="footer-tagline">Transformando o mercado de investimentos através da excelência operacional.</p>
         </div>
 
@@ -26,26 +28,32 @@ const Footer = () => {
             <h4>EMPRESA</h4>
             <ul>
               <li><Link to="/sobre-a-monteo">Sobre a Monteo</Link></li>
-              <li><Link to="/blog">Blog Monteo</Link></li>
             </ul>
           </div>
           <div className="link-col">
             <h4>CONTATO</h4>
             <ul>
-              <li>Dúvidas Frequentes</li>
-              <li>Trabalhe Conosco</li>
-              <li>Fale Conosco</li>
+              <li><Link to="/seja-franqueado">Trabalhe Conosco</Link></li>
+              <li>
+                <a
+                  href={`https://wa.me/${TAMIRES_WHATSAPP}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Fale Conosco
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      
+
       <div className="container footer-bottom">
-        <p>© 2026 Monteo Investimentos. Todos os direitos reservados.</p>
+        <p>© 2026 Monteo. Todos os direitos reservados.</p>
         <div className="social-links">
-          <span>INSTAGRAM</span>
-          <span>LINKEDIN</span>
-          <span>YOUTUBE</span>
+          <a href="https://www.instagram.com/monteo.oficial/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+          <a href="https://br.linkedin.com/company/monteo-investimentos" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+          <a href="https://www.youtube.com/@monteooficial" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
         </div>
       </div>
     </footer>
