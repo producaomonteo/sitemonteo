@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import './FinalCTA.css';
 
@@ -16,6 +16,15 @@ const INITIAL_FORM = { name: '', phone: '', email: '' };
 
 const FinalCTA = () => {
   const [activeOrigin, setActiveOrigin] = useState(null);
+
+  useEffect(() => {
+    const handler = (e) => {
+      const origin = e.detail?.origin || 'cliente';
+      openModal(origin);
+    };
+    window.addEventListener('openCTAModal', handler);
+    return () => window.removeEventListener('openCTAModal', handler);
+  }, []);
   const [form, setForm] = useState(INITIAL_FORM);
   const [submitted, setSubmitted] = useState(false);
 

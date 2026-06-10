@@ -71,8 +71,8 @@ const Hero = () => {
             Estrutura, método e estratégia para crescimento patrimonial.
           </p>
           <div className="hero-btns">
-            <button className="btn btn-primary">FALAR COM ESPECIALISTA</button>
-<button className="btn btn-outline">QUERO CRESCER COM A MONTEO</button>
+            <button className="btn btn-primary" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>FALAR COM ESPECIALISTA</button>
+            <button className="btn btn-outline" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>QUERO CRESCER COM A MONTEO</button>
           </div>
         </div>
       </div>
