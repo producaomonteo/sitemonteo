@@ -117,7 +117,7 @@ const MexClub = () => {
         {/* FORMULÁRIO */}
                 <section className="page-section form-section" id="formulario">
           <div className="container form-container" style={{textAlign:"center"}}>
-            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Faça parte</span>
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Faça parte</span>
             <h2 className="section-title">Quero entrar no MEX Club</h2>
             <p style={{marginBottom:"32px",textAlign:"center",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65"}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
             <button

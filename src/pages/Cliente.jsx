@@ -25,7 +25,7 @@ const Cliente = () => {
         {/* COMO FUNCIONA */}
         <section className="page-section">
           <div className="container">
-            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Como funciona</span>
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Como funciona</span>
             <div className="steps-grid">
               {[
                 { n: '01', title: 'Diagnóstico', desc: 'Entendemos sua situação financeira atual, seus objetivos e o melhor caminho para chegar lá.' },
@@ -45,7 +45,7 @@ const Cliente = () => {
         {/* DIFERENCIAIS */}
         <section className="page-section page-section--alt">
           <div className="container">
-            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Diferenciais</span>
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Diferenciais</span>
             <h2 className="section-title">Por que a Monteo?</h2>
             <div className="diff-list">
               {[
@@ -69,7 +69,7 @@ const Cliente = () => {
         {/* PROVA */}
         <section className="page-section">
           <div className="container">
-            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Números que provam</span>
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Números que provam</span>
             <div className="proof-row">
               <div className="proof-block">
                 <span className="proof-num">R$ 1,5 Bi</span>
@@ -102,7 +102,7 @@ const Cliente = () => {
         {/* FAQ */}
         <section className="page-section page-section--alt">
           <div className="container faq-container">
-            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Dúvidas frequentes</span>
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Dúvidas frequentes</span>
             <h2 className="section-title">FAQ</h2>
             <div className="faq-list">
               {[
@@ -123,7 +123,7 @@ const Cliente = () => {
         {/* FORMULÁRIO */}
         <section className="page-section form-section" id="formulario">
           <div className="container form-container" style={{textAlign:"center"}}>
-            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Dê o primeiro passo</span>
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Dê o primeiro passo</span>
             <h2 className="section-title">Fale com um especialista</h2>
             <p style={{marginBottom:"32px",textAlign:"center",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65"}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
             <button
