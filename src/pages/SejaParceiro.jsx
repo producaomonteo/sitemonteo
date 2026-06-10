@@ -86,39 +86,19 @@ const SejaParceiro = () => {
         </section>
 
         {/* FORMULÁRIO */}
-        <section className="page-section form-section page-section--alt" id="formulario">
+                <section className="page-section form-section" id="formulario">
           <div className="container form-container">
-            <span className="label section-label">Comece agora</span>
-            <h2 className="section-title">Quero ser parceiro</h2>
-            <form className="page-form glass-card" onSubmit={e => e.preventDefault()}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Nome</label>
-                  <input type="text" className="form-input" placeholder="Seu nome completo" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">WhatsApp</label>
-                  <input type="tel" className="form-input" placeholder="(00) 00000-0000" />
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Cidade</label>
-                  <input type="text" className="form-input" placeholder="Sua cidade" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Perfil</label>
-                  <select className="form-input form-select">
-                    <option value="">Selecione seu perfil</option>
-                    <option>Corretor de seguros</option>
-                    <option>Planejador financeiro</option>
-                    <option>Escritório de investimentos</option>
-                    <option>Outro</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="btn btn-primary form-btn">Enviar candidatura</button>
-            </form>
+            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Seja nosso parceiro</span>
+            <h2 className="section-title">Vamos crescer juntos</h2>
+            <p className="page-hero-subtitle" style={{marginBottom: '32px', textAlign: 'left'}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
+            <button
+              type="button"
+              className="btn btn-primary"
+              style={{display: 'block'}}
+              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'parceiro' } }))}
+            >
+              QUERO SER PARCEIRO
+            </button>
           </div>
         </section>
 

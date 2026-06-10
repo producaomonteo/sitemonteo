@@ -120,37 +120,19 @@ const SejaFranqueado = () => {
         </section>
 
         {/* FORMULÁRIO */}
-        <section className="page-section form-section" id="formulario">
+                <section className="page-section form-section" id="formulario">
           <div className="container form-container">
-            <span className="label section-label">Candidate-se</span>
+            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Candidate-se</span>
             <h2 className="section-title">Quero ser franqueado</h2>
-            <form className="page-form glass-card" onSubmit={e => e.preventDefault()}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Nome</label>
-                  <input type="text" className="form-input" placeholder="Seu nome completo" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">WhatsApp</label>
-                  <input type="tel" className="form-input" placeholder="(00) 00000-0000" />
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Cidade</label>
-                  <input type="text" className="form-input" placeholder="Sua cidade" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Modelo de interesse</label>
-                  <select className="form-input form-select">
-                    <option value="">Selecione</option>
-                    <option>Franqueado (autônomo)</option>
-                    <option>Master Franqueado (com time)</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="btn btn-primary form-btn">Enviar candidatura</button>
-            </form>
+            <p className="page-hero-subtitle" style={{marginBottom: '32px', textAlign: 'left'}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
+            <button
+              type="button"
+              className="btn btn-primary"
+              style={{display: 'block'}}
+              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } }))}
+            >
+              QUERO SER FRANQUEADO
+            </button>
           </div>
         </section>
 
