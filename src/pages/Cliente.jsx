@@ -125,13 +125,14 @@ const Cliente = () => {
           <div className="container form-container">
             <span className="label section-label" style={{display:"block",textAlign:"left"}}>Dê o primeiro passo</span>
             <h2 className="section-title">Fale com um especialista</h2>
-            <p className="page-hero-subtitle" style={{marginBottom: '32px'}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
+            <p className="page-hero-subtitle" style={{marginBottom: '32px', textAlign: 'left'}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
             <button
               type="button"
               className="btn btn-primary"
+              style={{display: 'block'}}
               onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}
             >
-              QUERO FALAR COM ESPECIALISTA
+              QUERO COMEÇAR AGORA
             </button>
           </div>
         </section>
