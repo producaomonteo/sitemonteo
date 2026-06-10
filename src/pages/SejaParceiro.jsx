@@ -87,14 +87,14 @@ const SejaParceiro = () => {
 
         {/* FORMULÁRIO */}
                 <section className="page-section form-section" id="formulario">
-          <div className="container form-container">
+          <div className="container form-container" style={{textAlign:"center"}}>
             <span className="label section-label" style={{display:"block",textAlign:"left"}}>Seja nosso parceiro</span>
             <h2 className="section-title">Vamos crescer juntos</h2>
-            <p className="page-hero-subtitle" style={{marginBottom: '32px', textAlign: 'left'}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
+            <p style={{marginBottom:"32px",textAlign:"center",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65"}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
             <button
               type="button"
               className="btn btn-primary"
-              style={{display: 'block'}}
+              style={{display:"block",margin:"0 auto"}}
               onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'parceiro' } }))}
             >
               QUERO SER PARCEIRO
