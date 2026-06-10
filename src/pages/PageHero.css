@@ -647,3 +647,10 @@
 .page-section .section-title {
   text-align: left !important;
 }
+
+.page-section .section-label,
+.page-section .section-title,
+.page-section .label,
+.page-section h2 {
+  text-align: left !important;
+}
