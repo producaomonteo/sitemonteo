@@ -654,3 +654,44 @@
 .page-section h2 {
   text-align: left !important;
 }
+
+.page-section {
+  text-align: center;
+}
+
+.page-section .step-card,
+.page-section .benefit-card,
+.page-section .profile-card {
+  text-align: left;
+}
+
+
+/* ── Fix section label alignment and font sizes ── */
+.page-section .section-label,
+.page-section .label {
+  text-align: left;
+  display: block;
+}
+
+.step-desc,
+.benefit-desc,
+.profile-desc,
+.model-desc,
+.faq-answer {
+  font-size: 15px !important;
+  line-height: 1.75;
+}
+
+.step-title,
+.benefit-title,
+.profile-title {
+  font-size: 18px !important;
+}
+
+.mini-text {
+  font-size: 15px !important;
+}
+
+.diff-pill {
+  font-size: 15px !important;
+}
