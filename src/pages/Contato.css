@@ -1,0 +1,79 @@
+.contato-page {
+  min-height: 80vh;
+  padding: 140px var(--page-gutter, 20px) 120px;
+  display: flex;
+  align-items: center;
+}
+
+.contato-page .section-header {
+  margin-bottom: 64px;
+}
+
+.contato-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contato-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contato-card:hover {
+  border-color: rgba(168,112,86,0.4);
+  background: rgba(168,112,86,0.06);
+  transform: translateY(-2px);
+}
+
+.contato-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(168,112,86,0.1);
+  border: 1px solid rgba(168,112,86,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.contato-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contato-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.contato-card-value {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .contato-page {
+    padding: 100px var(--page-gutter, 20px) 80px;
+  }
+
+  .contato-card-value {
+    font-size: 15px;
+  }
+}
