@@ -34,15 +34,7 @@ const Footer = () => {
             <h4>CONTATO</h4>
             <ul>
               <li><Link to="/seja-franqueado">Trabalhe Conosco</Link></li>
-              <li>
-                <a
-                  href={`https://wa.me/${TAMIRES_WHATSAPP}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Fale Conosco
-                </a>
-              </li>
+              <li><Link to="/contato">Fale Conosco</Link></li>
             </ul>
           </div>
         </div>
