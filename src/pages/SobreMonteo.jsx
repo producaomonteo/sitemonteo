@@ -85,11 +85,12 @@ const SobreMonteo = () => {
         <section className="page-section page-section--alt sobre-cta-section">
           <div className="container sobre-cta" style={{textAlign:'center', display:'flex', flexDirection:'column', alignItems:'center'}}>
             <h2 className="section-title" style={{textAlign:'center'}}>Faça parte do ecossistema</h2>
-            <p className="sobre-cta-sub">Seja como cliente, franqueado, parceiro ou profissional — há um caminho Monteo para você.</p>
+            <p className="sobre-cta-sub">Seja como cliente, franqueado, parceiro ou profissional. Há um caminho Monteo para você.</p>
             <div className="sobre-cta-btns">
-              <a href="/cliente" className="btn btn-primary">Sou cliente</a>
-              <a href="/seja-franqueado" className="btn btn-outline">Quero ser franqueado</a>
-              <a href="/seja-parceiro" className="btn btn-outline">Quero ser parceiro</a>
+              <button type="button" className="btn btn-primary" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>Quero ser cliente</button>
+              <button type="button" className="btn btn-outline" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } }))}>Quero ser franqueado</button>
+              <button type="button" className="btn btn-outline" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'parceiro' } }))}>Quero ser parceiro</button>
+              <button type="button" className="btn btn-outline" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'profissional-de-consorcio' } }))}>Quero ser MEX Club</button>
             </div>
           </div>
         </section>
