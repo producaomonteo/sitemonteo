@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import FinalCTA from '../components/FinalCTA';
+import ModalCTA from '../components/ModalCTA';
 import './PageHero.css';
 import './Cliente.css';
 
@@ -138,7 +138,7 @@ const Cliente = () => {
         </section>
 
       </main>
-      <FinalCTA />
+      <ModalCTA />
       <Footer />
     </div>
   );
