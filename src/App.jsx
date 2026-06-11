@@ -44,11 +44,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cliente" element={<Cliente />} />
-        <Route path="/seja-franqueado" element={<SejaFranqueado />} />
-        <Route path="/seja-parceiro" element={<SejaParceiro />} />
-        <Route path="/profissionais-de-consorcio" element={<MexClub />} />
-        <Route path="/sobre-a-monteo" element={<SobreMonteo />} />
+        <Route path="/cliente" element={<><Header /><Cliente /><FinalCTA /><Footer /></>} />
+        <Route path="/seja-franqueado" element={<><Header /><SejaFranqueado /><FinalCTA /><Footer /></>} />
+        <Route path="/seja-parceiro" element={<><Header /><SejaParceiro /><FinalCTA /><Footer /></>} />
+        <Route path="/profissionais-de-consorcio" element={<><Header /><MexClub /><FinalCTA /><Footer /></>} />
+        <Route path="/sobre-a-monteo" element={<><Header /><SobreMonteo /><FinalCTA /><Footer /></>} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contato" element={<><Header /><Contato /><Footer /></>} />
       </Routes>
