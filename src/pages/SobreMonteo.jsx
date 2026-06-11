@@ -107,6 +107,5 @@ const SobreMonteo = () => {
     </div>
   );
 };
-};
 
 export default SobreMonteo;
