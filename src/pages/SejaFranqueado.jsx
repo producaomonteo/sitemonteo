@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import FinalCTA from '../components/FinalCTA';
 import './PageHero.css';
 import './SejaFranqueado.css';
 
@@ -136,6 +137,7 @@ const SejaFranqueado = () => {
         </section>
 
       </main>
+      <FinalCTA />
       <Footer />
     </div>
   );

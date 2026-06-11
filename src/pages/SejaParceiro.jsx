@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import FinalCTA from '../components/FinalCTA';
 import './PageHero.css';
 import './SejaParceiro.css';
 
@@ -102,6 +103,7 @@ const SejaParceiro = () => {
         </section>
 
       </main>
+      <FinalCTA />
       <Footer />
     </div>
   );
