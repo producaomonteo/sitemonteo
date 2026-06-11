@@ -19,7 +19,7 @@ const MexClub = () => {
             <span className="label">Profissionais de Consórcio</span>
             <h1 className="page-hero-title">Eleve sua operação<br />ao próximo nível.</h1>
             <p className="page-hero-subtitle">MEX Club — a comunidade exclusiva para quem já opera no mercado de consórcio e quer escalar.</p>
-            <a href="#formulario" className="btn btn-primary page-hero-btn">Quero entrar no MEX Club</a>
+            <button type="button" className="btn btn-primary page-hero-btn" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'profissional-de-consorcio' } }))}>Quero entrar no MEX Club</button>
           </div>
         </section>
 

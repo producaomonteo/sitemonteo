@@ -18,7 +18,7 @@ const Cliente = () => {
           <div className="container page-hero-content">
             <span className="label">Para quem quer crescer</span>
             <h1 className="page-hero-title">Estruture seu patrimônio<br />com estratégia.</h1>
-            <a href="#formulario" className="btn btn-primary page-hero-btn">Falar com especialista</a>
+            <button type="button" className="btn btn-primary page-hero-btn" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>Falar com especialista</button>
           </div>
         </section>
 

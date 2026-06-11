@@ -18,7 +18,7 @@ const SejaFranqueado = () => {
           <div className="container page-hero-content">
             <span className="label">Seja Franqueado</span>
             <h1 className="page-hero-title">Construa uma operação<br />sólida com a Monteo.</h1>
-            <a href="#formulario" className="btn btn-primary page-hero-btn">Quero ser franqueado</a>
+            <button type="button" className="btn btn-primary page-hero-btn" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } }))}>Quero ser franqueado</button>
           </div>
         </section>
 

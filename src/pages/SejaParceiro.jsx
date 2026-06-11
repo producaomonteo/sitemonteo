@@ -18,7 +18,7 @@ const SejaParceiro = () => {
           <div className="container page-hero-content">
             <span className="label">Seja Parceiro</span>
             <h1 className="page-hero-title">Transforme sua carteira<br />em receita recorrente.</h1>
-            <a href="#formulario" className="btn btn-primary page-hero-btn">Quero ser parceiro</a>
+            <button type="button" className="btn btn-primary page-hero-btn" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'parceiro' } }))}>Quero ser parceiro</button>
           </div>
         </section>
 
