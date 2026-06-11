@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ModalCTA from '../components/ModalCTA';
+import recepcaoImg from '../assets/images/recepcao-monteo-2.webp';
 import './PageHero.css';
 import './SobreMonteo.css';
 
@@ -32,6 +34,17 @@ const SobreMonteo = () => {
                 <p>Hoje, com mais de R$ 1,5 bilhão em cartas de crédito sob assessoria e 3.500 clientes atendidos, somos reconhecidos como referência em estrutura, método e estratégia no mercado de consórcios brasileiro.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* FOTO ESCRITÓRIO */}
+        <section className="page-section" style={{paddingTop: '0'}}>
+          <div className="container">
+            <img
+              src={recepcaoImg}
+              alt="Escritório Monteo"
+              style={{width:'100%', borderRadius:'12px', display:'block', boxShadow:'0 24px 64px rgba(0,0,0,0.5)'}}
+            />
           </div>
         </section>
 
@@ -77,8 +90,8 @@ const SobreMonteo = () => {
 
         {/* CTA */}
         <section className="page-section page-section--alt sobre-cta-section">
-          <div className="container sobre-cta">
-            <h2 className="section-title">Faça parte do ecossistema</h2>
+          <div className="container sobre-cta" style={{textAlign:'center', display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <h2 className="section-title" style={{textAlign:'center'}}>Faça parte do ecossistema</h2>
             <p className="sobre-cta-sub">Seja como cliente, franqueado, parceiro ou profissional — há um caminho Monteo para você.</p>
             <div className="sobre-cta-btns">
               <a href="/cliente" className="btn btn-primary">Sou cliente</a>
@@ -89,9 +102,11 @@ const SobreMonteo = () => {
         </section>
 
       </main>
+      <ModalCTA />
       <Footer />
     </div>
   );
+};
 };
 
 export default SobreMonteo;

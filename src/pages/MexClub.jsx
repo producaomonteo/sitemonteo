@@ -84,7 +84,7 @@ const MexClub = () => {
           <div className="container faq-container">
             <span className="label section-label">Para quem é</span>
             <h2 className="section-title">Perfil ideal</h2>
-            <div className="profile-highlight glass-card">
+            <div className="profile-highlight glass-card" style={{textAlign:'left', maxWidth:'600px'}}>
               <p className="profile-highlight-text">
                 Profissionais que já atuam com consórcio e buscam escalar sua operação.<br /><br />
                 Perfil mínimo: <strong>R$ 2 milhões/mês</strong> em produção.
