@@ -120,19 +120,19 @@ const SejaFranqueado = () => {
         </section>
 
         {/* FORMULÁRIO */}
-                <section className="page-section form-section" id="formulario">
-          <div className="container form-container" style={{textAlign:"center"}}>
-            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Candidate-se</span>
-            <h2 className="section-title">Quero ser franqueado</h2>
-            <p style={{marginBottom:"32px",textAlign:"center",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65"}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
-            <button
-              type="button"
-              className="btn btn-primary"
-              style={{display:"block",margin:"0 auto"}}
-              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } }))}
-            >
-              QUERO SER FRANQUEADO
-            </button>
+                        <section className="page-section form-section" id="formulario" style={{textAlign:"center"}}>
+          <div className="container">
+            <h2 className="section-title" style={{textAlign:"center",marginBottom:"16px"}}>Quero crescer com a Monteo</h2>
+            <p style={{textAlign:"center",marginBottom:"32px",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65"}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
+            <div style={{display:"flex",justifyContent:"center"}}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } }))}
+              >
+                QUERO CRESCER COM A MONTEO
+              </button>
+            </div>
           </div>
         </section>
 
