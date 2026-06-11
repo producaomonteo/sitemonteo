@@ -89,14 +89,14 @@ const SejaParceiro = () => {
                                 <section className="page-section form-section" id="formulario">
           <div className="container" style={{display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center"}}>
             <span style={{fontSize:"10px",letterSpacing:"4px",color:"var(--primary)",fontWeight:"700",textTransform:"uppercase",marginBottom:"14px",display:"block"}}>Seja nosso parceiro</span>
-            <h2 style={{fontFamily:"Athelas,Georgia,serif",fontSize:"clamp(32px,4vw,52px)",color:"var(--white)",marginBottom:"16px",textAlign:"center",letterSpacing:"-0.02em"}}>Quero crescer com a Monteo</h2>
-            <p style={{textAlign:"center",marginBottom:"32px",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65",maxWidth:"520px"}}>Preencha seus dados e nossa equipe entrará em contato em breve.</p>
+            <h2 style={{fontFamily:"Athelas,Georgia,serif",fontSize:"clamp(32px,4vw,52px)",color:"var(--white)",marginBottom:"16px",textAlign:"center",letterSpacing:"-0.02em"}}>Quero ser parceiro</h2>
+            <p style={{textAlign:"center",marginBottom:"32px",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65",maxWidth:"520px"}}>Preencha seus dados e nossa equipe entrará em contato para apresentar as possibilidades de parceria.</p>
             <button
               type="button"
               className="btn btn-primary"
               onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'parceiro' } }))}
             >
-              QUERO CRESCER COM A MONTEO
+              QUERO SER PARCEIRO
             </button>
           </div>
         </section>
