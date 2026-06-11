@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import ModalCTA from '../components/ModalCTA';
 import './PageHero.css';
 import './MexClub.css';
@@ -133,7 +132,6 @@ const MexClub = () => {
 
       </main>
       <ModalCTA />
-      <Footer />
     </div>
   );
 };
