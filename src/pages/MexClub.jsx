@@ -114,6 +114,35 @@ const MexClub = () => {
           </div>
         </section>
 
+        {/* DIFERENCIAIS */}
+        <section className="page-section page-section--alt">
+          <div className="container">
+            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Diferenciais MEX Club</span>
+            <h2 className="section-title">Por que fazer parte do MEX Club?</h2>
+            <div style={{maxWidth:'860px',marginTop:'40px'}}>
+              {[
+                { title: 'Comunidade Exclusiva de Alta Performance', desc: 'Conecte-se aos profissionais que mais crescem no mercado de consórcios.' },
+                { title: 'Mentoria e Desenvolvimento Contínuo', desc: 'Aprenda diretamente com especialistas e referências nacionais em vendas, gestão e crescimento.' },
+                { title: 'Treinamentos Semanais', desc: 'Acesso constante a estratégias, processos e práticas que aceleram resultados.' },
+                { title: 'Modelo de Remuneração Diferenciado', desc: 'Maiores comissões do mercado, inclusive sobre crédito integral em vendas de parcelas reduzidas.' },
+                { title: 'Comissões Sem Estorno', desc: 'Mais previsibilidade financeira e segurança para construir uma operação sólida.' },
+                { title: 'Verba de Marketing por Produção', desc: 'Receba incentivos adicionais conforme o crescimento do seu volume de vendas.' },
+                { title: 'Premiações e Reconhecimento', desc: 'Campanhas exclusivas com viagens, carros, experiências e grandes premiações.' },
+                { title: 'Acesso às Maiores Administradoras', desc: 'Mais opções de produtos, melhores oportunidades e maior competitividade para seus clientes.' }
+              ].map((item, i) => (
+                <details key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.07)'}}>
+                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500'}}>
+                    <span style={{fontSize:'11px',color:'var(--primary)',fontWeight:'700',minWidth:'28px'}}>{String(i+1).padStart(2,'0')}</span>
+                    {item.title}
+                    <span style={{marginLeft:'auto',color:'var(--primary)',fontSize:'20px'}}>+</span>
+                  </summary>
+                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* DEPOIMENTO */}
         <section className="page-section">
           <div className="container">

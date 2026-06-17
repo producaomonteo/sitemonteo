@@ -85,6 +85,34 @@ const SejaParceiro = () => {
           </div>
         </section>
 
+        {/* DIFERENCIAIS */}
+        <section className="page-section page-section--alt">
+          <div className="container">
+            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Diferenciais para Parceiros</span>
+            <h2 className="section-title">Por que ser parceiro Monteo?</h2>
+            <div style={{maxWidth:'860px',marginTop:'40px'}}>
+              {[
+                { title: 'Nova Fonte de Receita Recorrente', desc: 'Transforme sua carteira existente em uma nova fonte de receita sem criar uma nova operação.' },
+                { title: 'Estrutura 100% Monteo', desc: 'Nossa equipe cuida de todo o processo comercial, operacional e de acompanhamento.' },
+                { title: 'Associe sua Marca à Monteo', desc: 'Associe sua marca à maior referência em alavancagem patrimonial do Brasil.' },
+                { title: 'Especialista Dedicado', desc: 'Suporte consultivo durante toda a jornada, garantindo uma experiência de excelência para seus clientes.' },
+                { title: 'Transparência e Resultados', desc: 'Relatórios periódicos com indicadores, oportunidades e resultados gerados.' },
+                { title: 'Sem Conflito com sua Atividade', desc: 'Solução complementar que amplia sua oferta de valor sem desviar o foco do seu negócio.' },
+                { title: 'Planejamento Patrimonial para seus Clientes', desc: 'Uma solução que fortalece o relacionamento e aumenta a percepção de valor da sua marca.' }
+              ].map((item, i) => (
+                <details key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.07)'}}>
+                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500'}}>
+                    <span style={{fontSize:'11px',color:'var(--primary)',fontWeight:'700',minWidth:'28px'}}>{String(i+1).padStart(2,'0')}</span>
+                    {item.title}
+                    <span style={{marginLeft:'auto',color:'var(--primary)',fontSize:'20px'}}>+</span>
+                  </summary>
+                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FORMULÁRIO */}
                                 <section className="page-section form-section" id="formulario">
           <div className="container" style={{display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center"}}>

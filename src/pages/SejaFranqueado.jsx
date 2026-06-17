@@ -119,6 +119,38 @@ const SejaFranqueado = () => {
           </div>
         </section>
 
+        {/* DIFERENCIAIS */}
+        <section className="page-section page-section--alt">
+          <div className="container">
+            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Diferenciais para Franqueados</span>
+            <h2 className="section-title">Por que ser franqueado Monteo?</h2>
+            <div style={{maxWidth:'860px',marginTop:'40px'}}>
+              {[
+                { title: 'Método Comercial Validado', desc: 'Método comercial de alta performance testado e validado com centenas de unidades.' },
+                { title: 'Sistema de Indicações Previsíveis', desc: 'Geração contínua de clientes através de um sistema estruturado de indicações.' },
+                { title: 'Acompanhamento com Liderança', desc: 'Acompanhamento próximo com liderança experiente em todo o processo.' },
+                { title: 'Treinamentos Contínuos', desc: 'Desenvolvimento profissional constante com treinamentos de alta qualidade.' },
+                { title: 'Cultura Forte e Humanizada', desc: 'Cultura certificada GPTW, focada em pessoas e resultados sustentáveis.' },
+                { title: 'Marca em Forte Expansão', desc: 'Marca consolidada e em forte expansão nacional com presença em todo o Brasil.' },
+                { title: 'Know-how dos Fundadores', desc: 'Acesso direto ao know-how dos fundadores e especialistas do ecossistema.' },
+                { title: 'Remuneração Altamente Atrativa', desc: 'Modelo de remuneração diferenciado e altamente competitivo no mercado.' },
+                { title: 'Backoffice Especializado', desc: 'Suporte operacional completo com backoffice dedicado à sua operação.' },
+                { title: 'Marketing e Processos Estruturados', desc: 'Marketing, processos e ferramentas já estruturados e prontos para uso.' },
+                { title: 'Crescimento e Equipe Própria', desc: 'Possibilidade de crescimento e construção de equipe própria dentro da rede.' }
+              ].map((item, i) => (
+                <details key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.07)'}}>
+                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500'}}>
+                    <span style={{fontSize:'11px',color:'var(--primary)',fontWeight:'700',minWidth:'28px'}}>{String(i+1).padStart(2,'0')}</span>
+                    {item.title}
+                    <span style={{marginLeft:'auto',color:'var(--primary)',fontSize:'20px'}}>+</span>
+                  </summary>
+                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* DEPOIMENTO */}
         <section className="page-section">
           <div className="container">
