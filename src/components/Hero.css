@@ -195,10 +195,11 @@
   }
 
   /* No mobile: a foto preenche do topo do site até pouco depois dos
-     botões. Como precisa ampliar (cover), priorizamos o lado esquerdo. */
+     botões. Ancorada um pouco à direita pra começar no painel branco
+     do MONTEO (pulando o pedaço azul da esquerda). */
   .hero-bg {
     background-size: cover;
-    background-position: left center;
+    background-position: 22% center;
     background-repeat: no-repeat;
   }
 

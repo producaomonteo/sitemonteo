@@ -116,3 +116,11 @@
   border-color: rgba(168,112,86,0.6);
   transform: translateY(-2px);
 }
+
+/* O CSS das páginas internas (PageHero.css) adiciona um '+' via
+   .faq-question::after, que vaza para o FAQ da home (mesma classe).
+   Aqui desligamos esse '+' só na home (que usa .faq-trigger),
+   mantendo apenas o ícone da direita. */
+.faq-trigger .faq-question::after {
+  content: none;
+}
