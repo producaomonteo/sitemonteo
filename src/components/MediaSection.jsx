@@ -38,7 +38,7 @@ const MediaSection = () => {
                 aria-label={`Ver matéria no ${logo.alt}`}
               >
                 <img
-                  className="media-logo-img"
+                  className={`media-logo-img${logo.alt === 'Istoé' ? ' media-logo-img--istoe' : ''}`}
                   src={logo.src}
                   alt={logo.alt}
                   loading="lazy"
