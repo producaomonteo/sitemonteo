@@ -6,7 +6,7 @@ import EcosystemDoors from './components/EcosystemDoors';
 import InstitutionalProof from './components/InstitutionalProof';
 import Testimonials from './components/Testimonials';
 import MediaSection from './components/MediaSection';
-import Differentials from './components/Differentials';
+import FAQ from './components/FAQ';
 import PodcastSection from './components/PodcastSection';
 import ReceitaPodcastSection from './components/ReceitaPodcastSection';
 import TeamSection from './components/TeamSection';
@@ -29,7 +29,7 @@ const Home = () => (
       <InstitutionalProof />
       <Testimonials />
       <MediaSection />
-      <Differentials />
+      <FAQ />
       <PodcastSection />
       <ReceitaPodcastSection />
       <TeamSection />
