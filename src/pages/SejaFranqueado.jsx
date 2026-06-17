@@ -119,6 +119,30 @@ const SejaFranqueado = () => {
           </div>
         </section>
 
+        {/* DEPOIMENTO */}
+        <section className="page-section">
+          <div className="container">
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Depoimento</span>
+            <h2 className="section-title" style={{textAlign:"center"}}>Quem já faz parte</h2>
+            <div style={{maxWidth:'560px',margin:'40px auto 0',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)'}}>
+              <a href="https://www.youtube.com/watch?v=7HJRnQiB5Eg" target="_blank" rel="noopener noreferrer" style={{display:'block'}}>
+                <div style={{position:'relative',aspectRatio:'16/9'}}>
+                  <img src="https://img.youtube.com/vi/7HJRnQiB5Eg/maxresdefault.jpg" alt="Leanderson Giacomello" style={{width:'100%',height:'100%',objectFit:'cover',display:'block',filter:'brightness(0.8)'}} onError={(e)=>{e.currentTarget.src='https://img.youtube.com/vi/7HJRnQiB5Eg/hqdefault.jpg'}} />
+                  <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center'}}>
+                    <div style={{width:'64px',height:'64px',borderRadius:'50%',background:'rgba(168,112,86,0.9)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff'}}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'16px 20px',background:'rgba(255,255,255,0.02)'}}>
+                  <span style={{fontSize:'10px',fontWeight:'700',letterSpacing:'2px',color:'var(--primary)',display:'block',marginBottom:'6px'}}>FRANQUEADO MONTEO</span>
+                  <h3 style={{fontSize:'18px',fontWeight:'600',color:'var(--white)'}}>Leanderson Giacomello</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* FORMULÁRIO */}
                                 <section className="page-section form-section" id="formulario">
           <div className="container" style={{display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center"}}>
