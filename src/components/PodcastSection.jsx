@@ -56,7 +56,6 @@ const PodcastSection = () => {
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
-                  <span className="podcast-play-label">Ver todos os episódios no YouTube →</span>
                 </div>
               </div>
             </a>
