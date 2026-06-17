@@ -32,8 +32,8 @@ const Home = () => (
       <PodcastSection />
       <ReceitaPodcastSection />
       <TeamSection />
-      <FAQ />
       <FinalCTA />
+      <FAQ />
     </main>
     <Footer />
   </div>
