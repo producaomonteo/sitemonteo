@@ -18,7 +18,15 @@ const PodcastSection = () => {
           {/* Esquerda — Logo */}
           <div className="podcast-left">
             <img src={logoMonteocast} alt="Monteo Cast" className="podcast-logo" />
-            <p className="podcast-desc">Conteúdo estratégico para quem quer entender e dominar o mercado de consórcios.</p>
+            <p className="podcast-desc">Conteúdo estratégico para quem quer entender e dominar as estratégias através de consórcios.</p>
+            <a
+              href={PLAYLIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="podcast-channel-btn"
+            >
+              Ver todos os episódios →
+            </a>
           </div>
 
           {/* Direita — Capa do episódio */}
