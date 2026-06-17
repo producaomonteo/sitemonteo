@@ -29,10 +29,10 @@ const Home = () => (
       <InstitutionalProof />
       <Testimonials />
       <MediaSection />
-      <FAQ />
       <PodcastSection />
       <ReceitaPodcastSection />
       <TeamSection />
+      <FAQ />
       <FinalCTA />
     </main>
     <Footer />
