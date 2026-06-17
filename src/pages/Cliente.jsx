@@ -42,35 +42,8 @@ const Cliente = () => {
           </div>
         </section>
 
-        {/* DIFERENCIAIS */}
+        {/* NÚMEROS QUE PROVAM */}
         <section className="page-section page-section--alt">
-          <div className="container">
-            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Diferenciais para Clientes</span>
-            <h2 className="section-title">Por que a Monteo?</h2>
-            <div style={{maxWidth:'860px',marginTop:'40px'}}>
-              {[
-                { title: 'Grupos Exclusivos de Investidores', desc: 'Grupos de investidores que compartilham o mesmo objetivo de crescimento patrimonial.' },
-                { title: 'Gestão Ativa das Cotas', desc: 'Acompanhamento contínuo da cota e oferta de lances para acelerar resultados.' },
-                { title: 'Suporte Estratégico na Aquisição de Imóveis', desc: 'Orientação especializada para decisões mais seguras e inteligentes.' },
-                { title: 'Liquidez para Negociação de Cartas', desc: 'Após a contemplação, não precisa esperar tanto para negociar a carta no mercado.' },
-                { title: 'Especialista Dedicado ao Seu Acompanhamento', desc: 'Suporte consultivo durante toda a sua jornada patrimonial.' },
-                { title: 'Planejamento Patrimonial Personalizado', desc: 'Estratégias alinhadas aos seus objetivos de curto, médio e longo prazo.' }
-              ].map((item, i) => (
-                <details key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.07)',paddingBottom:'0'}}>
-                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500'}}>
-                    <span style={{fontSize:'11px',color:'var(--primary)',fontWeight:'700',minWidth:'28px'}}>{String(i+1).padStart(2,'0')}</span>
-                    {item.title}
-                    <span style={{marginLeft:'auto',color:'var(--primary)',fontSize:'20px'}}>+</span>
-                  </summary>
-                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PROVA */}
-        <section className="page-section">
           <div className="container">
             <span className="label section-label" style={{display:"block",textAlign:"center"}}>Números que provam</span>
             <div className="proof-row">
@@ -86,39 +59,6 @@ const Cliente = () => {
                 <span className="proof-num">15 anos</span>
                 <span className="proof-desc">de atuação</span>
               </div>
-            </div>
-            <div className="testimonials-mini">
-              {[
-                { name: 'Ana Paula M.', text: 'A Monteo transformou minha visão sobre investimento em consórcio. Resultado real e acompanhamento de verdade.' },
-                { name: 'Carlos R.', text: 'Profissionalismo e estratégia que eu nunca tinha visto nesse mercado. Recomendo sem hesitar.' },
-                { name: 'Fernanda L.', text: 'Saí do zero e hoje tenho um patrimônio estruturado graças ao planejamento da equipe Monteo.' },
-              ].map(t => (
-                <div key={t.name} className="mini-card glass-card">
-                  <p className="mini-text">"{t.text}"</p>
-                  <span className="mini-name">— {t.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="page-section page-section--alt">
-          <div className="container faq-container">
-            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Dúvidas frequentes</span>
-            <h2 className="section-title">FAQ</h2>
-            <div className="faq-list">
-              {[
-                { q: 'O consórcio é um bom investimento?', a: 'Sim. Além de ser uma forma disciplinada de acumulação de patrimônio, o consórcio tem taxas muito menores que financiamentos tradicionais.' },
-                { q: 'Quanto tempo leva para ser contemplado?', a: 'A contemplação pode ocorrer a qualquer momento do grupo, seja por sorteio ou lance. Nossa assessoria maximiza suas chances.' },
-                { q: 'Como a Monteo me acompanha?', a: 'Com reuniões mensais, relatórios de posição e suporte direto com seu assessor dedicado durante toda a jornada.' },
-                { q: 'Posso usar o consórcio para imóvel e veículo?', a: 'Sim. Trabalhamos com consórcios de imóveis, veículos leves, pesados e serviços, sempre com as melhores condições do mercado.' },
-              ].map(f => (
-                <details key={f.q} className="faq-item glass-card">
-                  <summary className="faq-question">{f.q}</summary>
-                  <p className="faq-answer">{f.a}</p>
-                </details>
-              ))}
             </div>
           </div>
         </section>
@@ -155,17 +95,40 @@ const Cliente = () => {
           </div>
         </section>
 
+        {/* DIFERENCIAIS */}
+        <section className="page-section page-section--alt">
+          <div className="container">
+            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Diferenciais para Clientes</span>
+            <h2 className="section-title">Por que a Monteo?</h2>
+            <div style={{maxWidth:'860px',marginTop:'40px'}}>
+              {[
+                { title: 'Grupos Exclusivos de Investidores', desc: 'Grupos de investidores que compartilham o mesmo objetivo de crescimento patrimonial.' },
+                { title: 'Gestão Ativa das Cotas', desc: 'Acompanhamento contínuo da cota e oferta de lances para acelerar resultados.' },
+                { title: 'Suporte Estratégico na Aquisição de Imóveis', desc: 'Orientação especializada para decisões mais seguras e inteligentes.' },
+                { title: 'Liquidez para Negociação de Cartas', desc: 'Após a contemplação, não precisa esperar tanto para negociar a carta no mercado.' },
+                { title: 'Especialista Dedicado ao Seu Acompanhamento', desc: 'Suporte consultivo durante toda a sua jornada patrimonial.' },
+                { title: 'Planejamento Patrimonial Personalizado', desc: 'Estratégias alinhadas aos seus objetivos de curto, médio e longo prazo.' }
+              ].map((item, i) => (
+                <details key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.07)'}}>
+                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500'}}>
+                    <span style={{fontSize:'11px',color:'var(--primary)',fontWeight:'700',minWidth:'28px'}}>{String(i+1).padStart(2,'0')}</span>
+                    {item.title}
+                    <span style={{marginLeft:'auto',color:'var(--primary)',fontSize:'20px'}}>+</span>
+                  </summary>
+                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FORMULÁRIO */}
-                        <section className="page-section form-section" id="formulario">
+        <section className="page-section form-section" id="formulario">
           <div className="container" style={{display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center"}}>
             <span style={{fontSize:"10px",letterSpacing:"4px",color:"var(--primary)",fontWeight:"700",textTransform:"uppercase",marginBottom:"14px",display:"block"}}>Dê o primeiro passo</span>
             <h2 style={{fontFamily:"Athelas,Georgia,serif",fontSize:"clamp(32px,4vw,52px)",color:"var(--white)",marginBottom:"16px",textAlign:"center",letterSpacing:"-0.02em"}}>Fale com um especialista</h2>
             <p style={{textAlign:"center",marginBottom:"32px",fontSize:"17px",color:"rgba(255,255,255,0.6)",lineHeight:"1.65",maxWidth:"520px"}}>Preencha seus dados e um especialista Monteo entrará em contato para estruturar seu patrimônio.</p>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}
-            >
+            <button type="button" className="btn btn-primary" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>
               FALE COM UM ESPECIALISTA
             </button>
           </div>

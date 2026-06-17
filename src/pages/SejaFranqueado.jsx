@@ -11,7 +11,6 @@ const SejaFranqueado = () => {
     <div className="monteo-app">
       <Header />
       <main>
-
         {/* HERO */}
         <section className="page-hero">
           <div className="page-hero-overlay" />
@@ -66,55 +65,26 @@ const SejaFranqueado = () => {
           </div>
         </section>
 
-        {/* PROVA */}
+        {/* DEPOIMENTO */}
         <section className="page-section">
           <div className="container">
-            <span className="label section-label">Autoridade comprovada</span>
-            <div className="proof-row">
-              <div className="proof-block">
-                <span className="proof-num">R$ 300 Mi</span>
-                <span className="proof-desc">em vendas estruturadas</span>
-              </div>
-              <div className="proof-block">
-                <span className="proof-num">15 anos</span>
-                <span className="proof-desc">de atuação</span>
-              </div>
-              <div className="proof-block">
-                <span className="proof-num">GPTW</span>
-                <span className="proof-desc">Selo de excelência</span>
-              </div>
-            </div>
-            <div className="testimonials-mini">
-              {[
-                { name: 'Ricardo T.', text: 'Entrei como franqueado há 2 anos e hoje tenho uma operação estruturada com 8 pessoas no time.' },
-                { name: 'Juliana C.', text: 'O método Monteo me deu clareza e previsibilidade. Nunca imaginei crescer tão rápido.' },
-              ].map(t => (
-                <div key={t.name} className="mini-card glass-card">
-                  <p className="mini-text">"{t.text}"</p>
-                  <span className="mini-name">— {t.name}</span>
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Depoimento</span>
+            <h2 className="section-title" style={{textAlign:"center"}}>Quem já faz parte</h2>
+            <div style={{maxWidth:'560px',margin:'40px auto 0',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)'}}>
+              <a href="https://www.youtube.com/watch?v=7HJRnQiB5Eg" target="_blank" rel="noopener noreferrer" style={{display:'block'}}>
+                <div style={{position:'relative',aspectRatio:'16/9'}}>
+                  <img src="https://img.youtube.com/vi/7HJRnQiB5Eg/maxresdefault.jpg" alt="Leanderson Giacomello" style={{width:'100%',height:'100%',objectFit:'cover',display:'block',filter:'brightness(0.8)'}} onError={(e)=>{e.currentTarget.src='https://img.youtube.com/vi/7HJRnQiB5Eg/hqdefault.jpg'}} />
+                  <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center'}}>
+                    <div style={{width:'64px',height:'64px',borderRadius:'50%',background:'rgba(168,112,86,0.9)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff'}}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ETAPAS */}
-        <section className="page-section page-section--alt">
-          <div className="container">
-            <span className="label section-label">Como entrar</span>
-            <h2 className="section-title">Processo seletivo</h2>
-            <div className="steps-grid steps-grid--3">
-              {[
-                { n: '01', title: 'Aplicação', desc: 'Preencha o formulário com seus dados e perfil de interesse.' },
-                { n: '02', title: 'Análise', desc: 'Nossa equipe avalia seu perfil e entra em contato para uma conversa.' },
-                { n: '03', title: 'Aprovação', desc: 'Após aprovado, você recebe o onboarding completo para iniciar sua operação.' },
-              ].map(s => (
-                <div key={s.n} className="step-card glass-card">
-                  <span className="step-number">{s.n}</span>
-                  <h3 className="step-title">{s.title}</h3>
-                  <p className="step-desc">{s.desc}</p>
+                <div style={{padding:'16px 20px',background:'rgba(255,255,255,0.02)'}}>
+                  <span style={{fontSize:'10px',fontWeight:'700',letterSpacing:'2px',color:'var(--primary)',display:'block',marginBottom:'6px'}}>FRANQUEADO MONTEO</span>
+                  <h3 style={{fontSize:'18px',fontWeight:'600',color:'var(--white)'}}>Leanderson Giacomello</h3>
                 </div>
-              ))}
+              </a>
             </div>
           </div>
         </section>
@@ -151,26 +121,23 @@ const SejaFranqueado = () => {
           </div>
         </section>
 
-        {/* DEPOIMENTO */}
-        <section className="page-section">
+        {/* ETAPAS */}
+        <section className="page-section page-section--alt">
           <div className="container">
-            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Depoimento</span>
-            <h2 className="section-title" style={{textAlign:"center"}}>Quem já faz parte</h2>
-            <div style={{maxWidth:'560px',margin:'40px auto 0',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)'}}>
-              <a href="https://www.youtube.com/watch?v=7HJRnQiB5Eg" target="_blank" rel="noopener noreferrer" style={{display:'block'}}>
-                <div style={{position:'relative',aspectRatio:'16/9'}}>
-                  <img src="https://img.youtube.com/vi/7HJRnQiB5Eg/maxresdefault.jpg" alt="Leanderson Giacomello" style={{width:'100%',height:'100%',objectFit:'cover',display:'block',filter:'brightness(0.8)'}} onError={(e)=>{e.currentTarget.src='https://img.youtube.com/vi/7HJRnQiB5Eg/hqdefault.jpg'}} />
-                  <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center'}}>
-                    <div style={{width:'64px',height:'64px',borderRadius:'50%',background:'rgba(168,112,86,0.9)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff'}}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-                    </div>
-                  </div>
+            <span className="label section-label">Como entrar</span>
+            <h2 className="section-title">Processo seletivo</h2>
+            <div className="steps-grid steps-grid--3">
+              {[
+                { n: '01', title: 'Aplicação', desc: 'Preencha o formulário com seus dados e perfil de interesse.' },
+                { n: '02', title: 'Análise', desc: 'Nossa equipe avalia seu perfil e entra em contato para uma conversa.' },
+                { n: '03', title: 'Aprovação', desc: 'Após aprovado, você recebe o onboarding completo para iniciar sua operação.' },
+              ].map(s => (
+                <div key={s.n} className="step-card glass-card">
+                  <span className="step-number">{s.n}</span>
+                  <h3 className="step-title">{s.title}</h3>
+                  <p className="step-desc">{s.desc}</p>
                 </div>
-                <div style={{padding:'16px 20px',background:'rgba(255,255,255,0.02)'}}>
-                  <span style={{fontSize:'10px',fontWeight:'700',letterSpacing:'2px',color:'var(--primary)',display:'block',marginBottom:'6px'}}>FRANQUEADO MONTEO</span>
-                  <h3 style={{fontSize:'18px',fontWeight:'600',color:'var(--white)'}}>Leanderson Giacomello</h3>
-                </div>
-              </a>
+              ))}
             </div>
           </div>
         </section>

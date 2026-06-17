@@ -11,7 +11,6 @@ const MexClub = () => {
     <div className="monteo-app">
       <Header />
       <main>
-
         {/* HERO */}
         <section className="page-hero page-hero--mex">
           <div className="page-hero-overlay" />
@@ -46,39 +45,6 @@ const MexClub = () => {
           </div>
         </section>
 
-        {/* PROVA */}
-        <section className="page-section page-section--alt">
-          <div className="container">
-            <span className="label section-label">Quem já está dentro</span>
-            <div className="proof-row">
-              <div className="proof-block">
-                <span className="proof-num">R$ 1,5 Bi</span>
-                <span className="proof-desc">em cartas sob assessoria</span>
-              </div>
-              <div className="proof-block">
-                <span className="proof-num">15 anos</span>
-                <span className="proof-desc">de atuação no mercado</span>
-              </div>
-              <div className="proof-block">
-                <span className="proof-num">GPTW</span>
-                <span className="proof-desc">Selo de excelência</span>
-              </div>
-            </div>
-            <div className="testimonials-mini">
-              {[
-                { name: 'Marcos V.', text: 'Entrei no MEX Club e em 3 meses já havia dobrado minha produção com as ferramentas e rede de contatos.' },
-                { name: 'Patricia S.', text: 'As comissões e produtos que a Monteo oferece não encontro em nenhum outro lugar do mercado.' },
-                { name: 'Diego A.', text: 'O nível do networking e dos treinamentos é outro. Quem está no MEX Club está anos à frente da concorrência.' },
-              ].map(t => (
-                <div key={t.name} className="mini-card glass-card">
-                  <p className="mini-text">"{t.text}"</p>
-                  <span className="mini-name">— {t.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* PERFIL IDEAL */}
         <section className="page-section">
           <div className="container faq-container">
@@ -89,6 +55,30 @@ const MexClub = () => {
                 Profissionais que já atuam com consórcio e buscam escalar sua operação.<br /><br />
                 Perfil mínimo: <strong>R$ 2 milhões/mês</strong> em produção.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* DEPOIMENTO */}
+        <section className="page-section">
+          <div className="container">
+            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Depoimento</span>
+            <h2 className="section-title" style={{textAlign:"center"}}>Quem já está no próximo nível</h2>
+            <div style={{maxWidth:'560px',margin:'40px auto 0',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)'}}>
+              <a href="https://www.youtube.com/watch?v=w8SNOj5k5vA" target="_blank" rel="noopener noreferrer" style={{display:'block'}}>
+                <div style={{position:'relative',aspectRatio:'16/9'}}>
+                  <img src="https://img.youtube.com/vi/w8SNOj5k5vA/maxresdefault.jpg" alt="Profissional de Consórcio" style={{width:'100%',height:'100%',objectFit:'cover',display:'block',filter:'brightness(0.8)'}} onError={(e)=>{e.currentTarget.src='https://img.youtube.com/vi/w8SNOj5k5vA/hqdefault.jpg'}} />
+                  <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center'}}>
+                    <div style={{width:'64px',height:'64px',borderRadius:'50%',background:'rgba(168,112,86,0.9)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff'}}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'16px 20px',background:'rgba(255,255,255,0.02)'}}>
+                  <span style={{fontSize:'10px',fontWeight:'700',letterSpacing:'2px',color:'var(--primary)',display:'block',marginBottom:'6px'}}>MEX CLUB</span>
+                  <h3 style={{fontSize:'18px',fontWeight:'600',color:'var(--white)'}}>Profissional de Consórcio</h3>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -139,30 +129,6 @@ const MexClub = () => {
                   <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
                 </details>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* DEPOIMENTO */}
-        <section className="page-section">
-          <div className="container">
-            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Depoimento</span>
-            <h2 className="section-title" style={{textAlign:"center"}}>Quem já está no próximo nível</h2>
-            <div style={{maxWidth:'560px',margin:'40px auto 0',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)'}}>
-              <a href="https://www.youtube.com/watch?v=w8SNOj5k5vA" target="_blank" rel="noopener noreferrer" style={{display:'block'}}>
-                <div style={{position:'relative',aspectRatio:'16/9'}}>
-                  <img src="https://img.youtube.com/vi/w8SNOj5k5vA/maxresdefault.jpg" alt="Profissional de Consórcio" style={{width:'100%',height:'100%',objectFit:'cover',display:'block',filter:'brightness(0.8)'}} onError={(e)=>{e.currentTarget.src='https://img.youtube.com/vi/w8SNOj5k5vA/hqdefault.jpg'}} />
-                  <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center'}}>
-                    <div style={{width:'64px',height:'64px',borderRadius:'50%',background:'rgba(168,112,86,0.9)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff'}}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-                    </div>
-                  </div>
-                </div>
-                <div style={{padding:'16px 20px',background:'rgba(255,255,255,0.02)'}}>
-                  <span style={{fontSize:'10px',fontWeight:'700',letterSpacing:'2px',color:'var(--primary)',display:'block',marginBottom:'6px'}}>MEX CLUB</span>
-                  <h3 style={{fontSize:'18px',fontWeight:'600',color:'var(--white)'}}>Profissional de Consórcio</h3>
-                </div>
-              </a>
             </div>
           </div>
         </section>

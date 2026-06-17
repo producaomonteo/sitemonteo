@@ -11,7 +11,6 @@ const SejaParceiro = () => {
     <div className="monteo-app">
       <Header />
       <main>
-
         {/* HERO */}
         <section className="page-hero">
           <div className="page-hero-overlay" />
