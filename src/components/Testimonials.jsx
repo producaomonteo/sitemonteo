@@ -6,8 +6,8 @@ const categories = [
   {
     label: 'Clientes',
     testimonials: [
-      { name: 'Thiago Reis', role: 'MENTOR DE VENDAS', youtubeId: '5pEkPw2L2DQ' },
-      { name: 'Max Jefferson', role: 'CLIENTE MONTEO', youtubeId: 'omfdgae1BQE' },
+      { name: 'Thiago Reis', role: 'EMPRESÁRIO', youtubeId: '5pEkPw2L2DQ' },
+      { name: 'Max Jefferson', role: 'EMPRESÁRIO', youtubeId: 'omfdgae1BQE' },
       { name: 'Dr. Carlos Manfrim', role: 'CIRURGIÃO PLÁSTICO', youtubeId: 'GNMk80NnMfw' }
     ]
   },

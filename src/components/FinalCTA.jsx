@@ -97,7 +97,7 @@ const FinalCTA = () => {
 
   return (
     <>
-      <section className="final-cta">
+      <section className="final-cta" id="proximo-passo">
         <div className="container cta-container">
           <div className="cta-header reveal-up active">
             <span className="label">O SEU PRÓXIMO PASSO</span>

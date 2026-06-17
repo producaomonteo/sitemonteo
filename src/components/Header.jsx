@@ -147,7 +147,7 @@ const Header = () => {
             <button
               type="button"
               className="btn btn-primary btn-sm header-cta-btn header-cta-btn--primary"
-              onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } }))}
+              onClick={() => { const el = document.getElementById('proximo-passo'); if(el) el.scrollIntoView({behavior:'smooth'}); else window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } })); }}
             >
               Quero crescer com a Monteo
             </button>
