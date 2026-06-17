@@ -45,22 +45,25 @@ const Cliente = () => {
         {/* DIFERENCIAIS */}
         <section className="page-section page-section--alt">
           <div className="container">
-            <span className="label section-label" style={{display:"block",textAlign:"center"}}>Diferenciais</span>
+            <span className="label section-label" style={{display:"block",textAlign:"left"}}>Diferenciais para Clientes</span>
             <h2 className="section-title">Por que a Monteo?</h2>
-            <div className="diff-list">
+            <div style={{maxWidth:'860px',marginTop:'40px'}}>
               {[
-                'Planejamento estruturado',
-                'Assessoria especializada',
-                'Time de especialistas',
-                'Acompanhamento mensal',
-                'Orientações imobiliárias',
-                'Liquidez na venda da carta',
-                'Condições exclusivas',
-              ].map(d => (
-                <div key={d} className="diff-pill glass-card">
-                  <span className="diff-pill-dot" />
-                  {d}
-                </div>
+                { title: 'Grupos Exclusivos de Investidores', desc: 'Grupos de investidores que compartilham o mesmo objetivo de crescimento patrimonial.' },
+                { title: 'Gestão Ativa das Cotas', desc: 'Acompanhamento contínuo da cota e oferta de lances para acelerar resultados.' },
+                { title: 'Suporte Estratégico na Aquisição de Imóveis', desc: 'Orientação especializada para decisões mais seguras e inteligentes.' },
+                { title: 'Liquidez para Negociação de Cartas', desc: 'Após a contemplação, não precisa esperar tanto para negociar a carta no mercado.' },
+                { title: 'Especialista Dedicado ao Seu Acompanhamento', desc: 'Suporte consultivo durante toda a sua jornada patrimonial.' },
+                { title: 'Planejamento Patrimonial Personalizado', desc: 'Estratégias alinhadas aos seus objetivos de curto, médio e longo prazo.' }
+              ].map((item, i) => (
+                <details key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.07)',paddingBottom:'0'}}>
+                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500'}}>
+                    <span style={{fontSize:'11px',color:'var(--primary)',fontWeight:'700',minWidth:'28px'}}>{String(i+1).padStart(2,'0')}</span>
+                    {item.title}
+                    <span style={{marginLeft:'auto',color:'var(--primary)',fontSize:'20px'}}>+</span>
+                  </summary>
+                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
+                </details>
               ))}
             </div>
           </div>
