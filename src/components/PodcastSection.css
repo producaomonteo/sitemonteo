@@ -188,5 +188,6 @@
 .podcast-platform-btn--spotify { background: #1DB954; }
 .podcast-platform-btn--spotify:hover { background: #1ed760; }
 
-.podcast-platform-btn--youtube { background: #FF0000; }
-.podcast-platform-btn--youtube:hover { background: #cc0000; }
+.podcast-platform-btn--youtube { background: #fff; color: #000; }
+.podcast-platform-btn--youtube:hover { background: #ececec; }
+.podcast-platform-btn--youtube svg { color: #FF0000; }

@@ -104,5 +104,6 @@
 .receita-platform-btn--spotify { background: #1DB954; }
 .receita-platform-btn--spotify:hover { background: #1ed760; }
 
-.receita-platform-btn--youtube { background: #FF0000; }
-.receita-platform-btn--youtube:hover { background: #cc0000; }
+.receita-platform-btn--youtube { background: #fff; color: #000; }
+.receita-platform-btn--youtube:hover { background: #ececec; }
+.receita-platform-btn--youtube svg { color: #FF0000; }

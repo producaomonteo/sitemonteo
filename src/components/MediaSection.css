@@ -97,7 +97,7 @@
   /* A logo da Istoé precisa de mais altura pra ficar do mesmo
      tamanho visual das outras (igual ao desktop). */
   .media-logo-img--istoe {
-    max-height: 78px;
+    max-height: 96px;
   }
 }
 
