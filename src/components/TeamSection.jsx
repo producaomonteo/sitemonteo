@@ -1,54 +1,34 @@
-import React, { useEffect, useRef, useState } from 'react';
-import img2 from '../assets/images/recepcao-monteo-2.webp';
-import img5 from '../assets/images/foto-premiacao.png';
-import img6 from '../assets/images/foto-treinamento.png';
-import img7 from '../assets/images/foto-convencao2.png';
+import React, { useState } from 'react';
+import img1 from '../assets/images/recepcao-monteo-2.webp';
+import img2 from '../assets/images/escritorio-1.webp';
+import img3 from '../assets/images/escritorio-2.webp';
+import img4 from '../assets/images/escritorio-3.webp';
+import img5 from '../assets/images/escritorio-4.webp';
+import img6 from '../assets/images/escritorio-5.webp';
 import './TeamSection.css';
 
 const images = [
-  { src: img2, alt: 'Escritório Monteo - Ambiente' },
-  { src: img5, alt: 'Monteo - Premiação' },
-  { src: img6, alt: 'Monteo - Treinamento' },
-  { src: img7, alt: 'Monteo - Convenção' }
+  { src: img1, alt: 'Escritório Monteo - Recepção' },
+  { src: img2, alt: 'Escritório Monteo - Hall de entrada' },
+  { src: img3, alt: 'Escritório Monteo - Auditório' },
+  { src: img4, alt: 'Escritório Monteo - Lounge' },
+  { src: img5, alt: 'Escritório Monteo - Corredor' },
+  { src: img6, alt: 'Escritório Monteo - Sala de reunião' }
 ];
-
-const AUTOPLAY_INTERVAL = 4000;
 
 const TeamSection = () => {
   const [current, setCurrent] = useState(0);
-  const timerRef = useRef(null);
 
   const goTo = (idx) => {
     setCurrent((idx + images.length) % images.length);
-  };
-
-  const next = () => goTo(current + 1);
-  const prev = () => goTo(current - 1);
-
-  // Autoplay
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setCurrent((c) => (c + 1) % images.length);
-    }, AUTOPLAY_INTERVAL);
-    return () => clearInterval(timerRef.current);
-  }, []);
-
-  // Reset timer on manual nav
-  const manualNav = (idx) => {
-    clearInterval(timerRef.current);
-    goTo(idx);
-    timerRef.current = setInterval(() => {
-      setCurrent((c) => (c + 1) % images.length);
-    }, AUTOPLAY_INTERVAL);
   };
 
   return (
     <section className="team-section">
       <div className="container">
         <div className="section-header reveal-up active">
-          <span className="label">TIME & ESTRUTURA</span>
-          <h2 className="title">Pessoas que constroem a Monteo.</h2>
-          <p className="subtitle">Fotos reais do nosso escritório, equipe e eventos.</p>
+          <span className="label">ESTRUTURA</span>
+          <h2 className="title">Onde recebemos nossos clientes</h2>
         </div>
 
         <div className="team-carousel" aria-label="Fotos do escritório Monteo">
@@ -73,7 +53,7 @@ const TeamSection = () => {
           <button
             type="button"
             className="team-carousel-btn team-carousel-btn--prev"
-            onClick={() => manualNav(current - 1)}
+            onClick={() => goTo(current - 1)}
             aria-label="Foto anterior"
           >
             ‹
@@ -81,7 +61,7 @@ const TeamSection = () => {
           <button
             type="button"
             className="team-carousel-btn team-carousel-btn--next"
-            onClick={() => manualNav(current + 1)}
+            onClick={() => goTo(current + 1)}
             aria-label="Próxima foto"
           >
             ›
@@ -93,7 +73,7 @@ const TeamSection = () => {
                 key={i}
                 type="button"
                 className={`team-carousel-dot${i === current ? ' is-active' : ''}`}
-                onClick={() => manualNav(i)}
+                onClick={() => goTo(i)}
                 aria-label={`Ir para foto ${i + 1}`}
               />
             ))}
