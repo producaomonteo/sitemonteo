@@ -75,3 +75,34 @@
     padding: 88px var(--page-gutter, 20px) 96px;
   }
 }
+
+/* ── Botões de plataforma (Spotify + YouTube) ── */
+.receita-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.receita-platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  width: fit-content;
+}
+
+.receita-platform-btn:hover {
+  transform: translateY(-2px);
+}
+
+.receita-platform-btn--spotify { background: #1DB954; }
+.receita-platform-btn--spotify:hover { background: #1ed760; }
+
+.receita-platform-btn--youtube { background: #FF0000; }
+.receita-platform-btn--youtube:hover { background: #cc0000; }

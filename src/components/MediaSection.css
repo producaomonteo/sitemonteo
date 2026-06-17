@@ -93,6 +93,12 @@
     max-width: min(200px, 72vw);
     margin: 0 auto;
   }
+
+  /* A logo da Istoé precisa de mais altura pra ficar do mesmo
+     tamanho visual das outras (igual ao desktop). */
+  .media-logo-img--istoe {
+    max-height: 78px;
+  }
 }
 
 .media-logo-link {

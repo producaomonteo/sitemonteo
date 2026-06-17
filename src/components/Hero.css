@@ -192,6 +192,14 @@
     min-height: min(100vh, 720px);
   }
 
+  /* No mobile a foto landscape ficava com muito zoom (cover esticava
+     pra cobrir a altura). Aqui mostramos a largura inteira da imagem. */
+  .hero-bg {
+    background-size: 100% auto;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+  }
+
   .hero-label {
     font-size: 9px;
     letter-spacing: 3.5px;
