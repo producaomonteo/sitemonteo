@@ -14,10 +14,7 @@ const faqs = [
     q: 'Existe risco nesse tipo de estratégia?',
     a: 'Como toda decisão financeira, essa estratégia exige planejamento e critérios bem definidos. As administradoras de consórcio são regulamentadas e fiscalizadas pelo Banco Central, trazendo segurança e transparência para o segmento. Por isso, a Monteo atua com algumas das principais administradoras do mercado e busca estruturar estratégias alinhadas ao perfil de cada cliente.'
   },
-  {
-    q: 'Por que médicos utilizam esse tipo de estratégia?',
-    a: 'Porque ela permite acelerar a construção patrimonial, preservando liquidez e reduzindo a necessidade de utilizar grandes volumes de capital próprio. Por isso, é uma estratégia amplamente utilizada por profissionais que buscam crescimento patrimonial no longo prazo.'
-  },
+
   {
     q: 'Preciso investir grandes valores para começar?',
     a: 'Não. Um dos principais diferenciais dessa estratégia é justamente a possibilidade de construir patrimônio de forma gradual, através de aportes mensais planejados, sem a necessidade de imobilizar grandes volumes de capital próprio.'
@@ -32,7 +29,9 @@ const faqs = [
   },
   {
     q: 'Onde posso aprender mais sobre construção patrimonial através de consórcios?',
-    a: 'Você pode acompanhar o Monteocast, canal oficial de conteúdo da Monteo sobre construção patrimonial e estratégias de longo prazo. Os episódios estão disponíveis gratuitamente no YouTube e Spotify.'
+    a: 'Você pode acompanhar o Monteocast, canal oficial de conteúdo da Monteo sobre construção patrimonial e estratégias de longo prazo. Os episódios estão disponíveis gratuitamente no YouTube e Spotify.',
+    link: 'https://www.youtube.com/watch?v=89_4jaPNwxg&list=PLVU13ZzvmqTz4hymX_FdcQUmEDDr1bCPG',
+    linkLabel: 'Assistir Monteocast no YouTube →'
   },
 ];
 
@@ -44,7 +43,16 @@ const FAQItem = ({ item }) => {
         <span className="faq-question">{item.q}</span>
         <span className="faq-icon" aria-hidden>{open ? '−' : '+'}</span>
       </button>
-      {open && <div className="faq-answer"><p>{item.a}</p></div>}
+      {open && (
+        <div className="faq-answer">
+          <p>{item.a}</p>
+          {item.link && (
+            <a href={item.link} target="_blank" rel="noopener noreferrer" className="faq-link-btn">
+              {item.linkLabel}
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 };
