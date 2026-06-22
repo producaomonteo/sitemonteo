@@ -144,13 +144,14 @@ const Header = () => {
               onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>
               Falar com especialista
             </button>
-            <button
-              type="button"
+            <a
+              href="https://hotmart.com/pt-br/club/monteo/products"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary btn-sm header-cta-btn header-cta-btn--primary"
-              onClick={() => { const el = document.getElementById('proximo-passo'); if(el) el.scrollIntoView({behavior:'smooth'}); else window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } })); }}
             >
-              Quero crescer com a Monteo
-            </button>
+              Área de membros
+            </a>
           </div>
 
           <button
@@ -188,13 +189,15 @@ const Header = () => {
                   onClick={() => { closeMenu(); window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } })); }}>
                   Falar com especialista
                 </button>
-                <button
-                  type="button"
+                <a
+                  href="https://hotmart.com/pt-br/club/monteo/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary btn-sm btn-block header-cta-btn header-cta-btn--primary"
-                  onClick={() => { closeMenu(); window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'franqueado' } })); }}
+                  onClick={closeMenu}
                 >
-                  Quero crescer com a Monteo
-                </button>
+                  Área de membros
+                </a>
               </div>
             </div>
           </div>,
