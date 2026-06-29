@@ -212,7 +212,7 @@
     aspect-ratio: 16 / 9;
     z-index: 1;
     overflow: hidden;
-    margin-bottom: 28px;
+    margin-bottom: 8px;
   }
 
   .hero-bg {
