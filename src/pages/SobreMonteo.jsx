@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import MediaSection from '../components/MediaSection';
-import Footer from '../components/Footer';
 import ModalCTA from '../components/ModalCTA';
 import recepcaoImg from '../assets/images/recepcao-monteo-2.webp';
 import './PageHero.css';
@@ -84,7 +83,6 @@ const SobreMonteo = () => {
         </section>
 
       </main>
-      <Footer />
       <ModalCTA />
     </div>
   );
