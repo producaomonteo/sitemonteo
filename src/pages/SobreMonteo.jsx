@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
+import MediaSection from '../components/MediaSection';
+import Footer from '../components/Footer';
 import ModalCTA from '../components/ModalCTA';
 import recepcaoImg from '../assets/images/recepcao-monteo-2.webp';
 import './PageHero.css';
@@ -9,7 +11,7 @@ const SobreMonteo = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <div className="monteo-app">
+    <div className="monteo-app sobre-page">
       <Header />
       <main>
 
@@ -23,20 +25,18 @@ const SobreMonteo = () => {
         </section>
 
         {/* HISTÓRIA */}
-        <section className="page-section">
+        <section className="page-section sobre-historia">
           <div className="container">
-            <span className="label section-label">Nossa história</span>
-            <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'64px', alignItems:'center', marginTop:'40px'}}>
-              <img
-                src={recepcaoImg}
-                alt="Escritório Monteo"
-                style={{width:'100%', borderRadius:'12px', display:'block', boxShadow:'0 16px 48px rgba(0,0,0,0.5)', objectFit:'cover', aspectRatio:'4/3'}}
-              />
-              <div>
-                <h2 style={{fontFamily:'Athelas,Georgia,serif', fontSize:'clamp(28px,3.5vw,46px)', color:'var(--white)', marginBottom:'24px', lineHeight:'1.2', letterSpacing:'-0.02em'}}>15 anos transformando o mercado de consórcios.</h2>
-                <p style={{color:'rgba(255,255,255,0.6)', fontSize:'16px', lineHeight:'1.75', marginBottom:'16px'}}>A Monteo nasceu da visão de que o consórcio, quando bem estruturado, é uma das ferramentas mais poderosas de construção de patrimônio. Em 15 anos de atuação, evoluímos de uma operação local para um ecossistema completo que conecta clientes, franqueados, parceiros e profissionais do setor.</p>
-                <p style={{color:'rgba(255,255,255,0.6)', fontSize:'16px', lineHeight:'1.75'}}>Hoje, com mais de R$ 1,5 bilhão em cartas de crédito sob assessoria e 3.500 clientes atendidos, somos reconhecidos como referência em estrutura, método e estratégia no mercado de consórcios brasileiro.</p>
-              </div>
+            <img
+              src={recepcaoImg}
+              alt="Entrada da Monteo"
+              className="sobre-historia-img"
+            />
+            <div className="sobre-historia-text">
+              <span className="label section-label">Nossa história</span>
+              <h2 className="sobre-historia-title">15 anos transformando o mercado de consórcios.</h2>
+              <p>A Monteo nasceu da visão de que o consórcio, quando bem estruturado, é uma das ferramentas mais poderosas de construção de patrimônio. Em 15 anos de atuação, evoluímos de uma operação local para um ecossistema completo que conecta clientes, franqueados, parceiros e profissionais do setor.</p>
+              <p>Hoje, com mais de R$ 1,5 bilhão em cartas de crédito sob assessoria e 3.500 clientes atendidos, somos reconhecidos como referência em estrutura, método e estratégia no mercado de consórcios brasileiro.</p>
             </div>
           </div>
         </section>
@@ -66,20 +66,8 @@ const SobreMonteo = () => {
           </div>
         </section>
 
-        {/* MÍDIA */}
-        <section className="page-section">
-          <div className="container">
-            <span className="label section-label">Monteo na mídia</span>
-            <h2 className="section-title">Reconhecida pelo mercado</h2>
-            <div className="sobre-midia-logos">
-              {['Exame', 'Valor Econômico', 'InfoMoney', 'Terra', 'Estadão', 'IstoÉ', 'UOL'].map(m => (
-                <div key={m} className="sobre-midia-item glass-card">
-                  <span className="sobre-midia-name">{m}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* MÍDIA — igual à home (Terra, Istoé, Band) */}
+        <MediaSection />
 
         {/* CTA */}
         <section className="page-section page-section--alt sobre-cta-section">
@@ -96,6 +84,7 @@ const SobreMonteo = () => {
         </section>
 
       </main>
+      <Footer />
       <ModalCTA />
     </div>
   );
