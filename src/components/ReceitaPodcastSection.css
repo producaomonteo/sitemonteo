@@ -72,27 +72,20 @@
   }
 
   .receita-section {
-    padding: 88px var(--page-gutter, 20px) 96px;
+    padding: 88px var(--page-gutter, 20px) 48px;
   }
 
-  /* No mobile a foto dos convidados (faixa larga) estava com width:120%
-     e cortava na direita. Aqui ela fica contida e rolável na horizontal:
-     mostra todos os convidados num tamanho legível, sem cortar. */
+  /* No mobile a foto dos convidados aparece INTEIRA, cabendo na largura
+     (sem rolar). Como é uma faixa larga, ela fica baixinha. */
   .receita-right {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    overflow: hidden;
     border-radius: 12px;
   }
 
-  .receita-right::-webkit-scrollbar {
-    display: none;
-  }
-
   .receita-convidados {
-    width: auto;
-    max-width: none;
-    height: 200px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
 
