@@ -7,17 +7,16 @@
 }
 
 .sobre-historia-img {
+  display: block;
   width: 100%;
   max-height: 520px;
   object-fit: cover;
   border-radius: 16px;
-  display: block;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
-  margin-bottom: 48px;
+  margin: 0 auto 48px;
 }
 
 .sobre-historia-text {
-  max-width: 880px;
   text-align: left;
 }
 
@@ -56,18 +55,18 @@
   align-items: flex-start;
 }
 
-/* ── DESKTOP: Nossa História centralizada (foto + texto) ── */
+/* ── DESKTOP: Nossa História centralizada ──
+   Estreitamos o PRÓPRIO container da seção e centralizamos ele.
+   Assim o bloco inteiro (foto + texto) fica no centro da página,
+   sem depender de margin:auto nos filhos. */
 @media (min-width: 769px) {
-  .sobre-page .sobre-historia-img {
-    max-width: 1000px;
+  .sobre-page .sobre-historia .container {
+    max-width: 980px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .sobre-page .sobre-historia-text {
-    max-width: 820px;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
   }
 
@@ -80,7 +79,6 @@
 
 /* ── MOBILE: foto mais próxima da frase do topo ── */
 @media (max-width: 768px) {
-  /* encurta o hero pra foto subir e colar mais na frase */
   .sobre-page .page-hero {
     min-height: auto;
     padding-bottom: 28px;
