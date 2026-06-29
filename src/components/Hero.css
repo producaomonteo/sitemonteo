@@ -198,7 +198,7 @@
     flex-direction: column !important;
     align-items: stretch !important;
     justify-content: flex-start !important;
-    padding-top: calc(env(safe-area-inset-top, 0px) + 20px + 80px + 16px);
+    padding-top: 0 !important;
     padding-bottom: 36px;
     padding-left: 0;
     padding-right: 0;
