@@ -3,7 +3,7 @@ import logoReceita from '../assets/images/logo-receita-sucesso.png';
 import fotoConvidados from '../assets/images/foto-convidados.png';
 import './ReceitaPodcastSection.css';
 
-const SPOTIFY_URL = 'https://open.spotify.com/show/1FKaQlWFScLZvxJCKSl1kv';
+const SPOTIFY_URL = 'https://open.spotify.com/show/0sdIxUVCJCCDJhhupdRFW6';
 const YOUTUBE_URL = 'https://www.youtube.com/@receitadesucessopodcast/videos';
 
 const ReceitaPodcastSection = () => {
