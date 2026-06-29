@@ -68,7 +68,7 @@ const Cliente = () => {
           <div className="container">
             <span className="label section-label" style={{display:"block",textAlign:"center"}}>Depoimentos</span>
             <h2 className="section-title" style={{textAlign:"center"}}>Quem já vive os resultados</h2>
-            <div style={{display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'24px', marginTop:'40px'}}>
+            <div className="depoimentos-grid">
               {[
                 { name: 'Thiago Reis', role: 'EMPRESÁRIO', youtubeId: '5pEkPw2L2DQ' },
                 { name: 'Max Jefferson', role: 'EMPRESÁRIO', youtubeId: 'omfdgae1BQE' },

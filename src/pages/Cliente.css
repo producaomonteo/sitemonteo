@@ -1,1 +1,17 @@
 /* Cliente page specific styles — inherits from PageHero.css */
+
+/* Grade de depoimentos: 3 colunas no desktop, empilhada (1 por linha)
+   no mobile pra os vídeos não ficarem minúsculos. */
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
