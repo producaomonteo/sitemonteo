@@ -100,12 +100,12 @@ const SejaParceiro = () => {
                 { title: 'Planejamento Patrimonial para seus Clientes', desc: 'Uma solução que fortalece o relacionamento e aumenta a percepção de valor da sua marca.' }
               ].map((item, i) => (
                 <details key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.07)'}}>
-                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500'}}>
+                  <summary style={{display:'flex',alignItems:'center',gap:'16px',padding:'20px 0',cursor:'pointer',listStyle:'none',color:'rgba(255,255,255,0.85)',fontSize:'17px',fontWeight:'500',textAlign:'left'}}>
                     <span style={{fontSize:'11px',color:'var(--primary)',fontWeight:'700',minWidth:'28px'}}>{String(i+1).padStart(2,'0')}</span>
                     {item.title}
                     <span style={{marginLeft:'auto',color:'var(--primary)',fontSize:'20px'}}>+</span>
                   </summary>
-                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px'}}>{item.desc}</p>
+                  <p style={{color:'rgba(255,255,255,0.5)',fontSize:'15px',lineHeight:'1.75',padding:'0 0 20px 44px',textAlign:'left'}}>{item.desc}</p>
                 </details>
               ))}
             </div>
