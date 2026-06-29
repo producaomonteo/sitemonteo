@@ -386,14 +386,22 @@
 }
 
 
-/* No mobile o Hero começa no topo, atrás do menu. Deixamos o header
-   mais transparente pra ele não tampar a foto (o blur mantém a leitura). */
+/* No mobile o Hero começa no topo, atrás do menu. O Safari do iPhone tem
+   um bug em que backdrop-filter + transform não funciona (fica opaco),
+   então no mobile NÃO usamos o desfoque: só um fundo semitransparente,
+   que mostra a foto nítida atrás de forma previsível em qualquer celular. */
 @media (max-width: 768px) {
+  .header,
+  .header.is-scrolled {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
   .header {
-    background: rgba(21, 21, 21, 0.22);
+    background: rgba(21, 21, 21, 0.20) !important;
   }
 
   .header.is-scrolled {
-    background: rgba(21, 21, 21, 0.45);
+    background: rgba(21, 21, 21, 0.42) !important;
   }
 }
