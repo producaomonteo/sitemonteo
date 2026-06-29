@@ -188,19 +188,48 @@
 }
 
 @media (max-width: 768px) {
+  /* No mobile o Hero vira coluna: a foto do escritório aparece INTEIRA
+     (16:9, igual ao carrossel da Estrutura) num bloco no topo, e o texto
+     + botões descem logo abaixo — em vez de a foto ficar de fundo
+     ampliada e cortada. */
   .hero {
-    height: auto;
-    min-height: auto;
+    height: auto !important;
+    min-height: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 20px + 80px + 16px);
     padding-bottom: 36px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  /* No mobile: a foto preenche do topo do site até pouco depois dos
-     botões. Ancorada um pouco à direita pra começar no painel branco
-     do MONTEO (pulando o pedaço azul da esquerda). */
+  .hero-bg-container {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
   .hero-bg {
     background-size: cover;
-    background-position: 35% center;
+    background-position: center;
     background-repeat: no-repeat;
+    filter: brightness(0.92);
+  }
+
+  /* sem o escurecimento pesado: aqui a foto aparece aberta, como no carrossel */
+  .hero-overlay {
+    display: none !important;
+  }
+
+  .hero-content {
+    padding-left: var(--page-gutter, 20px);
+    padding-right: var(--page-gutter, 20px);
   }
 
   .hero-label {
@@ -220,10 +249,6 @@
     margin-bottom: 40px;
     padding: 0 2px;
     color: rgba(255, 255, 255, 0.88);
-    text-shadow:
-      0 1px 0 rgba(0, 0, 0, 0.5),
-      0 3px 8px rgba(0, 0, 0, 0.62),
-      0 6px 20px rgba(0, 0, 0, 0.5);
   }
 
   .hero-btns {
@@ -232,12 +257,5 @@
     max-width: 320px;
     margin: 0 auto;
     gap: 14px;
-  }
-
-  .hero-label {
-    text-shadow:
-      0 1px 0 rgba(0, 0, 0, 0.55),
-      0 3px 6px rgba(0, 0, 0, 0.65),
-      0 8px 18px rgba(0, 0, 0, 0.45);
   }
 }
