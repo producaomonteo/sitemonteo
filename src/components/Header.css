@@ -385,3 +385,15 @@
   justify-content: center;
 }
 
+
+/* No mobile o Hero começa no topo, atrás do menu. Deixamos o header
+   mais transparente pra ele não tampar a foto (o blur mantém a leitura). */
+@media (max-width: 768px) {
+  .header {
+    background: rgba(21, 21, 21, 0.22);
+  }
+
+  .header.is-scrolled {
+    background: rgba(21, 21, 21, 0.45);
+  }
+}
