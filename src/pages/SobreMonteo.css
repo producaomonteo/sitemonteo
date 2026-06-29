@@ -5,6 +5,7 @@
 .sobre-page .sobre-historia .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .sobre-historia-img {
