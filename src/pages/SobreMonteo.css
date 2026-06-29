@@ -1,12 +1,24 @@
 /* SobreMonteo page specific styles — inherits from PageHero.css.
    Tudo escopado em .sobre-page para não afetar outras páginas internas. */
 
-/* ── Nossa História: foto grande no topo + texto abaixo ── */
-.sobre-page .sobre-historia .container {
-  display: block;
+/* ── Nossa História: foto grande no topo + texto abaixo, CENTRALIZADO ──
+   Centralização SEM media query: o próprio container da seção fica estreito
+   e centralizado, então o bloco (foto + texto) fica no meio em qualquer tela. */
+/* A seção .page-section deixa o .container como grid/flex no PageHero.css,
+   e nesse caso margin:auto NÃO centraliza (o item fica preso à esquerda).
+   Forçamos display:block + centralização aqui. */
+.sobre-page .sobre-historia {
+  display: block !important;
 }
 
-.sobre-historia-img {
+.sobre-page .sobre-historia > .container {
+  display: block !important;
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.sobre-page .sobre-historia .sobre-historia-img {
   display: block;
   width: 100%;
   max-height: 520px;
@@ -16,11 +28,17 @@
   margin: 0 auto 48px;
 }
 
-.sobre-historia-text {
-  text-align: left;
+.sobre-page .sobre-historia .sobre-historia-text {
+  text-align: center;
 }
 
-.sobre-historia-title {
+.sobre-page .sobre-historia .section-label,
+.sobre-page .sobre-historia .sobre-historia-title,
+.sobre-page .sobre-historia .sobre-historia-text p {
+  text-align: center !important;
+}
+
+.sobre-page .sobre-historia-title {
   font-family: 'Athelas', Georgia, serif;
   font-size: clamp(28px, 3.5vw, 46px);
   color: var(--white);
@@ -29,19 +47,18 @@
   letter-spacing: -0.02em;
 }
 
-.sobre-historia-text p {
+.sobre-page .sobre-historia-text p {
   color: rgba(255, 255, 255, 0.6);
   font-size: 16px;
   line-height: 1.75;
   margin-bottom: 16px;
 }
 
-.sobre-historia-text p:last-child {
+.sobre-page .sobre-historia-text p:last-child {
   margin-bottom: 0;
 }
 
-/* ── Demais seções (números) alinhadas à esquerda ──
-   A seção de CTA "Faça parte" tem alinhamento central por estilo inline. */
+/* ── Demais seções (números) alinhadas à esquerda ── */
 .sobre-page .page-section {
   text-align: left;
 }
@@ -55,29 +72,7 @@
   align-items: flex-start;
 }
 
-/* ── DESKTOP: Nossa História centralizada ──
-   Estreitamos o PRÓPRIO container da seção e centralizamos ele.
-   Assim o bloco inteiro (foto + texto) fica no centro da página,
-   sem depender de margin:auto nos filhos. */
-@media (min-width: 769px) {
-  .sobre-page .sobre-historia .container {
-    max-width: 980px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .sobre-page .sobre-historia-text {
-    text-align: center;
-  }
-
-  .sobre-page .sobre-historia .section-label,
-  .sobre-page .sobre-historia .sobre-historia-title,
-  .sobre-page .sobre-historia-text p {
-    text-align: center !important;
-  }
-}
-
-/* ── MOBILE: foto mais próxima da frase do topo ── */
+/* ── MOBILE: foto mais próxima da frase do topo + foto menor ── */
 @media (max-width: 768px) {
   .sobre-page .page-hero {
     min-height: auto;
@@ -88,7 +83,7 @@
     padding-top: 24px;
   }
 
-  .sobre-historia-img {
+  .sobre-page .sobre-historia .sobre-historia-img {
     max-height: 300px;
     margin-bottom: 32px;
   }
