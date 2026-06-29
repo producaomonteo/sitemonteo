@@ -121,7 +121,7 @@
   align-items: center;
   text-align: center;
   gap: 18px;
-  margin-top: 96px;
+  padding-top: 96px !important;
 }
 
 .footer-logo {
