@@ -101,7 +101,7 @@ const FinalCTA = () => {
         <div className="container cta-container">
           <div className="cta-header reveal-up active">
             <span className="label">O SEU PRÓXIMO PASSO</span>
-            <h2 className="title">Qual é o seu próximo passo dentro da Monteo?</h2>
+            <h2 className="title">Escolha como deseja crescer dentro do Ecossistema Monteo.</h2>
             <p className="subtitle">Escolha sua porta de entrada e comece a transformar sua operação hoje mesmo.</p>
           </div>
           <div className="cta-grid">
@@ -117,6 +117,7 @@ const FinalCTA = () => {
               </button>
             ))}
           </div>
+          <p className="cta-signature">Se não agora, quando?</p>
         </div>
       </section>
 

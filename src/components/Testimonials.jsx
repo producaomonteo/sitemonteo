@@ -29,8 +29,11 @@ const Testimonials = () => {
     <section className="testimonials mesh-bg">
       <div className="container">
         <div className="section-header reveal-up active">
-          <span className="label">HISTÓRIAS REAIS</span>
-          <h2 className="title">Resultados que inspiram.</h2>
+          <span className="label">DEPOIMENTOS</span>
+          <h2 className="title">Histórias reais. Resultados reais.</h2>
+          <p className="subtitle">
+            Mais de 3.500 clientes confiaram na Monteo para construir patrimônio com estratégia.
+          </p>
         </div>
 
         <div className="video-grid">

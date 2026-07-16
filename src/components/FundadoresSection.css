@@ -1,0 +1,132 @@
+.fundadores-section {
+  background: var(--bg-dark);
+  padding: 104px var(--page-gutter, 20px);
+}
+
+.fundadores-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fundadores-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* ── Foto ── */
+.fundadores-media {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fundadores-foto {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: var(--shadow-premium);
+}
+
+.fundadores-legenda {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ── Texto ── */
+.fundadores-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.fundadores-label {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.fundadores-title {
+  font-family: 'Athelas', serif;
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.fundadores-text p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.fundadores-text p:last-child {
+  margin-bottom: 0;
+}
+
+.fundadores-text strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* ── Selos institucionais ── */
+.fundadores-selos {
+  list-style: none;
+  padding: 0;
+  margin: 56px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.fundadores-selo {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--primary-muted);
+  border-radius: 999px;
+  padding: 9px 18px;
+  background: rgba(168, 112, 86, 0.06);
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .fundadores-section {
+    padding: 72px var(--page-gutter, 20px);
+  }
+
+  .fundadores-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .fundadores-media {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .fundadores-title {
+    margin-bottom: 22px;
+  }
+
+  .fundadores-selos {
+    margin-top: 36px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fundadores-selo {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+}

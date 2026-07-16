@@ -315,3 +315,22 @@
     padding: 36px 24px;
   }
 }
+
+/* Assinatura institucional abaixo dos botões do CTA */
+.cta-signature {
+  text-align: center;
+  margin-top: 72px;
+  font-family: 'Athelas', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: 0.01em;
+  color: rgba(168, 112, 86, 0.9);
+}
+
+@media (max-width: 520px) {
+  .cta-signature {
+    margin-top: 56px;
+    font-size: 26px;
+  }
+}

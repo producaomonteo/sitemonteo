@@ -2,6 +2,16 @@
   padding: 160px var(--page-gutter, 20px);
 }
 
+/* Cabeçalho centralizado (label + título + contexto) antes dos vídeos */
+.testimonials .section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.testimonials .section-header .subtitle {
+  margin-top: 6px;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

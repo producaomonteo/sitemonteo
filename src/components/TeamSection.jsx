@@ -28,7 +28,7 @@ const TeamSection = () => {
       <div className="container">
         <div className="section-header reveal-up active">
           <span className="label">ESTRUTURA</span>
-          <h2 className="title">Onde recebemos nossos clientes</h2>
+          <h2 className="title">Onde grandes decisões patrimoniais ganham estratégia.</h2>
         </div>
 
         <div className="team-carousel" aria-label="Fotos do escritório Monteo">

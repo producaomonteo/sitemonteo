@@ -1,76 +1,76 @@
 .media-section {
-  padding: 52px var(--page-gutter, 20px);
+  padding: 76px var(--page-gutter, 20px);
   border-radius: 0;
   border-left: none;
   border-right: none;
   background: rgba(255, 255, 255, 0.015);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logos-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 48px;
-  opacity: 0.32;
+  gap: 96px;
+  opacity: 0.92;
   transition: opacity 0.6s ease;
 }
 
 .logos-wrapper:hover {
-  opacity: 0.65;
+  opacity: 1;
 }
 
 .media-logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 0;
+  flex: 0 0 auto;
   min-width: 0;
-  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .media-logo-item:hover {
-  opacity: 1.5;
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .media-logo-img {
   display: block;
-  height: clamp(20px, 3.2vw, 30px);
+  height: clamp(30px, 4.2vw, 46px);
   width: auto;
-  max-width: min(150px, 26vw);
+  max-width: min(220px, 32vw);
   object-fit: contain;
   object-position: center;
   filter: brightness(0) invert(1);
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .media-logo-img--istoe {
-  height: clamp(70px, 9vw, 110px);
+  height: clamp(110px, 13vw, 172px);
+  max-width: min(300px, 40vw);
 }
 
 .info-label {
   display: block;
   text-align: center;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 4px;
   color: var(--primary);
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   text-transform: uppercase;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
   .media-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 
   .info-label {
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 3px;
-    margin-bottom: 28px;
+    margin-bottom: 40px;
   }
 
   .logos-wrapper {
@@ -78,26 +78,28 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 48px;
+    opacity: 0.95;
   }
 
   .media-logo-item {
     flex: 0 0 auto;
     width: 100%;
-    max-width: 240px;
+    max-width: 260px;
   }
 
   .media-logo-img {
     height: auto;
-    max-height: 32px;
-    max-width: min(200px, 72vw);
+    max-height: 46px;
+    max-width: min(220px, 72vw);
     margin: 0 auto;
   }
 
-  /* A logo da Istoé precisa de mais altura pra ficar do mesmo
-     tamanho visual das outras (igual ao desktop). */
+  /* A logo da Istoé precisa de mais altura/largura pra ficar do mesmo
+     tamanho visual das outras. */
   .media-logo-img--istoe {
-    max-height: 96px;
+    max-height: 190px;
+    max-width: min(300px, 86vw);
   }
 }
 

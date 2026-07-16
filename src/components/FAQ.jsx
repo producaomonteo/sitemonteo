@@ -3,16 +3,16 @@ import './FAQ.css';
 
 const faqs = [
   {
-    q: 'Consórcio só vale a pena se contemplar rápido?',
-    a: 'Não. Embora a contemplação antecipada possa acelerar os resultados, o principal diferencial está na estratégia utilizada. Mesmo em cenários de longo prazo, é possível construir patrimônio de forma eficiente, preservando liquidez e reduzindo a necessidade de utilizar grandes volumes de capital próprio. Por isso, mais importante do que a velocidade da contemplação é a estratégia.'
+    q: 'Existe risco nesse tipo de estratégia?',
+    a: 'Como toda decisão financeira, essa estratégia exige planejamento e critérios bem definidos. As administradoras de consórcio são regulamentadas e fiscalizadas pelo Banco Central, trazendo segurança e transparência para o segmento. Por isso, a Monteo atua com algumas das principais administradoras do mercado e busca estruturar estratégias alinhadas ao perfil de cada cliente.'
   },
   {
     q: 'E se minha contemplação demorar mais do que o esperado?',
     a: 'A contemplação depende de fatores como as características do grupo, a estratégia adotada e a participação ativa do cliente. Por isso, a Monteo realiza uma gestão estratégica contínua buscando potencializar as oportunidades de contemplação. Além disso, mais importante do que a velocidade da contemplação é a estratégia utilizada para a construção patrimonial.'
   },
   {
-    q: 'Existe risco nesse tipo de estratégia?',
-    a: 'Como toda decisão financeira, essa estratégia exige planejamento e critérios bem definidos. As administradoras de consórcio são regulamentadas e fiscalizadas pelo Banco Central, trazendo segurança e transparência para o segmento. Por isso, a Monteo atua com algumas das principais administradoras do mercado e busca estruturar estratégias alinhadas ao perfil de cada cliente.'
+    q: 'Consórcio só vale a pena se contemplar rápido?',
+    a: 'Não. Embora a contemplação antecipada possa acelerar os resultados, o principal diferencial está na estratégia utilizada. Mesmo em cenários de longo prazo, é possível construir patrimônio de forma eficiente, preservando liquidez e reduzindo a necessidade de utilizar grandes volumes de capital próprio. Por isso, mais importante do que a velocidade da contemplação é a estratégia.'
   },
 
   {

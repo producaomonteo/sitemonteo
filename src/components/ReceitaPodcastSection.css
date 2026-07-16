@@ -1,92 +1,44 @@
 .receita-section {
-  padding: 120px var(--page-gutter, 20px) 140px;
+  padding: 76px var(--page-gutter, 20px) 84px;
 }
 
-.receita-layout {
+/* Cabeçalho "CONTEÚDO / Podcast" no topo da área de podcasts */
+.receita-topheader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* Layout 2 colunas no desktop: header à esquerda, carrossel à direita */
+.receita-inner {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 80px;
+  grid-template-columns: 0.82fr 1.35fr;
+  gap: 60px;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Esquerda */
-.receita-left {
+/* ── Cabeçalho: logo + descrição + botões (à esquerda) ── */
+.receita-header {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: flex-start;
+  gap: 22px;
+  text-align: left;
 }
 
 .receita-logo {
   width: 100%;
-  max-width: 300px;
+  max-width: 290px;
   height: auto;
   object-fit: contain;
 }
 
 .receita-desc {
-  color: rgba(255,255,255,0.45);
+  color: rgba(255, 255, 255, 0.45);
   font-size: 16px;
   line-height: 1.7;
-  max-width: 340px;
-}
-
-.receita-spotify-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 24px;
-  border-radius: 40px;
-  background: #1DB954;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  width: fit-content;
-}
-
-.receita-spotify-btn:hover {
-  background: #1ed760;
-  transform: translateY(-2px);
-}
-
-/* Direita */
-.receita-convidados {
-  width: 120%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-}
-
-@media (max-width: 900px) {
-  .receita-layout {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .receita-logo {
-    max-width: 220px;
-  }
-
-  .receita-section {
-    padding: 88px var(--page-gutter, 20px) 48px;
-  }
-
-  /* No mobile a foto dos convidados aparece INTEIRA, cabendo na largura
-     (sem rolar). Como é uma faixa larga, ela fica baixinha. */
-  .receita-right {
-    overflow: hidden;
-    border-radius: 12px;
-  }
-
-  .receita-convidados {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
+  max-width: 380px;
 }
 
 /* ── Botões de plataforma (Spotify + YouTube) ── */
@@ -94,6 +46,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  justify-content: flex-start;
 }
 
 .receita-platform-btn {
@@ -120,3 +73,154 @@
 .receita-platform-btn--youtube { background: #fff; color: #000; }
 .receita-platform-btn--youtube:hover { background: #ececec; }
 .receita-platform-btn--youtube svg { color: #FF0000; }
+
+/* ── Carrossel de convidados (coluna da direita) ── */
+.receita-carousel-wrap {
+  min-width: 0;
+}
+
+.receita-carousel {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.receita-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px;
+  cursor: grab;
+}
+
+.receita-track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.receita-track.is-dragging .receita-slide-img {
+  pointer-events: none;
+}
+
+.receita-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Exatamente 3 cards visíveis (2 gaps de 20px) */
+.receita-slide {
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.receita-slide-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Dica "arraste para o lado" */
+.receita-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.receita-hint svg {
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+/* Setas */
+.receita-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: rgba(21, 21, 21, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.receita-arrow:hover {
+  background: var(--primary);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.receita-arrow--prev { left: 6px; }
+.receita-arrow--next { right: 6px; }
+
+@media (max-width: 900px) {
+  .receita-section {
+    padding: 58px var(--page-gutter, 20px) 56px;
+  }
+
+  /* Empilha: header em cima (centralizado), carrossel embaixo */
+  .receita-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .receita-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .receita-desc {
+    text-align: center;
+  }
+
+  .receita-btns {
+    justify-content: center;
+  }
+
+  .receita-logo {
+    max-width: 230px;
+  }
+}
+
+/* Mobile: 3 cards visíveis, menores, com gap reduzido */
+@media (max-width: 600px) {
+  .receita-track {
+    gap: 10px;
+  }
+
+  .receita-slide {
+    flex-basis: calc((100% - 20px) / 3);
+  }
+
+  .receita-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .receita-arrow--prev { left: 2px; }
+  .receita-arrow--next { right: 2px; }
+}

@@ -1,5 +1,5 @@
 .podcast-section {
-  padding: 120px var(--page-gutter, 20px) 140px;
+  padding: 76px var(--page-gutter, 20px) 84px;
 }
 
 .podcast-layout {
@@ -107,12 +107,26 @@
     gap: 48px;
   }
 
+  /* Centraliza logo, descrição e botões no mobile */
+  .podcast-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .podcast-desc {
+    max-width: 400px;
+  }
+
+  .podcast-btns {
+    justify-content: center;
+  }
+
   .podcast-logo {
     max-width: 240px;
   }
 
   .podcast-section {
-    padding: 88px var(--page-gutter, 20px) 96px;
+    padding: 58px var(--page-gutter, 20px) 64px;
   }
 }
 

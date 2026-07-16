@@ -68,7 +68,7 @@ const Hero = () => {
             O Ecossistema que está transformando o mercado de consórcios no Brasil.
           </p>
           <p className="hero-subtitle stagger-text">
-            Estrutura, método e estratégia para crescimento patrimonial.
+            Construindo patrimônio para clientes. Escalando negócios para parceiros.
           </p>
           <div className="hero-btns">
             <button className="btn btn-primary" onClick={() => window.dispatchEvent(new CustomEvent('openCTAModal', { detail: { origin: 'cliente' } }))}>FALAR COM ESPECIALISTA</button>
