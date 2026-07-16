@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import EcosystemDoors from './components/EcosystemDoors';
+import FundadoresSection from './components/FundadoresSection';
 import InstitutionalProof from './components/InstitutionalProof';
 import Testimonials from './components/Testimonials';
 import MediaSection from './components/MediaSection';
@@ -26,11 +27,12 @@ const Home = () => (
     <main>
       <Hero />
       <EcosystemDoors />
+      <FundadoresSection />
       <InstitutionalProof />
       <Testimonials />
       <MediaSection />
-      <PodcastSection />
       <ReceitaPodcastSection />
+      <PodcastSection />
       <TeamSection />
       <FinalCTA />
       <FAQ />
