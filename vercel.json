@@ -1,5 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
+     "rewrites": [
+       { "source": "/medicos", "destination": "https://monteo-medicos.vercel.app" },
+       { "source": "/medicos/:path*", "destination": "https://monteo-medicos.vercel.app/:path*" },
+       { "source": "/investidores", "destination": "https://monteo-investidores.vercel.app" },
+       { "source": "/investidores/:path*", "destination": "https://monteo-investidores.vercel.app/:path*" },
+       { "source": "/(.*)", "destination": "/index.html" }
+     ]
+   }
