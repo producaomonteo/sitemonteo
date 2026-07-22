@@ -5,12 +5,14 @@ import Hero from './components/Hero';
 import EcosystemDoors from './components/EcosystemDoors';
 import FundadoresSection from './components/FundadoresSection';
 import InstitutionalProof from './components/InstitutionalProof';
+import LiderancaSection from './components/LiderancaSection';
 import Testimonials from './components/Testimonials';
 import MediaSection from './components/MediaSection';
 import FAQ from './components/FAQ';
 import PodcastSection from './components/PodcastSection';
 import ReceitaPodcastSection from './components/ReceitaPodcastSection';
 import TeamSection from './components/TeamSection';
+import CulturaSection from './components/CulturaSection';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import Cliente from './pages/Cliente';
@@ -29,11 +31,13 @@ const Home = () => (
       <EcosystemDoors />
       <FundadoresSection />
       <InstitutionalProof />
+      <LiderancaSection />
       <Testimonials />
       <MediaSection />
       <ReceitaPodcastSection />
       <PodcastSection />
       <TeamSection />
+      <CulturaSection />
       <FinalCTA />
       <FAQ />
     </main>
