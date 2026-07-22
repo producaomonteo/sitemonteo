@@ -1,5 +1,6 @@
 .ecosystem-doors {
   background: var(--bg-dark);
+  padding: 100px var(--page-gutter) 76px;
 }
 
 .ecosystem-doors .section-header {
@@ -156,6 +157,12 @@
 @media (max-width: 768px) {
   .doors-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* menos espaço embaixo (encosta melhor na seção Fundadores) */
+  .ecosystem-doors {
+    padding-top: 68px;
+    padding-bottom: 40px;
   }
 
   .section-header {

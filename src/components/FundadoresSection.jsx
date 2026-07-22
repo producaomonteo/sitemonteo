@@ -3,10 +3,8 @@ import fotoFundadores from '@Imagens/foto-fundadores.webp';
 import './FundadoresSection.css';
 
 const selos = [
-  'Autor Alta Books',
+  'Autores pela Alta Books',
   'Hosts do Receita de Sucesso Podcast',
-  '+15 anos de atuação',
-  'Great Place To Work',
 ];
 
 const FundadoresSection = () => {
@@ -14,14 +12,15 @@ const FundadoresSection = () => {
     <section className="fundadores-section">
       <div className="container">
         <div className="fundadores-grid">
+          <span className="label fundadores-label-top">OS FUNDADORES</span>
           <div className="fundadores-media">
             <img
               src={fotoFundadores}
-              alt="Juciel Oliveira e Karen Oliveira, fundadores da Monteo"
+              alt="Juciel Oliveira e Karen Hasse, fundadores da Monteo"
               className="fundadores-foto"
             />
             <span className="fundadores-legenda">
-              Juciel Oliveira &amp; Karen Oliveira — Fundadores
+              Juciel Oliveira &amp; Karen Hasse — Fundadores
             </span>
           </div>
 
@@ -31,15 +30,10 @@ const FundadoresSection = () => {
 
             <div className="fundadores-text">
               <p>
-                A Monteo nasceu da convicção de que patrimônio não deve depender
-                apenas do tempo, mas de estratégia.
-              </p>
-              <p>
-                Foi com essa visão que <strong>Juciel Oliveira</strong> e{' '}
-                <strong>Karen Oliveira</strong> fundaram a Monteo, com o propósito
-                de construir um ecossistema capaz de acelerar o crescimento
-                patrimonial de clientes e impulsionar o crescimento de empresas e
-                profissionais do mercado de consórcios.
+                <strong>Juciel Oliveira</strong> e <strong>Karen Hasse</strong>{' '}
+                fundaram a Monteo com um objetivo claro: transformar o consórcio
+                em uma ferramenta de construção patrimonial e criar um ecossistema
+                capaz de acelerar clientes, empresas e profissionais do mercado.
               </p>
               <p>
                 Hoje, a Monteo conecta clientes, parceiros e empresas em um dos

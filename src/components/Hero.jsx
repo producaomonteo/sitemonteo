@@ -65,7 +65,7 @@ const Hero = () => {
             <div className="light-beam"></div>
           </h1>
           <p className="hero-headline stagger-text">
-            O Ecossistema que está transformando o mercado de consórcios no Brasil.
+            O Ecossistema que lidera a transformação do mercado brasileiro de consórcios.
           </p>
           <p className="hero-subtitle stagger-text">
             Construindo patrimônio para clientes. Escalando negócios para parceiros.

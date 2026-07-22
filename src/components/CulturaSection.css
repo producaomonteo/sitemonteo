@@ -1,0 +1,107 @@
+.cultura-section {
+  background: var(--bg-dark);
+  padding: 84px var(--page-gutter, 20px);
+}
+
+/* Desktop: texto à esquerda, foto à direita */
+.cultura-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.cultura-content {
+  text-align: left;
+}
+
+.cultura-label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.cultura-title {
+  font-family: 'Athelas', serif;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.cultura-subtitle {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 20px;
+}
+
+.cultura-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 36px;
+}
+
+/* ── Três pilares como selos (igual à seção Fundadores) ── */
+.cultura-pilares {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cultura-pilar {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--primary-muted);
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: rgba(168, 112, 86, 0.06);
+}
+
+.cultura-pilar svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ── Foto (coluna da direita), arredondada ── */
+.cultura-media {
+  width: 100%;
+}
+
+.cultura-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile: empilha — texto em cima, foto embaixo */
+@media (max-width: 900px) {
+  .cultura-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cultura-section {
+    padding: 58px var(--page-gutter, 20px);
+  }
+
+  .cultura-pilar {
+    font-size: 11px;
+    padding: 9px 15px;
+  }
+}

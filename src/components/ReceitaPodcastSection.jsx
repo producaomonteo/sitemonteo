@@ -1,63 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import logoReceita from '../assets/images/logo-receita-sucesso.png';
-import cLuiza from '../assets/images/convidado-luiza-helena.webp';
-import cJoel from '../assets/images/convidado-joel-jota.webp';
-import cCaio from '../assets/images/convidado-caio-carneiro.webp';
-import cGeraldo from '../assets/images/convidado-geraldo-rufino.webp';
-import cAlfredo from '../assets/images/convidado-alfredo-soares.webp';
-import cGustavo from '../assets/images/convidado-gustavo-cerbasi.webp';
+import arteConvidados from '../assets/images/convidados-receita.webp';
 import './ReceitaPodcastSection.css';
 
 const SPOTIFY_URL = 'https://open.spotify.com/show/0sdIxUVCJCCDJhhupdRFW6';
 const YOUTUBE_URL = 'https://www.youtube.com/@receitadesucessopodcast/videos';
 
-const convidados = [
-  { name: 'Alfredo Soares', src: cAlfredo },
-  { name: 'Joel Jota', src: cJoel },
-  { name: 'Gustavo Cerbasi', src: cGustavo },
-  { name: 'Luiza Helena Trajano', src: cLuiza },
-  { name: 'Caio Carneiro', src: cCaio },
-  { name: 'Geraldo Rufino', src: cGeraldo },
-];
-
 const ReceitaPodcastSection = () => {
-  const trackRef = useRef(null);
-  const isDown = useRef(false);
-  const startX = useRef(0);
-  const startScroll = useRef(0);
-
-  const scrollByCards = (dir) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const slide = track.querySelector('.receita-slide');
-    const gap = 20;
-    const amount = slide ? slide.offsetWidth + gap : track.offsetWidth * 0.8;
-    track.scrollBy({ left: dir * amount, behavior: 'smooth' });
-  };
-
-  // Arrastar com o mouse (desktop). No celular, o arraste com o dedo
-  // já funciona de forma nativa pela rolagem horizontal.
-  const handleDown = (e) => {
-    const track = trackRef.current;
-    if (!track) return;
-    isDown.current = true;
-    startX.current = e.pageX;
-    startScroll.current = track.scrollLeft;
-    track.classList.add('is-dragging');
-  };
-
-  const handleMove = (e) => {
-    if (!isDown.current) return;
-    e.preventDefault();
-    const track = trackRef.current;
-    track.scrollLeft = startScroll.current - (e.pageX - startX.current);
-  };
-
-  const handleUp = () => {
-    isDown.current = false;
-    trackRef.current?.classList.remove('is-dragging');
-  };
-
   return (
     <section className="receita-section mesh-bg">
       <div className="container">
@@ -65,8 +14,8 @@ const ReceitaPodcastSection = () => {
           <span className="label">CONTEÚDO</span>
           <h2 className="title">Podcast</h2>
         </div>
-        <div className="receita-inner">
-          <div className="receita-header">
+
+        <div className="receita-header">
           <img src={logoReceita} alt="Receita de Sucesso Podcast" className="receita-logo" />
           <p className="receita-desc">
             Nossos fundadores entrevistam alguns dos maiores nomes do empreendedorismo
@@ -98,61 +47,14 @@ const ReceitaPodcastSection = () => {
           </div>
         </div>
 
-        <div className="receita-carousel-wrap">
-        <div className="receita-carousel">
-          <button
-            type="button"
-            className="receita-arrow receita-arrow--prev"
-            onClick={() => scrollByCards(-1)}
-            aria-label="Ver convidados anteriores"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-
-          <div
-            className="receita-track"
-            ref={trackRef}
-            onMouseDown={handleDown}
-            onMouseMove={handleMove}
-            onMouseUp={handleUp}
-            onMouseLeave={handleUp}
-          >
-            {convidados.map((c) => (
-              <div className="receita-slide" key={c.name}>
-                <img
-                  src={c.src}
-                  alt={`${c.name} no Receita de Sucesso Podcast`}
-                  className="receita-slide-img"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            ))}
-          </div>
-
-          <button
-            type="button"
-            className="receita-arrow receita-arrow--next"
-            onClick={() => scrollByCards(1)}
-            aria-label="Ver mais convidados"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </div>
-
-        <p className="receita-hint">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M5 12h14" />
-            <path d="M12 5l-7 7 7 7" />
-            <path d="M12 5l7 7-7 7" />
-          </svg>
-          Arraste para o lado
-        </p>
-        </div>
+        <div className="receita-convidados-art">
+          <img
+            src={arteConvidados}
+            alt="Convidados do Receita de Sucesso Podcast: Luiza Helena Trajano, Joel Jota, Caio Carneiro, Geraldo Rufino, Alfredo Soares e Gustavo Cerbasi"
+            className="receita-convidados-img"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </section>

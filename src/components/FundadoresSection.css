@@ -1,6 +1,6 @@
 .fundadores-section {
   background: var(--bg-dark);
-  padding: 104px var(--page-gutter, 20px);
+  padding: 84px var(--page-gutter, 20px);
 }
 
 .fundadores-section .container {
@@ -43,6 +43,10 @@
 .fundadores-content {
   display: flex;
   flex-direction: column;
+}
+
+.fundadores-label-top {
+  display: none;
 }
 
 .fundadores-label {
@@ -100,12 +104,23 @@
 /* ── Mobile ── */
 @media (max-width: 900px) {
   .fundadores-section {
-    padding: 72px var(--page-gutter, 20px);
+    padding: 58px var(--page-gutter, 20px);
   }
 
   .fundadores-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 24px;
+  }
+
+  /* No mobile o "OS FUNDADORES" aparece acima da foto */
+  .fundadores-label-top {
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .fundadores-content .fundadores-label {
+    display: none;
   }
 
   .fundadores-media {

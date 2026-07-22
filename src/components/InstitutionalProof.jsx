@@ -93,7 +93,7 @@ const InstitutionalProof = () => {
             <div className="proof-stat-number-wrap">
               <img src={gptwLogo} alt="Great Place to Work" className="proof-gptw-logo" />
             </div>
-            <p className="proof-stat-desc">empresa certificada Great Place To Work</p>
+            <p className="proof-stat-desc">Great Place to Work®</p>
           </div>
           <div className="proof-stat-item">
             <div className="proof-stat-number-wrap">

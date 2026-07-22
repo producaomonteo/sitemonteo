@@ -1,5 +1,11 @@
 .testimonials {
-  padding: 160px var(--page-gutter, 20px);
+  padding: 112px var(--page-gutter, 20px);
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 64px var(--page-gutter, 20px);
+  }
 }
 
 /* Cabeçalho centralizado (label + título + contexto) antes dos vídeos */

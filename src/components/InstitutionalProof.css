@@ -1,6 +1,6 @@
 .institutional-proof {
   background: var(--bg-dark);
-  padding: 100px var(--page-gutter, 20px) 112px;
+  padding: 84px var(--page-gutter, 20px) 90px;
 }
 
 .proof-label {
@@ -110,7 +110,7 @@
 
 @media (max-width: 520px) {
   .institutional-proof {
-    padding: 72px var(--page-gutter, 20px) 80px;
+    padding: 58px var(--page-gutter, 20px) 64px;
   }
 
   .proof-label {
