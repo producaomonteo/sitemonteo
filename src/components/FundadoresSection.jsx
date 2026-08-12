@@ -40,16 +40,16 @@ const FundadoresSection = () => {
                 ecossistemas que mais cresce no mercado brasileiro de consórcios.
               </p>
             </div>
+
+            <ul className="fundadores-selos">
+              {selos.map((selo) => (
+                <li key={selo} className="fundadores-selo">
+                  {selo}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-
-        <ul className="fundadores-selos">
-          {selos.map((selo) => (
-            <li key={selo} className="fundadores-selo">
-              {selo}
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

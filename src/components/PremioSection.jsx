@@ -1,6 +1,5 @@
 import React from 'react';
 import premioFoto from '../assets/images/premio-real-estate.webp';
-import awardsLogo from '../assets/images/real-estate-awards-logo.png';
 import './PremioSection.css';
 
 const PremioSection = () => {
@@ -8,11 +7,6 @@ const PremioSection = () => {
     <section className="premio-section">
       <div className="container premio-grid">
         <div className="premio-content">
-          <img
-            src={awardsLogo}
-            alt="Real Estate Awards 2026"
-            className="premio-logo"
-          />
           <span className="premio-ano">Real Estate Awards 2026</span>
           <h2 className="premio-title">
             Eleita a Melhor Empresa de Consórcio Imobiliário do Brasil

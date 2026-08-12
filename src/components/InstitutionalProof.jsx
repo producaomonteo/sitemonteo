@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { animate as anime } from 'animejs';
 import gptwLogo from '../assets/images/gptw-oficial.png';
+import awardsLogo from '../assets/images/real-estate-awards-logo.png';
 import './InstitutionalProof.css';
 const StatCounter = ({
   value,
@@ -103,9 +104,9 @@ const InstitutionalProof = () => {
           </div>
           <div className="proof-stat-item">
             <div className="proof-stat-number-wrap">
-              <h2 className="proof-stat-number">+<StatCounter value="100" suffix="" integerPtBR /></h2>
+              <img src={awardsLogo} alt="Real Estate Awards 2026" className="proof-awards-logo" />
             </div>
-            <p className="proof-stat-desc">franqueados e parceiros</p>
+            <p className="proof-stat-desc">Melhor Empresa de Consórcio Imobiliário do Brasil</p>
           </div>
         </div>
       </div>
