@@ -1,5 +1,5 @@
 .testimonials {
-  padding: 112px var(--page-gutter, 20px);
+  padding: 92px var(--page-gutter, 20px) 112px;
 }
 
 @media (max-width: 768px) {
@@ -142,8 +142,8 @@
 
 @media (max-width: 768px) {
   .testimonials {
-    padding-top: 88px;
-    padding-bottom: 88px;
+    padding-top: 56px;
+    padding-bottom: 80px;
   }
 
   .testimonials .section-header .label {

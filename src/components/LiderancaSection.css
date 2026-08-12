@@ -1,6 +1,6 @@
 .lideranca-section {
   background: var(--bg-dark);
-  padding: 40px var(--page-gutter, 20px) 96px;
+  padding: 40px var(--page-gutter, 20px) 72px;
 }
 
 .lideranca-section .container {
@@ -39,7 +39,7 @@
 
 @media (max-width: 768px) {
   .lideranca-section {
-    padding: 24px var(--page-gutter, 20px) 64px;
+    padding: 24px var(--page-gutter, 20px) 40px;
   }
 
   .lideranca-label {

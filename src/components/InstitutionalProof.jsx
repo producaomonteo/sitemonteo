@@ -74,7 +74,7 @@ const InstitutionalProof = () => {
         <div className="proof-stats-grid">
           <div className="proof-stat-item">
             <div className="proof-stat-number-wrap">
-              <h2 className="proof-stat-number">+R$&nbsp;<StatCounter value="1" suffix="" /><span className="proof-stat-unit">Bi</span></h2>
+              <h2 className="proof-stat-number">+R$&nbsp;<StatCounter value="1" suffix="" /><span className="proof-stat-unit proof-stat-unit--bi">Bi</span></h2>
             </div>
             <p className="proof-stat-desc">em negócios gerados anualmente pelo Ecossistema Monteo</p>
           </div>

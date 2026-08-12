@@ -68,6 +68,13 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* "Bi" um pouco maior que as demais unidades, para equilibrar a leitura */
+.proof-stat-unit--bi {
+  font-size: 0.58em;
+  margin-left: 6px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .proof-stat-desc {
   font-size: 12px;
   letter-spacing: 2px;
@@ -127,6 +134,10 @@
 
   .proof-stat-number {
     font-size: clamp(34px, 11vw, 46px);
+  }
+
+  .proof-stat-unit--bi {
+    font-size: 0.54em;
   }
 
   .proof-stat-desc {

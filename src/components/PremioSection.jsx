@@ -12,12 +12,9 @@ const PremioSection = () => {
             Eleita a Melhor Empresa de Consórcio Imobiliário do Brasil
           </h2>
           <p className="premio-text">
-            A Monteo foi reconhecida no Real Estate Awards 2026 como a Melhor Empresa
-            de Consórcio Imobiliário do Brasil.
-          </p>
-          <p className="premio-subtext">
-            Um reconhecimento que celebra não apenas nossos resultados, mas a história
-            construída por nosso time, clientes e parceiros.
+            No Real Estate Awards 2026, a Monteo foi reconhecida nacionalmente por
+            uma trajetória construída com resultados, excelência e a confiança de
+            clientes, parceiros e de todo o nosso time.
           </p>
         </div>
 
