@@ -1,0 +1,92 @@
+.premio-section {
+  background: var(--bg-dark);
+  padding: 84px var(--page-gutter, 20px);
+}
+
+.premio-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ── Texto ── */
+.premio-content {
+  text-align: left;
+}
+
+.premio-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.premio-ano {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+
+.premio-title {
+  font-family: 'Athelas', serif;
+  font-size: clamp(28px, 3.3vw, 46px);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.premio-text {
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 18px;
+}
+
+.premio-subtext {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Foto ── */
+.premio-media {
+  width: 100%;
+}
+
+.premio-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Mobile: empilha — texto em cima, foto embaixo */
+@media (max-width: 900px) {
+  .premio-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .premio-media {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .premio-section {
+    padding: 58px var(--page-gutter, 20px);
+  }
+
+  .premio-logo {
+    height: 44px;
+  }
+}
