@@ -1,10 +1,15 @@
 {
   "redirects": [
-    {
-      "source": "/:slug(amandatanno|consultoriafinanceira|invi|conhecaamonteolt|alavancagem)/?",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/amandatanno", "destination": "/", "permanent": true },
+    { "source": "/amandatanno/", "destination": "/", "permanent": true },
+    { "source": "/consultoriafinanceira", "destination": "/", "permanent": true },
+    { "source": "/consultoriafinanceira/", "destination": "/", "permanent": true },
+    { "source": "/invi", "destination": "/", "permanent": true },
+    { "source": "/invi/", "destination": "/", "permanent": true },
+    { "source": "/conhecaamonteolt", "destination": "/", "permanent": true },
+    { "source": "/conhecaamonteolt/", "destination": "/", "permanent": true },
+    { "source": "/alavancagem", "destination": "/", "permanent": true },
+    { "source": "/alavancagem/", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/medicos", "destination": "https://monteo-medicos.vercel.app" },
