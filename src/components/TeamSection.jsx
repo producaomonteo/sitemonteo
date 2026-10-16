@@ -10,10 +10,10 @@ import './TeamSection.css';
 const images = [
   { src: img1, alt: 'Escritório Monteo - Recepção' },
   { src: img2, alt: 'Escritório Monteo - Hall de entrada' },
-  { src: img3, alt: 'Escritório Monteo - Auditório' },
-  { src: img4, alt: 'Escritório Monteo - Lounge' },
-  { src: img5, alt: 'Escritório Monteo - Corredor' },
-  { src: img6, alt: 'Escritório Monteo - Sala de reunião' }
+  { src: img3, alt: 'Escritório Monteo - Sala de reunião' },
+  { src: img4, alt: 'Escritório Monteo - Corredor' },
+  { src: img5, alt: 'Escritório Monteo - Lounge' },
+  { src: img6, alt: 'Escritório Monteo - Auditório' }
 ];
 
 const TeamSection = () => {
