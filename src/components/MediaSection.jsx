@@ -2,6 +2,7 @@ import React from 'react';
 import logoTerra from '@Imagens/Logo Terra (1).svg';
 import logoIstoe from '../assets/images/logo-istoe.png';
 import logoBand from '../assets/images/logo-band.png';
+import logoInfoMoney from '@Imagens/Logo-Info-Money.svg';
 import './MediaSection.css';
 
 const mediaLogos = [
@@ -19,6 +20,11 @@ const mediaLogos = [
     alt: 'Band',
     src: logoBand,
     href: 'https://www.band.com.br/economia/noticias/regra-dos-2-especialista-ensina-como-organizar-contas-para-viver-de-renda-202601301343'
+  },
+  {
+    alt: 'InfoMoney',
+    src: logoInfoMoney,
+    href: 'https://www.infomoney.com.br/minhas-financas/consorcio-imobiliario-investidores/'
   }
 ];
 
