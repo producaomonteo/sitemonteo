@@ -59,6 +59,11 @@
   justify-content: center;
 }
 
+/* +R$ 1 Bi: números alinhados (o "1" na altura cheia) */
+.proof-stat-item:first-child .proof-stat-number {
+  font-variant-numeric: lining-nums;
+}
+
 /* unidades ("Bi", "anos") menores ao lado do número */
 .proof-stat-unit {
   font-family: 'Athelas', serif;
@@ -68,9 +73,9 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* "Bi" um pouco maior que as demais unidades, para equilibrar a leitura */
+/* "Bi" maior que as demais unidades, para equilibrar a leitura */
 .proof-stat-unit--bi {
-  font-size: 0.58em;
+  font-size: 0.72em;
   margin-left: 6px;
   color: rgba(255, 255, 255, 0.92);
 }
@@ -137,7 +142,7 @@
   }
 
   .proof-stat-unit--bi {
-    font-size: 0.54em;
+    font-size: 0.68em;
   }
 
   .proof-stat-desc {
