@@ -21,11 +21,21 @@
   --page-gutter: 20px;
 }
 
+/* Fonte serifada: Cormorant Garamond (mantém o nome 'Athelas' para valer no site todo) */
 @font-face {
   font-family: 'Athelas';
-  src: url('./assets/fonts/Athelas.ttc') format('truetype-collection');
-  font-weight: normal;
+  src: url('./assets/fonts/CormorantGaramond.woff2') format('woff2');
+  font-weight: 300 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Athelas';
+  src: url('./assets/fonts/CormorantGaramond-Italic.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -82,7 +92,7 @@ body::before {
 
 h1, h2, h3, .athelas {
   font-family: 'Athelas', serif;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
