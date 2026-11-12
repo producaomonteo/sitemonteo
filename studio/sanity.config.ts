@@ -6,7 +6,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'blog Monteo',
+  title: 'Monteo',
 
   projectId: '5ved96b8',
   dataset: 'production',

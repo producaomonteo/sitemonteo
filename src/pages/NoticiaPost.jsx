@@ -143,7 +143,7 @@ const NoticiaPost = () => {
     <div className="monteo-app noticia-page">
       {noticia && (
         <Helmet>
-          <title>{`${metaTitle} — Blog Monteo`}</title>
+          <title>{`${metaTitle} | Monteo`}</title>
           <meta name="description" content={metaDescription} />
           {canonical && <link rel="canonical" href={canonical} />}
           <meta property="og:type" content="article" />

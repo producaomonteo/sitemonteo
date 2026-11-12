@@ -46,7 +46,7 @@ const Noticias = () => {
     return noticias.filter((n) => n.categoria === filtro);
   }, [noticias, filtro]);
 
-  const pageTitle = 'Notícias — Blog Monteo';
+  const pageTitle = 'Notícias | Monteo';
   const pageDescription = 'Estratégia, mercado e conhecimento sobre consórcio, patrimônio e investimentos pela Monteo.';
 
   return (
