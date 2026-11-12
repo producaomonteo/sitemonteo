@@ -1,0 +1,269 @@
+/* ─────────────────────────────────────────────────────────
+   Tema CLARO — somente para /noticias e /noticias/[slug].
+   Navbar e rodapé permanecem escuros (estão fora deste
+   container).
+   ───────────────────────────────────────────────────────── */
+
+.noticia-page {
+  --noticia-bg: #ffffff;
+  --noticia-bg-alt: #f5f3f0;
+  --noticia-text: #1a1a1a;
+  --noticia-text-muted: #5a5a5a;
+  --noticia-text-soft: #7a7a7a;
+  --noticia-text-faint: #9a9a9a;
+  --noticia-border: rgba(0, 0, 0, 0.08);
+  --noticia-border-strong: rgba(0, 0, 0, 0.14);
+  --noticia-primary: #7a4a30;
+  --noticia-primary-hover: #5f3922;
+  background: var(--noticia-bg);
+}
+
+/* ── Hero da listagem /noticias ─────────────────────────── */
+.noticia-page .page-hero {
+  background: var(--noticia-bg);
+}
+
+.noticia-page .page-hero-overlay {
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(168, 112, 86, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(245, 243, 240, 0.9) 0%, transparent 70%);
+}
+
+.noticia-page .page-hero-title {
+  color: var(--noticia-text);
+}
+
+.noticia-page .page-hero-subtitle {
+  color: var(--noticia-text-muted);
+}
+
+.noticia-page .page-hero-content .label,
+.noticia-page .label {
+  color: var(--noticia-primary);
+}
+
+/* ── Seções base ────────────────────────────────────────── */
+.noticia-page .page-section {
+  background: var(--noticia-bg);
+}
+
+.noticia-page .page-section--alt {
+  background: var(--noticia-bg-alt);
+}
+
+.noticia-page .section-title {
+  color: var(--noticia-text);
+}
+
+/* ── Hero do post individual ────────────────────────────── */
+.noticia-page .post-hero {
+  background: var(--noticia-bg);
+}
+
+.noticia-page .post-title {
+  color: var(--noticia-text);
+}
+
+.noticia-page .post-lede {
+  color: var(--noticia-text-muted);
+}
+
+.noticia-page .post-breadcrumb-nav {
+  color: var(--noticia-text-soft);
+}
+
+.noticia-page .post-breadcrumb-nav a {
+  color: var(--noticia-primary);
+}
+
+.noticia-page .post-breadcrumb-nav a:hover {
+  color: var(--noticia-primary-hover);
+}
+
+.noticia-page .post-breadcrumb-sep {
+  color: var(--noticia-text-faint);
+}
+
+.noticia-page .post-byline-author {
+  color: var(--noticia-text);
+}
+
+.noticia-page .post-byline-photo {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.noticia-page .post-byline-time {
+  color: var(--noticia-text-soft);
+}
+
+.noticia-page .post-divider {
+  border-top-color: var(--noticia-border);
+}
+
+/* ── Corpo do post ──────────────────────────────────────── */
+.noticia-page .post-body-section {
+  background: var(--noticia-bg);
+}
+
+.noticia-page .post-body {
+  color: var(--noticia-text);
+}
+
+.noticia-page .post-paragraph {
+  color: #2a2a2a;
+}
+
+.noticia-page .post-h2,
+.noticia-page .post-h3 {
+  color: var(--noticia-text);
+}
+
+.noticia-page .post-link {
+  color: var(--noticia-primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(122, 74, 48, 0.4);
+}
+
+.noticia-page .post-link:hover {
+  color: var(--noticia-primary-hover);
+  text-decoration-color: var(--noticia-primary);
+}
+
+.noticia-page .post-list {
+  color: #2a2a2a;
+}
+
+.noticia-page .post-quote {
+  border-left-color: var(--noticia-primary);
+  color: var(--noticia-text);
+}
+
+.noticia-page .post-figure figcaption,
+.noticia-page .post-cover-inline figcaption {
+  color: var(--noticia-text-soft);
+}
+
+.noticia-page .post-callout {
+  background: rgba(122, 74, 48, 0.06);
+  border-color: rgba(122, 74, 48, 0.2);
+}
+
+.noticia-page .post-callout-title {
+  color: var(--noticia-text);
+}
+
+.noticia-page .post-callout-item {
+  color: var(--noticia-text);
+}
+
+.noticia-page .post-callout-item::before {
+  background: var(--noticia-primary);
+}
+
+/* ── Cards de notícia (listagem + relacionadas) ────────── */
+.noticia-page .noticia-card.glass-card {
+  background: var(--noticia-bg);
+  border-color: var(--noticia-border);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.noticia-page .noticia-card:hover {
+  border-color: rgba(122, 74, 48, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.noticia-page .noticia-card-media {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.noticia-page .noticia-card-category {
+  color: var(--noticia-primary);
+}
+
+.noticia-page .noticia-card-title {
+  color: var(--noticia-text);
+}
+
+.noticia-page .noticia-card-excerpt {
+  color: var(--noticia-text-muted);
+}
+
+.noticia-page .noticia-card-footer {
+  border-top-color: var(--noticia-border);
+  color: var(--noticia-text-faint);
+}
+
+.noticia-page .noticia-card-cta {
+  color: var(--noticia-primary);
+}
+
+/* ── Filtros ────────────────────────────────────────────── */
+.noticia-page .noticia-filter {
+  background: var(--noticia-bg);
+  border-color: var(--noticia-border);
+  color: var(--noticia-text-muted);
+}
+
+.noticia-page .noticia-filter:hover {
+  border-color: rgba(122, 74, 48, 0.35);
+  color: var(--noticia-text);
+}
+
+.noticia-page .noticia-filter.is-active {
+  background: rgba(122, 74, 48, 0.08);
+  border-color: rgba(122, 74, 48, 0.5);
+  color: var(--noticia-primary);
+}
+
+/* ── Botões em fundo claro ──────────────────────────────── */
+.noticia-page .btn-outline {
+  background: transparent;
+  border: 1px solid var(--noticia-border-strong);
+  color: var(--noticia-text);
+}
+
+.noticia-page .btn-outline:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(122, 74, 48, 0.45);
+  color: var(--noticia-primary);
+}
+
+.noticia-page .btn-primary {
+  background: var(--noticia-primary);
+  box-shadow:
+    0 0 0 1px rgba(122, 74, 48, 0.3),
+    0 10px 24px rgba(122, 74, 48, 0.2);
+}
+
+.noticia-page .btn-primary:hover {
+  background: var(--noticia-primary-hover);
+  box-shadow:
+    0 0 0 1px rgba(122, 74, 48, 0.5),
+    0 14px 36px rgba(122, 74, 48, 0.3);
+}
+
+/* ── Estados de loading / erro / vazio ─────────────────── */
+.noticia-page .noticia-state-text {
+  color: var(--noticia-text-soft);
+}
+
+.noticia-page .noticia-soon-card.glass-card {
+  background: var(--noticia-bg);
+  border-color: var(--noticia-border);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.noticia-page .noticia-soon-title {
+  color: var(--noticia-text);
+}
+
+.noticia-page .noticia-soon-text {
+  color: var(--noticia-text-muted);
+}
+
+.noticia-page .noticia-soon-icon {
+  color: var(--noticia-primary);
+}

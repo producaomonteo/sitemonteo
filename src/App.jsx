@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import EcosystemDoors from './components/EcosystemDoors';
@@ -16,52 +16,86 @@ import TeamSection from './components/TeamSection';
 import CulturaSection from './components/CulturaSection';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import NoticiasHomeSection from './components/NoticiasHomeSection';
 import Cliente from './pages/Cliente';
 import SejaFranqueado from './pages/SejaFranqueado';
 import SejaParceiro from './pages/SejaParceiro';
 import MexClub from './pages/MexClub';
 import SobreMonteo from './pages/SobreMonteo';
-import Blog from './pages/Blog';
 import Contato from './pages/Contato';
+import Noticias, { noticiasLoader } from './pages/Noticias';
+import NoticiaPost, {
+  noticiaPostLoader,
+  noticiaPostStaticPaths,
+} from './pages/NoticiaPost';
+import { sanityClient } from './lib/sanity';
+import { NOTICIAS_HOME_QUERY } from './lib/queries';
 
-const Home = () => (
-  <div className="monteo-app">
+const homeLoader = async () => {
+  try {
+    const { destaque, candidatos } = await sanityClient.fetch(NOTICIAS_HOME_QUERY);
+    const resto = (candidatos || []).filter((c) => !destaque || c._id !== destaque._id);
+    const combinadas = destaque ? [destaque, ...resto] : resto;
+    return { noticias: combinadas.slice(0, 3) };
+  } catch {
+    return { noticias: [] };
+  }
+};
+
+const Home = () => {
+  const { noticias } = useLoaderData() || { noticias: [] };
+  return (
+    <div className="monteo-app">
+      <Header />
+      <main>
+        <Hero />
+        <EcosystemDoors />
+        <FundadoresSection />
+        <InstitutionalProof />
+        <LiderancaSection />
+        <PremioSection />
+        <Testimonials />
+        <MediaSection />
+        <ReceitaPodcastSection />
+        <PodcastSection />
+        <TeamSection />
+        <CulturaSection />
+        <FinalCTA />
+        <FAQ />
+        <NoticiasHomeSection noticias={noticias} />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+const wrapWithShell = (Page) => (
+  <>
     <Header />
-    <main>
-      <Hero />
-      <EcosystemDoors />
-      <FundadoresSection />
-      <InstitutionalProof />
-      <LiderancaSection />
-      <PremioSection />
-      <Testimonials />
-      <MediaSection />
-      <ReceitaPodcastSection />
-      <PodcastSection />
-      <TeamSection />
-      <CulturaSection />
-      <FinalCTA />
-      <FAQ />
-    </main>
+    <Page />
     <Footer />
-  </div>
+  </>
 );
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cliente" element={<><Header /><Cliente /><Footer /></>} />
-        <Route path="/seja-franqueado" element={<><Header /><SejaFranqueado /><Footer /></>} />
-        <Route path="/seja-parceiro" element={<><Header /><SejaParceiro /><Footer /></>} />
-        <Route path="/profissionais-de-consorcio" element={<><Header /><MexClub /><Footer /></>} />
-        <Route path="/sobre-a-monteo" element={<><Header /><SobreMonteo /><Footer /></>} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contato" element={<><Header /><Contato /><Footer /></>} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;
+export const routes = [
+  { path: '/', element: <Home />, loader: homeLoader },
+  { path: '/cliente', element: wrapWithShell(Cliente) },
+  { path: '/seja-franqueado', element: wrapWithShell(SejaFranqueado) },
+  { path: '/seja-parceiro', element: wrapWithShell(SejaParceiro) },
+  { path: '/profissionais-de-consorcio', element: wrapWithShell(MexClub) },
+  { path: '/sobre-a-monteo', element: wrapWithShell(SobreMonteo) },
+  { path: '/contato', element: wrapWithShell(Contato) },
+  {
+    path: '/noticias',
+    element: <Noticias />,
+    loader: noticiasLoader,
+    entry: 'src/pages/Noticias.jsx',
+  },
+  {
+    path: '/noticias/:slug',
+    element: <NoticiaPost />,
+    loader: noticiaPostLoader,
+    getStaticPaths: noticiaPostStaticPaths,
+    entry: 'src/pages/NoticiaPost.jsx',
+  },
+];

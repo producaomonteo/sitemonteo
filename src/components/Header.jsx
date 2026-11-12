@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { animate as anime } from 'animejs';
-import logoMonteo from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
+import logoMonteoWhite from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
+import logoMonteoBlack from '@Imagens/LOGO 2025 HORIZONTAL PRETO-8.png';
 import './Header.css';
 
 const Header = () => {
@@ -11,6 +12,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isLight = location.pathname.startsWith('/noticias/');
+  const logoSrc = isLight ? logoMonteoBlack : logoMonteoWhite;
   const [isDesktopNav, setIsDesktopNav] = useState(
     () => typeof window !== 'undefined' && window.matchMedia('(min-width: 1181px)').matches
   );
@@ -106,18 +109,19 @@ const Header = () => {
     { name: 'Seja Franqueado', href: '/seja-franqueado' },
     { name: 'Seja Parceiro', href: '/seja-parceiro' },
     { name: 'Profissionais de Consórcio', href: '/profissionais-de-consorcio' },
+    { name: 'Notícias', href: '/noticias' },
     { name: 'Sobre a Monteo', href: '/sobre-a-monteo' }
   ];
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={`header glass-card${scrolled ? ' is-scrolled' : ''}`}>
+    <header className={`header glass-card${scrolled ? ' is-scrolled' : ''}${isLight ? ' header--light' : ''}`}>
       <div className="header-motion" ref={headerRef}>
         <div className="header-container">
           <div className="logo-section">
             <Link to="/">
-              <img src={logoMonteo} alt="Monteo Investimentos" className="logo" />
+              <img src={logoSrc} alt="Monteo Investimentos" className="logo" />
             </Link>
           </div>
 

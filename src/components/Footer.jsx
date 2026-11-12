@@ -1,11 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logoMonteo from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
+import { Link, useLocation } from 'react-router-dom';
+import logoMonteoWhite from '@Imagens/LOGO 2025 HORIZONTAL BRANCO-8.png';
+import logoMonteoBlack from '@Imagens/LOGO 2025 HORIZONTAL PRETO-8.png';
 import './Footer.css';
 
 const Footer = () => {
+  const location = useLocation();
+  const isLight = location.pathname.startsWith('/noticias/');
+  const logoMonteo = isLight ? logoMonteoBlack : logoMonteoWhite;
+
   return (
-    <footer className="footer">
+    <footer className={`footer${isLight ? ' footer--light' : ''}`}>
       {/* Colunas de navegação */}
       <div className="container footer-cols">
         <div className="footer-col">
@@ -21,6 +26,7 @@ const Footer = () => {
           <h4>EMPRESA</h4>
           <ul>
             <li><Link to="/sobre-a-monteo">Sobre a Monteo</Link></li>
+            <li><Link to="/noticias">Notícias</Link></li>
           </ul>
         </div>
         <div className="footer-col">

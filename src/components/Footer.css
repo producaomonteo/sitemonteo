@@ -143,6 +143,56 @@
   letter-spacing: 0.02em;
 }
 
+/* ── Variante CLARA (páginas /noticias e /noticias/[slug]) ── */
+.footer.footer--light {
+  background: #ffffff;
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.footer.footer--light::before {
+  background: linear-gradient(90deg, transparent, rgba(122, 74, 48, 0.3), transparent);
+}
+
+.footer--light .footer-col h4 {
+  color: #7a4a30;
+}
+
+.footer--light .footer-col + .footer-col {
+  border-left-color: rgba(122, 74, 48, 0.2);
+}
+
+.footer--light .footer-col a {
+  color: rgba(26, 26, 26, 0.65);
+}
+
+.footer--light .footer-col a:hover {
+  color: #1a1a1a;
+}
+
+.footer--light .footer-divider {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.footer--light .footer-social-link {
+  color: #7a4a30;
+}
+
+.footer--light .footer-social-link span {
+  color: rgba(26, 26, 26, 0.75);
+}
+
+.footer--light .footer-social-sep {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.footer--light .footer-tagline {
+  color: rgba(26, 26, 26, 0.55);
+}
+
+.footer--light .footer-copy {
+  color: rgba(26, 26, 26, 0.45);
+}
+
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .footer {

@@ -1,0 +1,111 @@
+/* Grid compartilhado entre listagem e home. */
+.noticia-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.noticia-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+.noticia-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 112, 86, 0.3);
+}
+
+.noticia-card-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.noticia-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.noticia-card:hover .noticia-card-media img {
+  transform: scale(1.04);
+}
+
+.noticia-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 28px 32px;
+  flex: 1;
+}
+
+.noticia-card-category {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.noticia-card-title {
+  font-size: 20px;
+  color: var(--white);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.noticia-card-excerpt {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.noticia-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.02em;
+}
+
+.noticia-card-cta {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .noticia-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .noticia-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .noticia-card-body {
+    padding: 24px 22px 28px;
+  }
+
+  .noticia-card-title {
+    font-size: 18px;
+  }
+}

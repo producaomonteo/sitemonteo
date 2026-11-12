@@ -29,6 +29,54 @@
   -webkit-backdrop-filter: blur(24px);
 }
 
+/* ── Variante CLARA (páginas /noticias e /noticias/[slug]) ── */
+.header.header--light {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02) inset;
+}
+
+.header.header--light.is-scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+}
+
+.header.header--light .nav-link {
+  color: rgba(26, 26, 26, 0.72);
+}
+
+.header.header--light .nav-link:hover,
+.header.header--light .nav-link--active {
+  color: #1a1a1a;
+}
+
+.header.header--light .header-cta-btn.btn-outline {
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+.header.header--light .header-cta-btn.btn-outline:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: #7a4a30;
+  border-color: rgba(122, 74, 48, 0.4);
+}
+
+.header.header--light .header-cta-btn.btn-primary {
+  background: #7a4a30;
+  box-shadow:
+    0 0 0 1px rgba(122, 74, 48, 0.3),
+    0 10px 24px rgba(122, 74, 48, 0.2);
+}
+
+.header.header--light .header-cta-btn.btn-primary:hover {
+  background: #5f3922;
+}
+
+.header.header--light .header-menu-bar {
+  background: #1a1a1a;
+}
+
 .header-motion {
   width: 100%;
 }

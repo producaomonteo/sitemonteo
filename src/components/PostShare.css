@@ -1,0 +1,51 @@
+.post-share {
+  display: flex;
+  align-items: center;
+}
+
+.post-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: transparent;
+  color: #4a4a4a;
+  cursor: pointer;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.post-share-btn:hover {
+  border-color: rgba(122, 74, 48, 0.5);
+  color: #7a4a30;
+  background: rgba(122, 74, 48, 0.05);
+}
+
+.post-share-btn.is-copied {
+  color: #2f7d32;
+  border-color: rgba(47, 125, 50, 0.5);
+  background: rgba(47, 125, 50, 0.08);
+}
+
+.post-share-btn svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.post-share-label {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .post-share-btn {
+    height: 34px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
