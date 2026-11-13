@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from '../components/Header';
 import './Contato.css';
 
 const Contato = () => {
   return (
-    <main className="contato-page">
+    <div className="monteo-app">
+      <Header />
+      <main className="contato-page">
       <div className="container">
         <div className="section-header reveal-up active">
           <span className="label">FALE CONOSCO</span>
@@ -47,7 +50,8 @@ const Contato = () => {
           </a>
         </div>
       </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

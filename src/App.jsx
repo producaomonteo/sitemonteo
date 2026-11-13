@@ -71,7 +71,6 @@ const Home = () => {
 
 const wrapWithShell = (Page) => (
   <>
-    <Header />
     <Page />
     <Footer />
   </>
