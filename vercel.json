@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     { "source": "/amandatanno", "destination": "/", "permanent": true },
     { "source": "/amandatanno/", "destination": "/", "permanent": true },
@@ -16,6 +18,6 @@
     { "source": "/medicos/:path*", "destination": "https://monteo-medicos.vercel.app/:path*" },
     { "source": "/investidores", "destination": "https://monteo-investidores.vercel.app" },
     { "source": "/investidores/:path*", "destination": "https://monteo-investidores.vercel.app/:path*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }

@@ -151,6 +151,20 @@ const NoticiaPost = () => {
           <meta property="og:description" content={metaDescription} />
           {canonical && <meta property="og:url" content={canonical} />}
           {ogImage && <meta property="og:image" content={ogImage} />}
+          {ogImage && <meta property="og:image:secure_url" content={ogImage} />}
+          {ogImage && <meta property="og:image:type" content="image/jpeg" />}
+          {ogImage && <meta property="og:image:width" content="1200" />}
+          {ogImage && <meta property="og:image:height" content="630" />}
+          {ogImage && (
+            <meta
+              property="og:image:alt"
+              content={noticia.capa?.alt || noticia.titulo}
+            />
+          )}
+          <meta name="twitter:card" content="summary_large_image" />
+          {ogImage && <meta name="twitter:image" content={ogImage} />}
+          <meta name="twitter:title" content={metaTitle} />
+          <meta name="twitter:description" content={metaDescription} />
           <meta property="article:published_time" content={noticia.publicadoEm} />
           <meta property="article:section" content={CATEGORIA_LABELS[noticia.categoria] || 'Notícia'} />
           {noticia.autor?.nome && <meta property="article:author" content={noticia.autor.nome} />}
