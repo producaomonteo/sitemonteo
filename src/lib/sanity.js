@@ -1,11 +1,13 @@
 import {createClient} from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
+const isBrowser = typeof window !== 'undefined'
+
 export const sanityClient = createClient({
   projectId: '5ved96b8',
   dataset: 'production',
   apiVersion: '2024-01-01',
-  useCdn: true,
+  useCdn: isBrowser,
 })
 
 const builder = imageUrlBuilder(sanityClient)
